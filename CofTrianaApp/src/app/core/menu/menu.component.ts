@@ -20,7 +20,7 @@ import { TranslateService } from '@ngx-translate/core';
           <span fxFlex></span>
           <span class="menu-badge mat-{{ badge.type }}" *ngFor="let badge of menuitem.badge">{{ badge.value }}</span>
         </a>
-        <a appAccordionToggle class="relative" href="{{menuitem.state}}" target="_blank" *ngIf="menuitem.type === 'extTabLink'">
+        <a appAccordionToggle class="relative" href="{{menuitem.state}}" *ngIf="menuitem.type === 'extTabLink'">
           <mat-icon>{{ menuitem.icon }}</mat-icon>
           <span>{{ menuitem.name | translate }}</span>
           <span fxFlex></span>

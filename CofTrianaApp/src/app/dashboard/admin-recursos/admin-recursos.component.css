@@ -1,0 +1,30 @@
+.container{
+  display: flex;
+  align-content: center;
+    width: 100%;
+    margin-top: 40px;
+    
+}
+
+table {
+    margin-left: 80px;
+    width: 90%;
+  }
+  
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+#btn-edit{
+  font-size: 18px;
+}
+
+#btn-delete{
+  font-size: 18px;
+}
+
+#btn-add{
+  display: flex;
+  align-self: flex-end;
+}

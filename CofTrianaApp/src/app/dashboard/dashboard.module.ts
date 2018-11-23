@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { MatIconModule, MatCardModule, MatButtonModule, MatListModule, MatProgressBarModule, MatMenuModule } from '@angular/material';
+import { MatIconModule, MatCardModule, MatButtonModule, MatListModule, MatProgressBarModule, MatMenuModule, MatTableModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutes } from './dashboard.routing';
 import { AdminComponent } from './admin/admin.component';
+import { AdminRecursosComponent } from './admin-recursos/admin-recursos.component';
 
 @NgModule({
   imports: [
@@ -18,9 +19,10 @@ import { AdminComponent } from './admin/admin.component';
     MatListModule,
     MatProgressBarModule,
     MatMenuModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatTableModule
   ],
-  declarations: [ DashboardComponent, AdminComponent ]
+  declarations: [ DashboardComponent, AdminComponent, AdminRecursosComponent ]
 })
 
 export class DashboardModule {}
