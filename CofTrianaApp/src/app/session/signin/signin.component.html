@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="container-img">
+    <img
+      id="image"
+      src="http://www.coftriana.es/wp-content/uploads/2017/09/logo_patronos_125px-01.jpg"
+    />
+  </div>
+
+  <div class="container-form">
+    <img
+      class="logo"
+      src="https://pbs.twimg.com/profile_images/920582761013968896/XQKM6M-P_400x400.jpg"
+    />
+    <h1>COF TRIANA</h1>
+
+    <div class="example-container">
+      <mat-form-field>
+        <input type="text" name="email" [(ngModel)]="email" matInput placeholder="Correo electrónico" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput name="password" [(ngModel)]="password" type="password" placeholder="Contraseña" />
+      </mat-form-field>
+
+      <button id="login-btn" mat-raised-button color="primary" (click)="doLogin()">
+        Iniciar sesión
+      </button>
+    </div>
+    <a href="#">¿Olvidaste tu contraseña?</a>
+  </div>
+</div>
+

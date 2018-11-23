@@ -1,0 +1,80 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+}
+
+.example-card {
+    max-width: 200px;
+    margin-left: 30px;
+    margin-top: 20px;
+  }
+  
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  } 
+
+  .card-wrapper{
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.card-content{
+    margin-left: 10px;
+    width: 100%;
+}
+
+
+.card{
+    display: flex;
+    width: 26%;
+    height: 30%;
+    justify-content: flex-start;
+    align-content: flex-start;
+    border: solid 3px;
+    margin-left: 40px;
+    margin-top: 40px;
+    box-shadow: 5px 10px #888888;
+}
+
+#tituloLibro{
+    text-transform: capitalize;
+}
+#autor{
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
+#categoria{
+    font-size: 14px;
+    color: #a3c2c2;
+    text-transform: capitalize;
+}
+
+#fechaPublicacion{
+    font-size: 14px;
+}
+
+
+#disponible{
+    width: 120px;
+    background-color: #00e64d;
+    color: white;
+    border: solid 2px;
+    text-align: center;
+    font-size: 17px;
+}
+#prestado{
+    width: 120px;
+    background-color: #ff3333;
+    color: white;
+    border: solid 2px;
+    text-align: center;
+    font-size: 17px;
+}
+
+#titlePage{
+    margin-top: 20px;
+    text-align: center;
+}
