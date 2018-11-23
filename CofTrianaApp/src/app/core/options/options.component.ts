@@ -27,6 +27,8 @@ export class OptionsComponent {
   }
 
   ngOnInit() {
+    this.options.collapsed = true;
+    this.messageEvent.emit(this.options);
     
     
   }

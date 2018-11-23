@@ -3,14 +3,20 @@
     <mat-icon>menu</mat-icon>
   </button>
   <div class="branding">
-    <div class="logo"></div>
+    <div class="logo">COF - TRIANA</div>
   </div>
-  <div class="search-bar" fxFlex>
+
+  <!--
+<div class="search-bar" fxFlex>
     <form class="search-form" [ngStyle.xs]="{display: 'none'}">
       <mat-icon>search</mat-icon>
-      <input type="text" placeholder="Search" autofocus="true" />
+      <input type="text" placeholder="Buscar" autofocus="true" />
     </form>
   </div>
+
+  -->
+  <span class="example-spacer"></span>
+  
   <button (click)="fullScreenToggle()" mat-icon-button>
     <mat-icon>fullscreen</mat-icon>
   </button>
@@ -18,25 +24,15 @@
     <mat-icon>notifications</mat-icon>
     <span class="notification-label">5</span>
   </button>
-  <button [matMenuTriggerFor]="user" mat-icon-button class="ml-xs">
-    <mat-icon>person</mat-icon>
-  </button>
+  <button mat-button [matMenuTriggerFor]="user">{{nombreLogueado}}</button>
   <mat-menu #user="matMenu" x-position="before">
     <button mat-menu-item>
-      <mat-icon>settings</mat-icon>
-      Settings
-    </button>
-    <button mat-menu-item>
       <mat-icon>account_box</mat-icon>
-      Profile
-    </button>
-    <button mat-menu-item>
-      <mat-icon>notifications_off</mat-icon>
-      Disable notifications
+      Mi perfil
     </button>
     <button mat-menu-item (click)="logout()">
       <mat-icon>exit_to_app</mat-icon>
-      Sign Out
+      Cerrar sesión
     </button>
   </mat-menu>
 </mat-toolbar>

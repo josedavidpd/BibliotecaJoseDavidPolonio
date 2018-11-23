@@ -43,14 +43,17 @@ mat-toolbar {
       line-height: 50px;
       padding: 0 64px 0 16px;
     }
-    .logo {
-      background-image: url(/assets/images/logo.svg);
+    /*.logo {
+      background-image: url('https://pbs.twimg.com/profile_images/920582761013968896/XQKM6M-P_400x400.jpg');
       width: 109px;
       height: 25px;
       -webkit-background-size: 109px 25px;
       background-size: 109px 25px;
       margin: auto;
-    }
+    }*/
+    .example-spacer {
+      flex: 1 1 auto;
+  }
     .search-bar {
       .search-form {
         background: rgba(255,255,255,1);
