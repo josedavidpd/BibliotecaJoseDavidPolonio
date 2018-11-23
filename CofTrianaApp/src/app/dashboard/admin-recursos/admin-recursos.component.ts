@@ -29,4 +29,13 @@ export class AdminRecursosComponent implements OnInit {
     )
   }
 
+  borrarRecurso(id: number){
+    this.recursoService.deleteRecurso(id).subscribe(response => {
+      this.getRecursos();
+    }, error => {
+      console.log(error);
+    }
+    )
+  }
+
 }
