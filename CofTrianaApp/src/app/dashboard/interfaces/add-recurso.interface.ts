@@ -1,7 +1,7 @@
 export interface AddRecurso {
   title: string;
   autor: string;
-  anuy: string;
+  anyo: string;
   content: string;
   typeId: number;
   categoryId: number;

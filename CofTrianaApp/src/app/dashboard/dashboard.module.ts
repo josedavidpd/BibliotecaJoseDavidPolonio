@@ -1,13 +1,22 @@
+import { CategoriasService } from './services/categorias.service';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { MatIconModule, MatCardModule, MatButtonModule, MatListModule, MatProgressBarModule, MatMenuModule, MatTableModule } from '@angular/material';
+import { MatIconModule, MatCardModule, MatButtonModule, MatListModule, MatProgressBarModule, MatMenuModule, MatTableModule, MatInputModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutes } from './dashboard.routing';
 import { AdminComponent } from './admin/admin.component';
 import { AdminRecursosComponent } from './admin-recursos/admin-recursos.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { AddRecursoComponent } from './add-recurso/add-recurso.component';
+import { FormsModule } from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import { RecursosService } from './services/recursos.service';
+import { TiposService } from './services/tipos.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -20,9 +29,18 @@ import { AdminRecursosComponent } from './admin-recursos/admin-recursos.componen
     MatProgressBarModule,
     MatMenuModule,
     FlexLayoutModule,
-    MatTableModule
+    MatTableModule,
+    MatDialogModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    HttpClientModule,
+    MatInputModule 
   ],
-  declarations: [ DashboardComponent, AdminComponent, AdminRecursosComponent ]
+  entryComponents:[
+    AddRecursoComponent
+  ],
+  declarations: [ DashboardComponent, AdminComponent, AdminRecursosComponent, AddRecursoComponent ]
 })
 
 export class DashboardModule {}

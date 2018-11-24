@@ -1,3 +1,4 @@
+import { AddRecursoDto } from './../dto/add-recurso.dto';
 import { Recursos } from './../interfaces/recursos.interface';
 import { SessionService } from './../../session/services/session.service';
 import { Injectable } from '@angular/core';
@@ -45,7 +46,7 @@ export class RecursosService {
   }
 
 
-  addRecurso(nuevoRecurso: AddRecurso){
+  addRecurso(nuevoRecursoDto: AddRecursoDto){
 
     const requestOptions = {
       headers: new HttpHeaders({
@@ -55,7 +56,7 @@ export class RecursosService {
       })
     };
 
-    return this.http.post<AddRecurso>(`${recursoUrl}/create`,nuevoRecurso,requestOptions);
+    return this.http.post<AddRecurso>(`${recursoUrl}/create`,nuevoRecursoDto,requestOptions);
 
   }
 }
