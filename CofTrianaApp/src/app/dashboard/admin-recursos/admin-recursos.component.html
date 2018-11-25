@@ -36,11 +36,15 @@
       <th mat-header-cell *matHeaderCellDef>Fecha de publicación</th>
       <td mat-cell *matCellDef="let element">{{ element.anyo }}</td>
     </ng-container>
+    <ng-container matColumnDef="¿Disponible?">
+        <th mat-header-cell *matHeaderCellDef>¿Disponible?</th>
+        <td mat-cell *matCellDef="let element">{{ element.free ? 'Sí' : 'En préstamo' }}</td>
+      </ng-container>
 
     <ng-container matColumnDef="Acciones">
       <th mat-header-cell *matHeaderCellDef>Acciones</th>
       <td mat-cell *matCellDef="let element">
-        <button mat-icon-button class="btn">
+        <button mat-icon-button class="btn" (click)="openDialogEditRecurso(element)">
           <i class="fas fa-pen"></i>
         </button>
         <button mat-icon-button class="btn" (click)="borrarRecurso(element.id)">

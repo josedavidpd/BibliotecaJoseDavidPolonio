@@ -18,6 +18,7 @@ import { RecursosService } from './services/recursos.service';
 import { TiposService } from './services/tipos.service';
 import {HttpClientModule} from '@angular/common/http';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { EditRecursoComponent } from './edit-recurso/edit-recurso.component';
 
 @NgModule({
   imports: [
@@ -40,9 +41,10 @@ import {NgxPaginationModule} from 'ngx-pagination';
     NgxPaginationModule
   ],
   entryComponents:[
-    AddRecursoComponent
+    AddRecursoComponent,
+    EditRecursoComponent
   ],
-  declarations: [ DashboardComponent, AdminComponent, AdminRecursosComponent, AddRecursoComponent ]
+  declarations: [ DashboardComponent, AdminComponent, AdminRecursosComponent, AddRecursoComponent, EditRecursoComponent ]
 })
 
 export class DashboardModule {}

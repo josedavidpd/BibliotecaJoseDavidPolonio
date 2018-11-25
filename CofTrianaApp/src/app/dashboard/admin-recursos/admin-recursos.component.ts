@@ -1,9 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { RecursosService } from "../services/recursos.service";
 import { Recursos } from "../interfaces/recursos.interface";
-import { MatDialog, MatTableDataSource } from "@angular/material";
+import { MatDialog, MatTableDataSource, MatDialogConfig } from "@angular/material";
 import { AddRecursoComponent } from "../add-recurso/add-recurso.component";
 import { Title } from "@angular/platform-browser";
+import { EditRecursoComponent } from "../edit-recurso/edit-recurso.component";
 
 const ELEMENT_DATA: Recursos[] = [];
 
@@ -13,6 +14,7 @@ const ELEMENT_DATA: Recursos[] = [];
   styleUrls: ["./admin-recursos.component.css"]
 })
 export class AdminRecursosComponent implements OnInit {
+
   constructor(
     private recursoService: RecursosService,
     public dialog: MatDialog,
@@ -31,6 +33,7 @@ export class AdminRecursosComponent implements OnInit {
     "Categoria",
     "Autor",
     "Fecha de publicacion",
+    "¿Disponible?",
     "Acciones"
   ];
 
@@ -73,5 +76,25 @@ export class AdminRecursosComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  openDialogEditRecurso(recurso : Recursos){
+    const dialogEditRecurso = this.dialog.open(EditRecursoComponent, {
+      data :{
+        element : recurso
+        
+      }
+    });
+    const dialogConfig = new MatDialogConfig();
+
+    dialogEditRecurso.afterClosed().subscribe(response =>{
+
+      this.getRecursos();
+
+    }, error => {
+      console.log(error);
+    }
+    
+    )
   }
 }

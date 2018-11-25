@@ -1,5 +1,8 @@
 <div fxLayout="column" fFlexFill>
   <mat-form-field class="example-full-width">
+        <input disabled matInput placeholder="Id" [(ngModel)]="id" name="id" />
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
     <input matInput placeholder="Título" [(ngModel)]="title" name="title" />
   </mat-form-field>
   <mat-form-field class="example-full-width">
@@ -49,7 +52,7 @@
     </mat-select>
   </mat-form-field>
 
-  <button mat-raised-button color="primary" (click)="addRecurso()">
+  <button mat-raised-button color="primary" (click)="editRecurso()">
     Editar recurso
   </button>
 </div>
