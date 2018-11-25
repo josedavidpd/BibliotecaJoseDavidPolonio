@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Recursos } from './interfaces/recursos.interface';
 import { Router } from '@angular/router';
 import { RecursosService } from './services/recursos.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,9 +14,10 @@ export class DashboardComponent {
   arrayRecursos: Recursos[];
   free: boolean;
 
-  constructor(private router: Router, private recursoService: RecursosService) { }
+  constructor(private router: Router, private recursoService: RecursosService, private title: Title) { }
 
   ngOnInit() {
+    this.title.setTitle('CofTriana - Inicio');
     if(localStorage.getItem('token')== null){
       this.router.navigate(['']);
     }

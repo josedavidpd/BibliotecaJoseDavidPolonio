@@ -1,55 +1,50 @@
-.container{
-    display: flex;
-    align-items: flex-start;
-    width: 100vw;
-    height: 100vh;
-    margin-top: 40px;
-    flex-wrap: wrap;
+.container {
+  display: flex;
+  align-items: flex-start;
+  width: 100vw;
+  height: 100vh;
+  margin-top: 40px;
+  flex-wrap: wrap;
 }
 
-.recursos{
-  
-    width: 27%;
-    text-align: center;
-    height: 30%;
-    border: solid 2px;
-    text-decoration: none;
-    color: black;
-    margin-left: 30px;
-    margin-right: 30px;
-    
+.recursos {
+  width: 27%;
+  text-align: center;
+  height: 30%;
+  border: solid 2px;
+  text-decoration: none;
+  color: black;
+  margin-left: 30px;
+  margin-right: 30px;
 }
-.tipos{
- 
-    width: 27%;
-    text-align: center;
-    height: 30%;
-    border: solid 2px;
-    text-decoration: none;
-    color: black;
-    margin-right: 30px;
-    margin-left: 30px;
+.tipos {
+  width: 27%;
+  text-align: center;
+  height: 30%;
+  border: solid 2px;
+  text-decoration: none;
+  color: black;
+  margin-right: 30px;
+  margin-left: 30px;
 }
-.categorias{
-    
-    width: 27%;
-    text-align: center;
-    height: 30%;
-    border: solid 2px;
-    text-decoration: none;
-    color: black;
-    margin-left: 30px;
-    margin-right: 30px;
+.categorias {
+  width: 27%;
+  text-align: center;
+  height: 30%;
+  border: solid 2px;
+  text-decoration: none;
+  color: black;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
-.usuarios{
-        
-    width: 27%;
-    text-align: center;
-    height: 30%;
-    border: solid 2px;
-    text-decoration: none;
-    color: black;
-    margin-left: 30px;
-    margin-right: 30px;
+.usuarios {
+  width: 27%;
+  text-align: center;
+  height: 30%;
+  border: solid 2px;
+  text-decoration: none;
+  color: black;
+  margin-left: 30px;
+  margin-right: 30px;
 }

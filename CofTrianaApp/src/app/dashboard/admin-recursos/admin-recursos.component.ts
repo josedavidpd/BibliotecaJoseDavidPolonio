@@ -3,6 +3,7 @@ import { RecursosService } from "../services/recursos.service";
 import { Recursos } from "../interfaces/recursos.interface";
 import { MatDialog, MatTableDataSource } from "@angular/material";
 import { AddRecursoComponent } from "../add-recurso/add-recurso.component";
+import { Title } from "@angular/platform-browser";
 
 const ELEMENT_DATA: Recursos[] = [];
 
@@ -14,10 +15,12 @@ const ELEMENT_DATA: Recursos[] = [];
 export class AdminRecursosComponent implements OnInit {
   constructor(
     private recursoService: RecursosService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private title: Title
   ) {}
 
   ngOnInit() {
+    this.title.setTitle('Admin - Recursos');
     this.getRecursos();
   }
 

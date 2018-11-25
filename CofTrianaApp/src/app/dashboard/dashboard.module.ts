@@ -17,6 +17,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { RecursosService } from './services/recursos.service';
 import { TiposService } from './services/tipos.service';
 import {HttpClientModule} from '@angular/common/http';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   imports: [
@@ -35,7 +36,8 @@ import {HttpClientModule} from '@angular/common/http';
     MatFormFieldModule,
     MatSelectModule,
     HttpClientModule,
-    MatInputModule 
+    MatInputModule,
+    NgxPaginationModule
   ],
   entryComponents:[
     AddRecursoComponent

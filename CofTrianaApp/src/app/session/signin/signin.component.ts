@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 import { MatSnackBar } from '@angular/material';
 import { SessionService } from '../services/session.service';
 import { LoginDto } from '../dto/login.dto';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-signin',
@@ -16,9 +17,10 @@ export class SigninComponent implements OnInit {
   password = '';
 
   public form: FormGroup;
-  constructor(private fb: FormBuilder, private router: Router, private sessionService: SessionService) {}
+  constructor(private fb: FormBuilder, private router: Router, private sessionService: SessionService, private title: Title) {}
 
   ngOnInit() {
+    this.title.setTitle('CofTriana - Inicio de sesión');
     this.form = this.fb.group ( {
       uname: [null , Validators.compose ( [ Validators.required ] )] , password: [null , Validators.compose ( [ Validators.required ] )]
     } );

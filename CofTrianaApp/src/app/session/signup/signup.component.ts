@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { CustomValidators } from 'ng2-validation';
+import { Title } from '@angular/platform-browser';
 
 const password = new FormControl('', Validators.required);
 const confirmPassword = new FormControl('', CustomValidators.equalTo(password));
@@ -14,9 +15,10 @@ const confirmPassword = new FormControl('', CustomValidators.equalTo(password));
 export class SignupComponent implements OnInit {
 
   public form: FormGroup;
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(private fb: FormBuilder, private router: Router, private title: Title) {}
 
   ngOnInit() {
+    this.title.setTitle('CofTriana - Registro');
     this.form = this.fb.group( {
       email: [null, Validators.compose([Validators.required, CustomValidators.email])],
       password: password,

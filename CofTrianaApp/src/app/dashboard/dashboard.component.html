@@ -4,7 +4,7 @@
     <hr/>
 
     <div class="card-wrapper">
-            <div class="card" *ngFor="let recurso of arrayRecursos">
+            <div class="card" *ngFor="let recurso of arrayRecursos | paginate: { itemsPerPage: 8, currentPage: p }">
               <div id="imagen">
                 <img  src="https://http2.mlstatic.com/secreto-de-la-mente-millonaria-libro-pdf-gratis-D_NQ_NP_858052-MPA26462455618_112017-F.jpg"
                   width="120px" height="196px" />
@@ -32,6 +32,10 @@
         
             
           </div>
-    
+          <div class="container-pagination">
 
+              <pagination-controls class="pagination" (pageChange)="p = $event" previousLabel="Anterior"
+              nextLabel="Siguiente"  responsive="true"></pagination-controls>
+          </div>
+          
 </div>

@@ -1,40 +1,55 @@
 <div fxLayout="column" fFlexFill>
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Título" [(ngModel)]="title" name="title">
+    <input matInput placeholder="Título" [(ngModel)]="title" name="title" />
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Autor" [(ngModel)]="autor" name="autor">
+    <input matInput placeholder="Autor" [(ngModel)]="autor" name="autor" />
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Año de publicación" [(ngModel)]="anyo" name="anyo">
+    <input
+      matInput
+      placeholder="Año de publicación"
+      [(ngModel)]="anyo"
+      name="anyo"
+    />
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Descripción" [(ngModel)]="content" name="content">
+    <input
+      matInput
+      placeholder="Descripción"
+      [(ngModel)]="content"
+      name="content"
+    />
   </mat-form-field>
-
-
-  
-
-    <mat-form-field>
-    <mat-select placeholder="Tipo" [(value)]="tipoSeleccionado" name="tipoSeleccionado">
-      <mat-option *ngFor="let tipo of arrayTipos" [value]="tipo.id">
-        {{tipo.name}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-
-
 
   <mat-form-field>
-    <mat-select placeholder="Categoria" [(value)]="categoriaSeleccionada" name="categoriaSeleccionada">
-      <mat-option *ngFor="let categoria of arrayCategorias" [value]="categoria.id">
-        {{categoria.name}}
+    <mat-select
+      placeholder="Tipo"
+      [(value)]="tipoSeleccionado"
+      name="tipoSeleccionado"
+    >
+      <mat-option *ngFor="let tipo of arrayTipos" [value]="tipo.id">
+        {{ tipo.name }}
       </mat-option>
     </mat-select>
   </mat-form-field>
 
+  <mat-form-field>
+    <mat-select
+      placeholder="Categoria"
+      [(value)]="categoriaSeleccionada"
+      name="categoriaSeleccionada"
+    >
+      <mat-option
+        *ngFor="let categoria of arrayCategorias"
+        [value]="categoria.id"
+      >
+        {{ categoria.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
-  
-
-  <button mat-raised-button color="primary" (click)="addRecurso()">Crear recurso</button>
+  <button mat-raised-button color="primary" (click)="addRecurso()">
+    Crear recurso
+  </button>
 </div>
