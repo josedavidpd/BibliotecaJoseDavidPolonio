@@ -1,7 +1,13 @@
+<div class="container">
+
+  <img class="image" src="http://www.coftriana.es/wp-content/uploads/2017/10/logo_we_top-03.jpg" width="95%">
+
+  <h2 style="text-align:center; margin-top: 20px">Recursos</h2>
+  <hr/>
+
 <div fxLayout="column wrap">
-    <h1 id="titlePage">Recursos</h1>
   <div class="card-wrapper" fxFlex.gt-md="33.33%" fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="500">
-    <mat-card class="pa-0 cards" style="width:20%; height: 200px;" *ngFor="let recurso of arrayRecursos">
+    <mat-card class="pa-0 cards" style="width:20%; height: 200px;" *ngFor="let recurso of arrayRecursos | paginate: { itemsPerPage: 8, currentPage: p }">
       <div fxLayout="row">
         <div class="media-grid compact bg-cover" style="background-image: url('https://http2.mlstatic.com/secreto-de-la-mente-millonaria-libro-pdf-gratis-D_NQ_NP_858052-MPA26462455618_112017-F.jpg')" fxFlex="40">
           <figure>
@@ -12,16 +18,16 @@
           <div fxLayout="column" fxFill>
             <div>
               <h1 id="tituloLibro" class="ma-0">{{recurso.title}}</h1>
-              <p id="autor" class="ma-0 pa-0 text-md">Autor: {{recurso.autor}}</p>
-              <p class="ma-0 pa-0 text-md">Año publicación: {{recurso.anyo}}</p>
+              <p id="autor" class="ma-0 pa-0 text-md">{{recurso.autor}}</p>
+              <p style="text-transform: capitalize" class="ma-0 pa-0 text-md">{{recurso.anyo}}</p>
             </div>
 
-            <div class="mat-text-primary text-xl">
+            <div  class="mat-text-primary text-xl">
               <span> {{recurso.category.name}}</span>
-              <p *ngIf="recurso.free == true" id="disponible">
+              <p  *ngIf="recurso.free == true" id="disponible">
                   {{ recurso.free ? "Disponible" : "En préstamo" }}
                 </p>
-                <p *ngIf="recurso.free == false" id="prestado">
+                <p  *ngIf="recurso.free == false" id="prestado">
                   {{ recurso.free ? "Disponible" : "En préstamo" }}
                 </p>
             </div>
@@ -35,6 +41,19 @@
 
     
   </div>
+</div>
+
+<div class="container-pagination">
+    <pagination-controls
+      class="pagination"
+      (pageChange)="p = $event"
+      previousLabel="Anterior"
+      nextLabel="Siguiente"
+      responsive="true"
+    ></pagination-controls>
+  </div>
+ 
+
 </div>
 <!--
 
