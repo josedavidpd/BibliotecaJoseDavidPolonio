@@ -2,7 +2,7 @@ import { CategoriasService } from './services/categorias.service';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { MatIconModule, MatCardModule, MatButtonModule, MatListModule, MatProgressBarModule, MatMenuModule, MatTableModule, MatInputModule, MatSnackBar, MatSnackBarModule } from '@angular/material';
+import { MatIconModule, MatCardModule, MatButtonModule, MatListModule, MatProgressBarModule, MatMenuModule, MatTableModule, MatInputModule, MatSnackBar, MatSnackBarModule, MatPaginatorIntl } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { DashboardComponent } from './dashboard.component';
@@ -23,6 +23,8 @@ import { DeleteRecursoComponent } from './delete-recurso/delete-recurso.componen
 import { AdminCategoriasComponent } from './admin-categorias/admin-categorias.component';
 import { AddCategoriaComponent } from './add-categoria/add-categoria.component';
 
+import { MatPaginatorModule } from '@angular/material';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -42,7 +44,8 @@ import { AddCategoriaComponent } from './add-categoria/add-categoria.component';
     HttpClientModule,
     MatInputModule,
     NgxPaginationModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatPaginatorModule
   ],
   entryComponents:[
     AddRecursoComponent,

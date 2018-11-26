@@ -32,7 +32,8 @@ import {
   MatSlideToggleModule,
   MatSelectModule,
   MatProgressBarModule, 
-  MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material';
+  MAT_DIALOG_DEFAULT_OPTIONS,
+  MatPaginatorIntl} from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {BidiModule} from '@angular/cdk/bidi';
 
@@ -50,7 +51,7 @@ import {
 
 import { AppRoutes } from './app.routing';
 import { AppComponent } from './app.component';
-import { SessionService } from './session/services/session.service';
+import { getEspPaginator } from './dashboard/esp-paginator';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -109,7 +110,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     PerfectScrollbarModule
   ],
   providers: [
+    {provide: MatPaginatorIntl, useValue: getEspPaginator()},
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true}},
+    
     {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG  ,
