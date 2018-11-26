@@ -2,7 +2,7 @@
     <mat-form-field>
         <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrar búsqueda">
       </mat-form-field>
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <!-- Position Column -->
     <ng-container matColumnDef="Id">
       <th mat-header-cell *matHeaderCellDef>ID</th>
@@ -64,10 +64,12 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="10"></mat-paginator>
 
   <button mat-fab color="warn" class="mat-fab-bottom-right" (click)="openDialogAddRecurso()"  style="z-index: 9;">
     <i class="fas fa-plus"></i>
   </button>
 
-  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="10"></mat-paginator>
+  
 </div>
+

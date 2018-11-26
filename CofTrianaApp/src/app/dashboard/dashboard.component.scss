@@ -86,3 +86,17 @@
 .pagination /deep/ .ngx-pagination .current {
   background: red;
 }
+
+@media(min-width:1800px){
+  .card {
+    display: flex;
+    width: 20%;
+    height: 30%;
+    justify-content: flex-start;
+    align-content: flex-start;
+    border: solid 3px;
+    margin-left: 50px;
+    margin-top: 40px;
+    box-shadow: 5px 10px #888888;
+  }
+}

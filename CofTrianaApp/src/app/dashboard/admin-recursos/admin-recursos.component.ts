@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { RecursosService } from "../services/recursos.service";
 import { Recursos } from "../interfaces/recursos.interface";
-import { MatDialog, MatTableDataSource, MatDialogConfig, MatPaginator, MatSort } from "@angular/material";
+import { MatDialog, MatTableDataSource, MatPaginator, MatSort} from "@angular/material";
 import { AddRecursoComponent } from "../add-recurso/add-recurso.component";
 import { Title } from "@angular/platform-browser";
 import { EditRecursoComponent } from "../edit-recurso/edit-recurso.component";
@@ -14,10 +14,13 @@ const ELEMENT_DATA: Recursos[] = [];
   templateUrl: "./admin-recursos.component.html",
   styleUrls: ["./admin-recursos.component.css"]
 })
-export class AdminRecursosComponent implements OnInit {
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
+
+export class AdminRecursosComponent implements OnInit {
+  @ViewChild(MatPaginator)
+  paginator!: MatPaginator;
+
+
 
   constructor(
     private recursoService: RecursosService,
@@ -28,6 +31,10 @@ export class AdminRecursosComponent implements OnInit {
   ngOnInit() {
     this.title.setTitle('Admin - Recursos');
     this.getRecursos();
+  }
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
   }
 
   displayedColumns: string[] = [
@@ -42,6 +49,8 @@ export class AdminRecursosComponent implements OnInit {
     "Acciones"
   ];
 
+  
+  
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
   applyFilter(filterValue: string) {
