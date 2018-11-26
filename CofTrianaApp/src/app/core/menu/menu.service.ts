@@ -25,25 +25,25 @@ const MENUITEMS = [
     state: '/',
     name: 'Inicio',
     type: 'link',
-    icon: 'explore'
+    icon: 'home'
   },
   {
     state: '/recursos',
     name: 'Recursos',
     type: 'extTabLink',
-    icon: 'local_library'
+    icon: 'list'
   },
   {
     state: '/categorias',
     name: 'Categorias',
     type: 'extTabLink',
-    icon: 'local_library'
+    icon: 'view_module'
   },
   {
     state: '/admin',
     name: 'Zona Admin',
     type: 'extTabLink',
-    icon: 'local_library'
+    icon: 'supervisor_account'
   }
 ];
 
