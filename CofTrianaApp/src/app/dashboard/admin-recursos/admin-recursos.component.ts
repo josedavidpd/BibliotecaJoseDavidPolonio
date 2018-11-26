@@ -28,6 +28,7 @@ export class AdminRecursosComponent implements OnInit {
 
   displayedColumns: string[] = [
     "Id",
+    "Contenido",
     "Nombre",
     "Tipo",
     "Categoria",
