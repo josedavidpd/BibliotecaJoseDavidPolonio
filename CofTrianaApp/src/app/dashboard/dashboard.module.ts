@@ -21,6 +21,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { EditRecursoComponent } from './edit-recurso/edit-recurso.component';
 import { DeleteRecursoComponent } from './delete-recurso/delete-recurso.component';
 import { AdminCategoriasComponent } from './admin-categorias/admin-categorias.component';
+import { AddCategoriaComponent } from './add-categoria/add-categoria.component';
 
 @NgModule({
   imports: [
@@ -46,9 +47,10 @@ import { AdminCategoriasComponent } from './admin-categorias/admin-categorias.co
   entryComponents:[
     AddRecursoComponent,
     EditRecursoComponent, 
-    DeleteRecursoComponent
+    DeleteRecursoComponent,
+    AddCategoriaComponent
   ],
-  declarations: [ DashboardComponent, AdminComponent, AdminRecursosComponent, AddRecursoComponent, EditRecursoComponent, DeleteRecursoComponent, AdminCategoriasComponent ]
+  declarations: [ DashboardComponent, AdminComponent, AdminRecursosComponent, AddRecursoComponent, EditRecursoComponent, DeleteRecursoComponent, AdminCategoriasComponent, AddCategoriaComponent ]
 })
 
 export class DashboardModule {}

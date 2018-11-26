@@ -82,6 +82,7 @@ export class AdminRecursosComponent implements OnInit {
 
   openDialogEditRecurso(recurso : Recursos){
     const dialogEditRecurso = this.dialog.open(EditRecursoComponent, {
+      width: '30%',
       data :{
         element : recurso
         

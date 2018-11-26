@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoriasService } from '../services/categorias.service';
 import { Category } from '../interfaces/category.interface';
+import { AddCategoriaDto } from '../dto/add-categoria.dto';
+import { AddCategoriaComponent } from '../add-categoria/add-categoria.component';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-admin-categorias',
@@ -16,7 +19,7 @@ export class AdminCategoriasComponent implements OnInit {
     "Acciones"
   ];
 
-  constructor(private categoriaService: CategoriasService) { }
+  constructor(private dialog: MatDialog,private categoriaService: CategoriasService) { }
 
   ngOnInit() {
     this.getAllCategorias();
@@ -30,6 +33,18 @@ export class AdminCategoriasComponent implements OnInit {
       console.log(error);
     }
     )
+  }
+  openDialogAddCategoria(){
+    const dialogAddCategoria = this.dialog.open(AddCategoriaComponent);
+
+    dialogAddCategoria.afterClosed().subscribe(
+      response => {
+        this.getAllCategorias();
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
 }
