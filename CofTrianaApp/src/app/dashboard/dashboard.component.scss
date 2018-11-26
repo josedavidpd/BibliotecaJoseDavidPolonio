@@ -18,6 +18,8 @@
   display: flex;
   align-content: flex-start;
   flex-wrap: wrap;
+  margin-top: 40px;
+  margin-left: 40px;
 }
 
 .card-content {
@@ -25,7 +27,8 @@
   width: 100%;
 }
 
-.card {
+
+/*.card {
   display: flex;
   width: 20%;
   height: 30%;
@@ -35,6 +38,10 @@
   margin-left: 20px;
   margin-top: 40px;
   box-shadow: 5px 10px #888888;
+}*/
+.cards{
+  border: solid 3px;
+  box-shadow: 5px 10px #888888;
 }
 
 #tituloLibro {
@@ -43,16 +50,19 @@
 #autor {
   font-size: 14px;
   text-transform: capitalize;
+  font-weight: bold;
 }
 
 #categoria {
   font-size: 14px;
   color: #a3c2c2;
   text-transform: capitalize;
+  
 }
 
 #fechaPublicacion {
   font-size: 14px;
+  font-weight: bold;
 }
 
 #disponible {
@@ -62,6 +72,7 @@
   border: solid 2px;
   text-align: center;
   font-size: 17px;
+
 }
 #prestado {
   width: 120px;
@@ -70,6 +81,7 @@
   border: solid 2px;
   text-align: center;
   font-size: 17px;
+
 }
 
 #titlePage {
@@ -90,8 +102,8 @@
 @media(min-width:1800px){
   .card {
     display: flex;
-    width: 20%;
-    height: 30%;
+    width: 25%;
+    height: 35%;
     justify-content: flex-start;
     align-content: flex-start;
     border: solid 3px;
