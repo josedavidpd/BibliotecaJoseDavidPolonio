@@ -17,13 +17,11 @@ export class SigninComponent implements OnInit {
   password = '';
 
   public form: FormGroup;
-  constructor(private fb: FormBuilder, private router: Router, private sessionService: SessionService, private title: Title) {}
+  constructor(public snackBar: MatSnackBar, private router: Router, private sessionService: SessionService, private title: Title) {}
 
   ngOnInit() {
     this.title.setTitle('CofTriana - Inicio de sesión');
-    this.form = this.fb.group ( {
-      uname: [null , Validators.compose ( [ Validators.required ] )] , password: [null , Validators.compose ( [ Validators.required ] )]
-    } );
+
     if(localStorage.getItem('token') == null){
       this.router.navigate(['']);
     }else{
@@ -42,10 +40,10 @@ export class SigninComponent implements OnInit {
       this.router.navigate(['dashboard']);
       
     }, error => {
-      /*this.snackBar.open('Email o contraseña incorrectos', 'x', {
+      this.snackBar.open('Email o contraseña incorrectos', 'x', {
         duration: 3000,
         verticalPosition: 'top'
-      });*/
+      });
       console.log(error);
     });
 
