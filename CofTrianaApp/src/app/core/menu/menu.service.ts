@@ -40,10 +40,22 @@ const MENUITEMS = [
     icon: 'view_module'
   },
   {
-    state: '/admin',
-    name: 'Zona Admin',
+    state: '/admin/recursos',
+    name: 'Admin - RECURSOS',
     type: 'extTabLink',
     icon: 'supervisor_account'
+  },
+  {
+    state: '/admin/categorias',
+    name: 'Admin - CATEGORIAS',
+    type: 'extTabLink',
+    icon: 'scatter_plot'
+  },
+  {
+    state: '/admin/tipos',
+    name: 'Admin - TIPOS',
+    type: 'extTabLink',
+    icon: 'style'
   }
 ];
 

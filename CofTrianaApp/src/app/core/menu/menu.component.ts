@@ -33,6 +33,7 @@ import { TranslateService } from '@ngx-translate/core';
           <span class="menu-badge mat-{{ badge.type }}" *ngFor="let badge of menuitem.badge">{{ badge.value }}</span>
           <mat-icon class="menu-caret">arrow_drop_down</mat-icon>
         </a>
+        
         <mat-nav-list class="sub-menu" *ngIf="menuitem.type === 'sub'">
           <mat-list-item *ngFor="let childitem of menuitem.children" routerLinkActive="open">
             <a [routerLink]="['/', menuitem.state, childitem.state ]" class="relative">{{ childitem.name | translate }}</a>
