@@ -9,16 +9,21 @@
       <td mat-cell *matCellDef="let element">{{ element.id }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="Contenido">
-      <th mat-header-cell *matHeaderCellDef>Contenido</th>
-      <td mat-cell *matCellDef="let element">{{ element.content }}</td>
-    </ng-container>
+      
+
+    
 
     <!-- Name Column -->
-    <ng-container matColumnDef="Nombre">
-      <th mat-header-cell *matHeaderCellDef>Nombre</th>
+    <ng-container matColumnDef="Titulo">
+      <th mat-header-cell *matHeaderCellDef>Título</th>
       <td mat-cell *matCellDef="let element">{{ element.title }}</td>
     </ng-container>
+
+    <ng-container matColumnDef="Descripcion">
+        <th mat-header-cell *matHeaderCellDef>Descripción</th>
+        <td mat-cell *matCellDef="let element">{{ element.content }}</td>
+      </ng-container>
+
 
     <!-- Weight Column -->
     <ng-container matColumnDef="Tipo">
@@ -26,7 +31,7 @@
       <td mat-cell *matCellDef="let element">{{ element.type.name }}</td>
     </ng-container>
 
-    <!-- Symbol Column -->
+    <!--  -->
     <ng-container matColumnDef="Categoria">
       <th mat-header-cell *matHeaderCellDef>Categoria</th>
       <td mat-cell *matCellDef="let element">{{ element.category.name }}</td>
@@ -52,7 +57,7 @@
         <button mat-icon-button class="btn" (click)="openDialogEditRecurso(element)">
           <i class="fas fa-pen"></i>
         </button>
-        <button mat-icon-button class="btn" (click)="borrarRecurso(element.id)">
+        <button mat-icon-button class="btn" (click)="openDialogDeleteRecurso(element)">
           <i id="btn-delete" class="material-icons"> delete_outline </i>
         </button>
       </td>

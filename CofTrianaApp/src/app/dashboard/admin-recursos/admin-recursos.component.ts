@@ -5,6 +5,7 @@ import { MatDialog, MatTableDataSource, MatDialogConfig } from "@angular/materia
 import { AddRecursoComponent } from "../add-recurso/add-recurso.component";
 import { Title } from "@angular/platform-browser";
 import { EditRecursoComponent } from "../edit-recurso/edit-recurso.component";
+import { DeleteRecursoComponent } from "../delete-recurso/delete-recurso.component";
 
 const ELEMENT_DATA: Recursos[] = [];
 
@@ -28,8 +29,8 @@ export class AdminRecursosComponent implements OnInit {
 
   displayedColumns: string[] = [
     "Id",
-    "Contenido",
-    "Nombre",
+    "Titulo",
+    "Descripcion",
     "Tipo",
     "Categoria",
     "Autor",
@@ -86,8 +87,6 @@ export class AdminRecursosComponent implements OnInit {
         
       }
     });
-    const dialogConfig = new MatDialogConfig();
-
     dialogEditRecurso.afterClosed().subscribe(response =>{
 
       this.getRecursos();
@@ -96,6 +95,20 @@ export class AdminRecursosComponent implements OnInit {
       console.log(error);
     }
     
+    )
+  }
+
+  openDialogDeleteRecurso(recurso: Recursos){
+    const dialogDeleteRecurso = this.dialog.open(DeleteRecursoComponent, {
+      data:{
+        element:recurso
+      }
+    });
+    dialogDeleteRecurso.afterClosed().subscribe (response =>{
+      this.getRecursos();
+    }, error =>{
+      console.log(error);
+    }
     )
   }
 }

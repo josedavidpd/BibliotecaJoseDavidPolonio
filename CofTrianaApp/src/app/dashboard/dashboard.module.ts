@@ -2,7 +2,7 @@ import { CategoriasService } from './services/categorias.service';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { MatIconModule, MatCardModule, MatButtonModule, MatListModule, MatProgressBarModule, MatMenuModule, MatTableModule, MatInputModule } from '@angular/material';
+import { MatIconModule, MatCardModule, MatButtonModule, MatListModule, MatProgressBarModule, MatMenuModule, MatTableModule, MatInputModule, MatSnackBar, MatSnackBarModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { DashboardComponent } from './dashboard.component';
@@ -19,6 +19,7 @@ import { TiposService } from './services/tipos.service';
 import {HttpClientModule} from '@angular/common/http';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { EditRecursoComponent } from './edit-recurso/edit-recurso.component';
+import { DeleteRecursoComponent } from './delete-recurso/delete-recurso.component';
 
 @NgModule({
   imports: [
@@ -38,13 +39,15 @@ import { EditRecursoComponent } from './edit-recurso/edit-recurso.component';
     MatSelectModule,
     HttpClientModule,
     MatInputModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatSnackBarModule
   ],
   entryComponents:[
     AddRecursoComponent,
-    EditRecursoComponent
+    EditRecursoComponent, 
+    DeleteRecursoComponent
   ],
-  declarations: [ DashboardComponent, AdminComponent, AdminRecursosComponent, AddRecursoComponent, EditRecursoComponent ]
+  declarations: [ DashboardComponent, AdminComponent, AdminRecursosComponent, AddRecursoComponent, EditRecursoComponent, DeleteRecursoComponent ]
 })
 
 export class DashboardModule {}
