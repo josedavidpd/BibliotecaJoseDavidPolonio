@@ -20,6 +20,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { EditRecursoComponent } from './edit-recurso/edit-recurso.component';
 import { DeleteRecursoComponent } from './delete-recurso/delete-recurso.component';
+import { AdminCategoriasComponent } from './admin-categorias/admin-categorias.component';
 
 @NgModule({
   imports: [
@@ -47,7 +48,7 @@ import { DeleteRecursoComponent } from './delete-recurso/delete-recurso.componen
     EditRecursoComponent, 
     DeleteRecursoComponent
   ],
-  declarations: [ DashboardComponent, AdminComponent, AdminRecursosComponent, AddRecursoComponent, EditRecursoComponent, DeleteRecursoComponent ]
+  declarations: [ DashboardComponent, AdminComponent, AdminRecursosComponent, AddRecursoComponent, EditRecursoComponent, DeleteRecursoComponent, AdminCategoriasComponent ]
 })
 
 export class DashboardModule {}
