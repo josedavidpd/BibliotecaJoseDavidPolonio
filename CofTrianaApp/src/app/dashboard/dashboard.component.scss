@@ -29,6 +29,7 @@
 
 .image{
   border: 2px solid;
+  width: 92%;
 }
 
 
@@ -114,5 +115,10 @@
     margin-left: 50px;
     margin-top: 40px;
     box-shadow: 5px 10px #888888;
+  }
+
+  .image{
+    border: 2px solid;
+    width: 95%;
   }
 }

@@ -59,10 +59,37 @@ const MENUITEMS = [
   }
 ];
 
+const USERMENU = [
+  {
+    state: '/',
+    name: 'Inicio',
+    type: 'link',
+    icon: 'home'
+  },
+  {
+    state: '/recursos',
+    name: 'Recursos',
+    type: 'extTabLink',
+    icon: 'list'
+  },
+  {
+    state: '/categorias',
+    name: 'Categorias',
+    type: 'extTabLink',
+    icon: 'view_module'
+  }
+];
+
 @Injectable()
 export class MenuService {
   getAll(): Menu[] {
-    return MENUITEMS;
+    if(localStorage.getItem('role') === 'general'){
+      return USERMENU;
+   
+    }else{
+      return MENUITEMS;
+    }
+   
   }
 
   add(menu) {
