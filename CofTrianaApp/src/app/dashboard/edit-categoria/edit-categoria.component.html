@@ -1,0 +1,14 @@
+<div fxLayout="column" fFlexFill>
+  <mat-form-field class="example-full-width">
+    <input readonly matInput placeholder="Id" [(ngModel)]="id" name="id" />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Nombre categoria" [(ngModel)]="name" name="name" />
+  </mat-form-field>
+
+
+  <button mat-raised-button color="primary" (click)="editarCategoria(id)">
+    Editar categoria
+  </button>
+</div>

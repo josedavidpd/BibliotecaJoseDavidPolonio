@@ -4,6 +4,7 @@ import { Category } from '../interfaces/category.interface';
 import { AddCategoriaDto } from '../dto/add-categoria.dto';
 import { AddCategoriaComponent } from '../add-categoria/add-categoria.component';
 import { MatDialog } from '@angular/material';
+import { EditCategoriaComponent } from '../edit-categoria/edit-categoria.component';
 
 @Component({
   selector: 'app-admin-categorias',
@@ -45,6 +46,24 @@ export class AdminCategoriasComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  openDialogEditCategoria(categoria: Category){
+    const dialogEditCategoria = this.dialog.open(EditCategoriaComponent, {
+      width: '20%',
+      data: {
+        element: categoria
+      }
+    })
+    dialogEditCategoria.afterClosed().subscribe(response =>{
+
+      this.getAllCategorias();
+
+    }, error => {
+      console.log(error);
+    }
+    
+    )
   }
 
 }
