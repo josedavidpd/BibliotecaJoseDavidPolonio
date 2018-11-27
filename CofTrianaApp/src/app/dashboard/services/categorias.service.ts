@@ -41,4 +41,16 @@ export class CategoriasService {
 
     return this.http.post<AddCategoria>(`${categoriaUrl}/create`,nuevaCategoria,requestOptions);
   }
+
+  editCategoria(id:number, categoriaEditada: AddCategoria){
+    const requestOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${this.sessionService.getToken()}`,
+        'Access-Control-Allow-Origin': '*'
+      })
+    };
+
+    return this.http.put<AddCategoria>(`${categoriaUrl}/edit/${id}`,categoriaEditada,requestOptions);
+  }
 }
