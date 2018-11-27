@@ -23,6 +23,7 @@ import { MatPaginatorModule } from '@angular/material';
 import { AdminUsuariosComponent } from './admin-usuarios/admin-usuarios.component';
 import { DeleteUsuarioComponent } from './delete-usuario/delete-usuario.component';
 import { EditUsuarioComponent } from './edit-usuario/edit-usuario.component';
+import { AdminTiposComponent } from './admin-tipos/admin-tipos.component';
 
 @NgModule({
   imports: [
@@ -52,7 +53,7 @@ import { EditUsuarioComponent } from './edit-usuario/edit-usuario.component';
     DeleteRecursoComponent,
     AddCategoriaComponent
   ],
-  declarations: [ DashboardComponent, AdminRecursosComponent, AddRecursoComponent, EditRecursoComponent, DeleteRecursoComponent, AdminCategoriasComponent, AddCategoriaComponent, AdminUsuariosComponent, DeleteUsuarioComponent, EditUsuarioComponent ]
+  declarations: [ DashboardComponent, AdminRecursosComponent, AddRecursoComponent, EditRecursoComponent, DeleteRecursoComponent, AdminCategoriasComponent, AddCategoriaComponent, AdminUsuariosComponent, DeleteUsuarioComponent, EditUsuarioComponent, AdminTiposComponent ]
 })
 
 export class DashboardModule {}

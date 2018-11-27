@@ -1,3 +1,4 @@
+import { AdminTiposComponent } from './admin-tipos/admin-tipos.component';
 import { AdminRecursosComponent } from './admin-recursos/admin-recursos.component';
 import { Routes } from '@angular/router';
 
@@ -9,7 +10,8 @@ export const DashboardRoutes: Routes = [
   {path: 'dashboard',component: DashboardComponent},
   {path: 'admin/recursos',component: AdminRecursosComponent},
   {path: 'admin/categorias',component: AdminCategoriasComponent},
-  {path: 'admin/usuarios',component: AdminUsuariosComponent}
+  {path: 'admin/usuarios',component: AdminUsuariosComponent},
+  {path: 'admin/tipos',component: AdminTiposComponent}
 
 
 
