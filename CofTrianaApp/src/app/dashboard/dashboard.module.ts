@@ -21,6 +21,8 @@ import { AddCategoriaComponent } from './add-categoria/add-categoria.component';
 
 import { MatPaginatorModule } from '@angular/material';
 import { AdminUsuariosComponent } from './admin-usuarios/admin-usuarios.component';
+import { DeleteUsuarioComponent } from './delete-usuario/delete-usuario.component';
+import { EditUsuarioComponent } from './edit-usuario/edit-usuario.component';
 
 @NgModule({
   imports: [
@@ -50,7 +52,7 @@ import { AdminUsuariosComponent } from './admin-usuarios/admin-usuarios.componen
     DeleteRecursoComponent,
     AddCategoriaComponent
   ],
-  declarations: [ DashboardComponent, AdminRecursosComponent, AddRecursoComponent, EditRecursoComponent, DeleteRecursoComponent, AdminCategoriasComponent, AddCategoriaComponent, AdminUsuariosComponent ]
+  declarations: [ DashboardComponent, AdminRecursosComponent, AddRecursoComponent, EditRecursoComponent, DeleteRecursoComponent, AdminCategoriasComponent, AddCategoriaComponent, AdminUsuariosComponent, DeleteUsuarioComponent, EditUsuarioComponent ]
 })
 
 export class DashboardModule {}
