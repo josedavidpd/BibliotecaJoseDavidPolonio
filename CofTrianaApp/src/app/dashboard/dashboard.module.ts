@@ -20,6 +20,7 @@ import { AdminCategoriasComponent } from './admin-categorias/admin-categorias.co
 import { AddCategoriaComponent } from './add-categoria/add-categoria.component';
 
 import { MatPaginatorModule } from '@angular/material';
+import { AdminUsuariosComponent } from './admin-usuarios/admin-usuarios.component';
 
 @NgModule({
   imports: [
@@ -49,7 +50,7 @@ import { MatPaginatorModule } from '@angular/material';
     DeleteRecursoComponent,
     AddCategoriaComponent
   ],
-  declarations: [ DashboardComponent, AdminRecursosComponent, AddRecursoComponent, EditRecursoComponent, DeleteRecursoComponent, AdminCategoriasComponent, AddCategoriaComponent ]
+  declarations: [ DashboardComponent, AdminRecursosComponent, AddRecursoComponent, EditRecursoComponent, DeleteRecursoComponent, AdminCategoriasComponent, AddCategoriaComponent, AdminUsuariosComponent ]
 })
 
 export class DashboardModule {}

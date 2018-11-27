@@ -18,6 +18,7 @@ export class DashboardComponent {
 
   ngOnInit() {
     this.title.setTitle('CofTriana - Inicio');
+    
     if(localStorage.getItem('token')== null){
       this.router.navigate(['']);
     }
