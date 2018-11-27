@@ -43,7 +43,7 @@ const MENUITEMS = [
     state: '/admin/recursos',
     name: 'Admin - RECURSOS',
     type: 'extTabLink',
-    icon: 'supervisor_account'
+    icon: 'assignment'
   },
   {
     state: '/admin/categorias',
@@ -56,6 +56,12 @@ const MENUITEMS = [
     name: 'Admin - TIPOS',
     type: 'extTabLink',
     icon: 'style'
+  },
+  {
+    state: '/admin/usuarios',
+    name: 'Admin - USUARIOS',
+    type: 'extTabLink',
+    icon: 'supervisor_account'
   }
 ];
 
