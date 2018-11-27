@@ -98,7 +98,7 @@ export class MenuService {
    
   }
 
-  add(menu) {
+  add(menu: { state: string; name: string; type: string; icon: string; children: { state: string; name: string; }[]; }) {
     MENUITEMS.push(menu);
   }
 }
