@@ -1,12 +1,12 @@
-<div fxLayout="column" fFlexFill>
+<div fxLayout="column" fxFlexFill>
 
   <form [formGroup]="createUser">
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Nombre" formControlName="name" name="name" />
+    <input required matInput placeholder="Nombre" formControlName="name" name="name" />
   </mat-form-field>
 
-  <div *ngIf="createUser.controls['name'].invalid && (createUser.controls['name'].dirty || createUser.controls['name'].touched)" class="alert alert-danger">
-      <div *ngIf="createUser.controls['name'].errors.required">
+  <div *ngIf="createUser.controls['name'].invalid && (createUser.controls['name'].dirty || createUser.controls['name'].touched)">
+      <div class="alert alert-danger" *ngIf="createUser.controls['name'].errors.required">
         Nombre obligatorio
       </div>
 
@@ -17,13 +17,34 @@
     <input matInput placeholder="Email" formControlName="email" name="email" />
   </mat-form-field>
 
+  <div *ngIf="createUser.controls['email'].invalid && (createUser.controls['email'].dirty || createUser.controls['email'].touched)">
+    <div class="alert alert-danger" *ngIf="createUser.controls['email'].errors.required">
+      Email obligatorio
+    </div>
+
+    <div class="alert alert-danger" *ngIf="createUser.controls['email'].errors.email">
+      Email incorrecto
+    </div>
+
+
+  </div>
+
   <mat-form-field class="example-full-width">
     <input matInput type="password" placeholder="Contraseña" formControlName="password" name="password" />
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Repite contraseña" formControlName="repetirPassword" name="repetirPassword" />
+    <input matInput type="password" placeholder="Repite contraseña" formControlName="repetirPassword" name="repetirPassword" />
   </mat-form-field>
+
+  <div *ngIf="createUser.controls['repetirPassword'].invalid && (createUser.controls['repetirPassword'].dirty || createUser.controls['repetirPassword'].touched)" class="alert alert-danger">
+    <div *ngIf="createUser.controls['password'].value !== createUser.controls['repetirPassword'].value">
+      Las contraseñas no coindicen
+    </div>
+    
+  
+
+  </div>
 
   <mat-form-field class="example-full-width">
     <input matInput placeholder="Teléfono" formControlName="phone" name="phone" />
@@ -41,7 +62,7 @@
 </form>
 
 
-  <button mat-raised-button color="primary" (click)="nuevoUsuario()">
+  <button mat-raised-button color="primary" *ngIf="validarForm()" (click)="nuevoUsuario()">
     Crear usuario
   </button>
 </div>

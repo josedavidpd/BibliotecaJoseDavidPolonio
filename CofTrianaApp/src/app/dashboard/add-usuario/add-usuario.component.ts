@@ -13,7 +13,7 @@ export class AddUsuarioComponent implements OnInit {
 
   createUser: FormGroup;
 
-  passwordControl = new FormControl('', [Validators.required, Validators.minLength(6)]);
+  passwordControl = new FormControl('', [Validators.required, Validators.minLength(4)]);
 
   constructor(public dialogRef: MatDialogRef<AddUsuarioComponent>,private usuarioService: UsuariosService) { }
 
@@ -23,7 +23,7 @@ export class AddUsuarioComponent implements OnInit {
       name: new FormControl('',Validators.required),      
       email: new FormControl('', [Validators.email, Validators.required]),
       password: this.passwordControl,
-      repetirPassword: new FormControl('', [Validators.required, Validators.minLength(6), CustomValidators.equalTo(this.passwordControl)]),
+      repetirPassword: new FormControl('', [Validators.required, Validators.minLength(4), CustomValidators.equalTo(this.passwordControl)]),
       phone: new FormControl('', [Validators.required]),
       notes: new FormControl('', [Validators.required])
       
@@ -31,11 +31,22 @@ export class AddUsuarioComponent implements OnInit {
   }
 
   nuevoUsuario(){
-    this.usuarioService.addUsuario(this.createUser).subscribe(usuario =>{
+    this.usuarioService.addUsuario(this.createUser.value).subscribe(usuario =>{
       this.dialogRef.close();
     },error =>{
       console.log(error);
     })
+  }
+
+  validarForm(): boolean{
+    let validado:boolean;
+    if(this.createUser.valid){
+      validado = true;
+    }else{
+      validado = false;
+
+    }
+    return validado;
   }
 
 }
