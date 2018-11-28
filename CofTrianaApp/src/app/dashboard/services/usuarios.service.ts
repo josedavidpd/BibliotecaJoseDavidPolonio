@@ -60,7 +60,7 @@ export class UsuariosService {
   }
 
 
-  addUsuario(nuevoUsuario: FormGroup){
+  addUsuario(nuevoUsuario: EditAddUsuarioDto){
     const requestOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',

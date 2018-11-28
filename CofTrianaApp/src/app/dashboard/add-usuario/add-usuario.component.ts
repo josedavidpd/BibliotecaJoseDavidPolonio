@@ -3,6 +3,7 @@ import { UsuariosService } from '../services/usuarios.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CustomValidators } from 'ng2-validation';
 import { MatDialogRef } from '@angular/material';
+import { EditAddUsuarioDto } from '../dto/edit-add-usuario.dto';
 
 @Component({
   selector: 'app-add-usuario',
@@ -31,7 +32,8 @@ export class AddUsuarioComponent implements OnInit {
   }
 
   nuevoUsuario(){
-    this.usuarioService.addUsuario(this.createUser.value).subscribe(usuario =>{
+    const nuevoUsuario = <EditAddUsuarioDto>this.createUser.value;
+    this.usuarioService.addUsuario(nuevoUsuario).subscribe(usuario =>{
       this.dialogRef.close();
     },error =>{
       console.log(error);
