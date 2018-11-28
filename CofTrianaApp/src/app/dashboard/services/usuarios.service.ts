@@ -6,6 +6,7 @@ import { SessionService } from 'src/app/session/services/session.service';
 import { Usuario } from '../interfaces/usuario.interface';
 import { EditAddUsuarioDto } from '../dto/edit-add-usuario.dto';
 import { EditAddUsuarioResponse } from '../interfaces/edit-add-usuario.interface';
+import { OneUsuario } from '../interfaces/one-usuario.interface';
 
 
 const usuarioUrl = `${environment.apiUrl}/user`;
@@ -68,5 +69,17 @@ export class UsuariosService {
     };
 
     return this.http.post<EditAddUsuarioResponse>(`${usuarioUrl}/create`,nuevoUsuario,requestOptions);
+  }
+
+  getOneUsuario(id:number){
+    const requestOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${this.sessionService.getToken()}`,
+        'Access-Control-Allow-Origin': '*'
+      })
+    };
+
+    return this.http.get<OneUsuario>(`${usuarioUrl}/${id}`,requestOptions);
   }
 }

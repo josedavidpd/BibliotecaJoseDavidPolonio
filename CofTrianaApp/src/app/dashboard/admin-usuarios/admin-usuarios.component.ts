@@ -3,6 +3,7 @@ import { UsuariosService } from '../services/usuarios.service';
 import { Usuario } from '../interfaces/usuario.interface';
 import { MatPaginator, MatTableDataSource, MatDialog } from '@angular/material';
 import { DeleteUsuarioComponent } from '../delete-usuario/delete-usuario.component';
+import { EditUsuarioComponent } from '../edit-usuario/edit-usuario.component';
 
 
 const ELEMENT_DATA: Usuario[] = [];
@@ -66,6 +67,27 @@ export class AdminUsuariosComponent implements OnInit {
     dialogDeleteUsuario.beforeClose().subscribe(response =>{
       this.getUsuarios();
     }, error =>{
+      console.log(error);
+    })
+  }
+
+
+  openDialogEditUsuario(usuario: Usuario){
+    this.usuarioService.getOneUsuario(usuario.id).subscribe(OneUsuario =>{
+      usuario = OneUsuario;
+    }, error =>{
+      console.log(error);
+    })
+    const dialogEditUsuario = this.dialog.open(EditUsuarioComponent,{
+      width: '20%',
+      data:{
+        element: usuario
+      }
+    })
+
+    dialogEditUsuario.afterClosed().subscribe(response =>{
+      this.getUsuarios();
+    },error =>{
       console.log(error);
     })
   }
