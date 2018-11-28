@@ -1,10 +1,21 @@
 <div fxLayout="column" fFlexFill>
+
+  <form [formGroup]="createCategoria">
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Nombre" [(ngModel)]="name" name="name" />
+    <input matInput placeholder="Nombre" formControlName="name" name="name" />
   </mat-form-field>
 
+  <div *ngIf="createCategoria.controls['name'].invalid && (createCategoria.controls['name'].dirty || createCategoria.controls['name'].touched)">
+      <div class="alert alert-danger" *ngIf="createCategoria.controls['name'].errors.required">
+        <small><i class="fas fa-exclamation-circle icon-error"></i>Nombre de categoria obligatorio</small>
+      </div>
 
-  <button mat-raised-button color="primary" (click)="addCategoria()">
+  </div>
+
+</form>
+
+
+  <button mat-raised-button color="primary" [disabled]="!createCategoria.valid" (click)="addCategoria()">
     Crear categoria
   </button>
 </div>
