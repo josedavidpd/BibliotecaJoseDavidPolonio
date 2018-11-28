@@ -7,7 +7,7 @@
 
   <div *ngIf="createUser.controls['name'].invalid && (createUser.controls['name'].dirty || createUser.controls['name'].touched)">
       <div class="alert alert-danger" *ngIf="createUser.controls['name'].errors.required">
-        <i class="fas fa-exclamation-circle icon-error"></i>Nombre obligatorio
+        <small><i class="fas fa-exclamation-circle icon-error"></i>Nombre obligatorio</small>
       </div>
 
     </div>
@@ -19,11 +19,11 @@
 
   <div *ngIf="createUser.controls['email'].invalid && (createUser.controls['email'].dirty || createUser.controls['email'].touched)">
     <div class="alert alert-danger" *ngIf="createUser.controls['email'].errors.required">
-      <i class="fas fa-exclamation-circle icon-error"></i>Email obligatorio
+      <small><i class="fas fa-exclamation-circle icon-error"></i>Email obligatorio</small>
     </div>
 
     <div class="alert alert-danger" *ngIf="createUser.controls['email'].errors.email">
-      <i class="fas fa-times icon-error"></i>Email incorrecto
+      <small><i class="fas fa-times icon-error"></i>Email incorrecto</small>
     </div>
 
 
@@ -39,7 +39,7 @@
 
   <div *ngIf="createUser.controls['repetirPassword'].invalid && (createUser.controls['repetirPassword'].dirty || createUser.controls['repetirPassword'].touched)" class="alert alert-danger">
     <div *ngIf="createUser.controls['password'].value !== createUser.controls['repetirPassword'].value">
-      <i class="fas fa-times icon-error"></i>Las contraseñas no coindicen
+      <small><i class="fas fa-times icon-error"></i>Las contraseñas no coindicen</small>
     </div>
     
   
@@ -52,7 +52,7 @@
 
   <div *ngIf="createUser.controls['phone'].invalid && (createUser.controls['phone'].dirty || createUser.controls['phone'].touched)">
     <div class="alert alert-danger" *ngIf="createUser.controls['phone'].errors.required">
-      <i class="fas fa-exclamation-circle icon-error"></i>Teléfono obligatorio
+      <small><i class="fas fa-exclamation-circle icon-error"></i>Teléfono obligatorio</small>
     </div>
 
 
