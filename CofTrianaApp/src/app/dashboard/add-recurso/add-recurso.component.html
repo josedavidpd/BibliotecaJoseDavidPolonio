@@ -1,31 +1,67 @@
 <div fxLayout="column" fFlexFill>
+
+  <form [formGroup]="createRecurso">
+
+
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Título" [(ngModel)]="title" name="title" />
+    <input matInput placeholder="Título" formControlName="title" name="title" />
   </mat-form-field>
+
+  <div *ngIf="createRecurso.controls['title'].invalid && (createRecurso.controls['title'].dirty || createRecurso.controls['title'].touched)">
+      <div class="alert alert-danger" *ngIf="createRecurso.controls['title'].errors.required">
+        <small><i class="fas fa-exclamation-circle icon-error"></i>Título obligatorio</small>
+      </div>
+  
+  
+    </div>
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Autor" [(ngModel)]="autor" name="autor" />
+    <input matInput placeholder="Autor" formControlName="autor" name="autor" />
   </mat-form-field>
+
+  <div *ngIf="createRecurso.controls['autor'].invalid && (createRecurso.controls['autor'].dirty || createRecurso.controls['autor'].touched)">
+      <div class="alert alert-danger" *ngIf="createRecurso.controls['autor'].errors.required">
+        <small><i class="fas fa-exclamation-circle icon-error"></i>Autor obligatorio</small>
+      </div>
+  
+  </div>
+
+
   <mat-form-field class="example-full-width">
     <input
       matInput
       placeholder="Año de publicación"
-      [(ngModel)]="anyo"
+      formControlName="anyo"
       name="anyo"
     />
   </mat-form-field>
+  <div *ngIf="createRecurso.controls['anyo'].invalid && (createRecurso.controls['anyo'].dirty || createRecurso.controls['anyo'].touched)">
+      <div class="alert alert-danger" *ngIf="createRecurso.controls['anyo'].errors.required">
+        <small><i class="fas fa-exclamation-circle icon-error"></i>Año de publicación obligatorio</small>
+      </div>
+  
+  
+  </div>
   <mat-form-field class="example-full-width">
     <textarea
       matInput
       placeholder="Descripción"
-      [(ngModel)]="content"
+      formControlName="content"
       name="content"
     ></textarea>
   </mat-form-field>
 
+  <div *ngIf="createRecurso.controls['content'].invalid && (createRecurso.controls['content'].dirty || createRecurso.controls['content'].touched)">
+      <div class="alert alert-danger" *ngIf="createRecurso.controls['content'].errors.required">
+        <small><i class="fas fa-exclamation-circle icon-error"></i>Descripción obligatoria</small>
+      </div>
+  
+  
+    </div>
+
   <mat-form-field>
     <mat-select
       placeholder="Tipo"
-      [(value)]="tipoSeleccionado"
+      formControlName="tipoSeleccionado"
       name="tipoSeleccionado"
     >
       <mat-option *ngFor="let tipo of arrayTipos" [value]="tipo.id">
@@ -37,7 +73,7 @@
   <mat-form-field>
     <mat-select
       placeholder="Categoria"
-      [(value)]="categoriaSeleccionada"
+      formControlName="categoriaSeleccionada"
       name="categoriaSeleccionada"
     >
       <mat-option
@@ -49,7 +85,9 @@
     </mat-select>
   </mat-form-field>
 
-  <button mat-raised-button color="primary" (click)="addRecurso()">
+</form>
+
+  <button mat-raised-button color="primary" [disabled]="!createRecurso.valid" (click)="addRecurso()">
     Crear recurso
   </button>
 </div>

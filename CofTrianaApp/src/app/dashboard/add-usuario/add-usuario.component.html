@@ -10,7 +10,7 @@
         <small><i class="fas fa-exclamation-circle icon-error"></i>Nombre obligatorio</small>
       </div>
 
-    </div>
+  </div>
 
 
   <mat-form-field class="example-full-width">
@@ -32,6 +32,16 @@
   <mat-form-field class="example-full-width">
     <input matInput required type="password" placeholder="Contraseña" formControlName="password" name="password" />
   </mat-form-field>
+  <div *ngIf="createUser.controls['password'].invalid && (createUser.controls['password'].dirty || createUser.controls['password'].touched)">
+      <div class="alert alert-danger" *ngIf="createUser.controls['password'].errors.required">
+        <small><i class="fas fa-exclamation-circle icon-error"></i>Contraseña obligatoria</small>
+      </div>
+
+      <div class="alert alert-danger" *ngIf="createUser.controls['password'].errors.minlength">
+          <small><i class="fas fa-exclamation-circle icon-error"></i>Mínimo 4 caracteres</small>
+        </div>
+
+  </div>
 
   <mat-form-field class="example-full-width">
     <input matInput required type="password" placeholder="Repita contraseña" formControlName="repetirPassword" name="repetirPassword" />

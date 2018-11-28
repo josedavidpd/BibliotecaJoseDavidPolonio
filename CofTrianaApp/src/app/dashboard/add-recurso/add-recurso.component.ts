@@ -1,3 +1,4 @@
+import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { AddRecursoDto } from "./../dto/add-recurso.dto";
 import { TiposService } from "./../services/tipos.service";
 import { Component, OnInit } from "@angular/core";
@@ -14,12 +15,8 @@ import { Title } from "@angular/platform-browser";
   styleUrls: ["./add-recurso.component.scss"]
 })
 export class AddRecursoComponent implements OnInit {
-  title: string;
-  autor: string;
-  anyo: string;
-  content: string;
-  tipoSeleccionado: number;
-  categoriaSeleccionada: number;
+  
+  createRecurso: FormGroup;
 
   arrayCategorias: Category[];
   arrayTipos: Type[];
@@ -32,19 +29,21 @@ export class AddRecursoComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+
+    this.createRecurso = new FormGroup({
+      title: new FormControl('', [Validators.required]),
+      autor: new FormControl('', [Validators.required]),
+      anyo: new FormControl('', [Validators.required, Validators.maxLength(4)]),
+      content: new FormControl('', [Validators.required, Validators.maxLength(100)]),
+      tipoSeleccionado: new FormControl(''),
+      categoriaSeleccionada: new FormControl('')
+    })
     this.getCategorias();
     this.getTipos();
   }
 
   addRecurso() {
-    const addRecursoDto = new AddRecursoDto(
-      this.title,
-      this.autor,
-      this.anyo,
-      this.content,
-      this.tipoSeleccionado,
-      this.categoriaSeleccionada
-    );
+    const addRecursoDto = <AddRecursoDto>this.createRecurso.value;
 
     this.recursoService.addRecurso(addRecursoDto).subscribe(
       nuevoRecurso => {
