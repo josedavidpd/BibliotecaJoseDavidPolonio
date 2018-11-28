@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { UsuariosService } from '../services/usuarios.service';
 import { Usuario } from '../interfaces/usuario.interface';
-import { MatPaginator, MatTableDataSource } from '@angular/material';
+import { MatPaginator, MatTableDataSource, MatDialog } from '@angular/material';
+import { DeleteUsuarioComponent } from '../delete-usuario/delete-usuario.component';
 
 
 const ELEMENT_DATA: Usuario[] = [];
@@ -30,7 +31,7 @@ export class AdminUsuariosComponent implements OnInit {
   ];
 
 
-  constructor(private usuarioService: UsuariosService) { }
+  constructor(private usuarioService: UsuariosService,public dialog: MatDialog) { }
 
   ngOnInit() {
     this.getUsuarios();
@@ -50,6 +51,20 @@ export class AdminUsuariosComponent implements OnInit {
   getUsuarios(){
     this.usuarioService.getAllUsuarios().subscribe(usuarios =>{
       this.dataSource.data = usuarios;
+    }, error =>{
+      console.log(error);
+    })
+  }
+
+  openDialogDeleteUsuario(usuario: Usuario){
+    const dialogDeleteUsuario = this.dialog.open(DeleteUsuarioComponent, {
+      data:{
+        element: usuario
+      }
+    })
+
+    dialogDeleteUsuario.beforeClose().subscribe(response =>{
+      this.getUsuarios();
     }, error =>{
       console.log(error);
     })

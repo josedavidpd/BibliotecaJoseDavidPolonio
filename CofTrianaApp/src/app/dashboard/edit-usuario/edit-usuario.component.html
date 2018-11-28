@@ -1,3 +1,37 @@
-<p>
-  edit-usuario works!
-</p>
+<div fxLayout="column" fFlexFill>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Id" [(ngModel)]="id" name="id" />
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+        <input matInput placeholder="Nombre" [(ngModel)]="name" name="name" />
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput type="email" placeholder="Email" [(ngModel)]="email" name="email" />
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput type="password" placeholder="Autor" [(ngModel)]="password" name="password" />
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput type="password" placeholder="Autor" name="repeatPassword" />
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input
+      matInput
+      placeholder="Teléfono"
+      [(ngModel)]="phone"
+      name="phone"
+    />
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <textarea
+      matInput
+      placeholder="Observaciones"
+      [(ngModel)]="notes"
+      name="notes"
+    ></textarea>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="editRecurso()">
+    Editar recurso
+  </button>
+</div>

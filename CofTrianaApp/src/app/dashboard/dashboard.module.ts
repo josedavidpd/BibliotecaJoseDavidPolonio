@@ -53,7 +53,9 @@ import { EditCategoriaComponent } from './edit-categoria/edit-categoria.componen
     EditRecursoComponent, 
     DeleteRecursoComponent,
     AddCategoriaComponent, 
-    EditCategoriaComponent
+    EditCategoriaComponent,
+    DeleteUsuarioComponent,
+    EditUsuarioComponent
   ],
   declarations: [ DashboardComponent, AdminRecursosComponent, AddRecursoComponent, EditRecursoComponent, DeleteRecursoComponent, AdminCategoriasComponent, AddCategoriaComponent, AdminUsuariosComponent, DeleteUsuarioComponent, EditUsuarioComponent, AdminTiposComponent, EditCategoriaComponent ]
 })
