@@ -25,7 +25,7 @@ export class AddUsuarioComponent implements OnInit {
       password: this.passwordControl,
       repetirPassword: new FormControl('', [Validators.required, Validators.minLength(4), CustomValidators.equalTo(this.passwordControl)]),
       phone: new FormControl('', [Validators.required]),
-      notes: new FormControl('', [Validators.required])
+      notes: new FormControl('')
       
     })
   }
