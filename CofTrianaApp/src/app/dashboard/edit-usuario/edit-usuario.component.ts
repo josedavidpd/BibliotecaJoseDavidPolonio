@@ -1,3 +1,6 @@
+import { element } from 'protractor';
+import { CustomValidators } from 'ng2-validation';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { UsuariosService } from '../services/usuarios.service';
@@ -10,29 +13,30 @@ import { EditUsuarioDto } from '../dto/edit-usuario.dto';
   styleUrls: ['./edit-usuario.component.scss']
 })
 export class EditUsuarioComponent implements OnInit {
+
+  editUsuario:FormGroup;
+  password= new FormControl('',[Validators.required, Validators.minLength(4)]);
   id: number;
-  name: string;
-  email: string;
-  password: string;
-  phone: string;
-  notes: string;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, private usuarioService: UsuariosService, public dialogRef: MatDialogRef<EditUsuarioComponent> ) { }
 
   ngOnInit() {
     this.id = this.data.element.id;
-    this.name = this.data.element.name;
-    this.email = this.data.element.email;
-    this.phone = this.data.element.phone;
-    this.notes = this.data.element.notes;
+    this.editUsuario = new FormGroup({
+      id: new FormControl(this.data.element.id),
+      name: new FormControl(this.data.element.name, [Validators.required]),
+      email: new FormControl(this.data.element.email, [Validators.email, Validators.required]),
+      password: this.password,
+      repeatPassword: new FormControl('',[Validators.required,CustomValidators.equalTo(this.password)]),
+      phone: new FormControl(this.data.element.phone, [Validators.required]),
+      notes: new FormControl(this.data.element.notes)
+
+    })
   }
 
   editarUsuario(){
-    if(this.password === ''){
-      this.password = this.data.element.password;
-    }
-
-    const usuarioEditado = new EditUsuarioDto(this.id,this.name, this.email, this.password, this.phone, this.notes);
+    
+    const usuarioEditado = <EditUsuarioDto>this.editUsuario.value;
     
     this.usuarioService.editUsuario(this.id, usuarioEditado).subscribe(usuarioEditado =>{
       this.dialogRef.close();

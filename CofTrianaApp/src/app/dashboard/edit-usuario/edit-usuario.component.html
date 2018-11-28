@@ -1,37 +1,102 @@
 <div fxLayout="column" fFlexFill>
+  <form [formGroup]="editUsuario">
+
+
     <mat-form-field class="example-full-width">
-        <input matInput placeholder="Id" [(ngModel)]="id" name="id" />
+        <input matInput readonly placeholder="Id" formControlName="id" name="id" />
   </mat-form-field>
+
+
   <mat-form-field class="example-full-width">
-        <input matInput placeholder="Nombre" [(ngModel)]="name" name="name" />
+        <input matInput placeholder="Nombre" formControlName="name" name="name" />
   </mat-form-field>
+  <div *ngIf="editUsuario.controls['name'].invalid && (editUsuario.controls['name'].dirty || editUsuario.controls['name'].touched)">
+      <div class="alert alert-danger" *ngIf="editUsuario.controls['name'].errors.required">
+        <small><i class="fas fa-exclamation-circle icon-error"></i>Nombre obligatorio</small>
+      </div>
+  
+  
+    </div>
+
+
   <mat-form-field class="example-full-width">
-    <input matInput type="email" placeholder="Email" [(ngModel)]="email" name="email" />
+    <input matInput type="email" placeholder="Email" formControlName="email" name="email" />
   </mat-form-field>
+
+  <div *ngIf="editUsuario.controls['email'].invalid && (editUsuario.controls['email'].dirty || editUsuario.controls['email'].touched)">
+      <div class="alert alert-danger" *ngIf="editUsuario.controls['email'].errors.required">
+        <small><i class="fas fa-exclamation-circle icon-error"></i>Email obligatorio</small>
+      </div>
+  
+      <div class="alert alert-danger" *ngIf="editUsuario.controls['email'].errors.email">
+        <small><i class="fas fa-times icon-error"></i>Email incorrecto</small>
+      </div>
+  
+  
+  </div>
+
+
   <mat-form-field class="example-full-width">
-    <input matInput type="password" placeholder="Contraseña" [(ngModel)]="password" name="password" />
+    <input matInput type="password" placeholder="Contraseña"formControlName="password" name="password" />
   </mat-form-field>
+
+  <div *ngIf="editUsuario.controls['password'].invalid && (editUsuario.controls['password'].dirty || editUsuario.controls['password'].touched)">
+      <div class="alert alert-danger" *ngIf="editUsuario.controls['password'].errors.required">
+        <small><i class="fas fa-exclamation-circle icon-error"></i>Contraseña obligatorio</small>
+      </div>
+  
+      <div class="alert alert-danger" *ngIf="editUsuario.controls['password'].errors.minlength">
+        <small><i class="fas fa-times icon-error"></i>Mínimo 4 caracteres</small>
+      </div>
+  
+  
+  </div>
+
+
   <mat-form-field class="example-full-width">
-    <input matInput type="password" placeholder="Autor" name="repeatPassword" />
+    <input matInput type="password" placeholder="Repite contraseña" formControlName="repeatPassword" name="repeatPassword" />
   </mat-form-field>
+  <div *ngIf="editUsuario.controls['repeatPassword'].invalid && (editUsuario.controls['repeatPassword'].dirty || editUsuario.controls['repeatPassword'].touched)" class="alert alert-danger">
+      <div *ngIf="editUsuario.controls['password'].value !== editUsuario.controls['repeatPassword'].value">
+        <small><i class="fas fa-times icon-error"></i>Las contraseñas no coindicen</small>
+      </div>
+      
+    
+  
+    </div>
+
+
   <mat-form-field class="example-full-width">
     <input
       matInput
       placeholder="Teléfono"
-      [(ngModel)]="phone"
+      formControlName="phone"
       name="phone"
     />
   </mat-form-field>
+
+  <div *ngIf="editUsuario.controls['phone'].invalid && (editUsuario.controls['phone'].dirty || editUsuario.controls['phone'].touched)">
+      <div class="alert alert-danger" *ngIf="editUsuario.controls['phone'].errors.required">
+        <small><i class="fas fa-exclamation-circle icon-error"></i>Teléfono obligatorio</small>
+      </div>
+  
+  
+  </div>
+
+
   <mat-form-field class="example-full-width">
     <textarea
       matInput
-      placeholder="Observaciones"
-      [(ngModel)]="notes"
+      placeholder="Observaciones (opcional)"
+      formControlName="notes"
       name="notes"
     ></textarea>
   </mat-form-field>
 
-  <button mat-raised-button color="primary" (click)="editarUsuario()">
-    Editar recurso
+
+</form>
+
+  <button mat-raised-button [disabled]="!editUsuario.valid" color="primary" (click)="editarUsuario()">
+    Editar usuario
   </button>
 </div>

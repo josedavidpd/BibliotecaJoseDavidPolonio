@@ -15,8 +15,6 @@ export class SigninComponent implements OnInit {
 
   email = '';
   password = '';
-
-  public form: FormGroup;
   constructor(public snackBar: MatSnackBar, private router: Router, private sessionService: SessionService, private title: Title) {}
 
   ngOnInit() {
