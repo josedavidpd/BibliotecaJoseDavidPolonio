@@ -40,9 +40,9 @@ export class SigninComponent implements OnInit {
     }, error => {
       this.snackBar.open('Email o contraseña incorrectos', 'x', {
         duration: 3000,
-        verticalPosition: 'top'
+        verticalPosition: 'top',
+        horizontalPosition:'right'
       });
-      console.log(error);
     });
 
 }
