@@ -7,6 +7,7 @@ import { Usuario } from '../interfaces/usuario.interface';
 import { EditAddUsuarioDto } from '../dto/edit-add-usuario.dto';
 import { EditAddUsuarioResponse } from '../interfaces/edit-add-usuario.interface';
 import { OneUsuario } from '../interfaces/one-usuario.interface';
+import { FormGroup } from '@angular/forms';
 
 
 const usuarioUrl = `${environment.apiUrl}/user`;
@@ -59,7 +60,7 @@ export class UsuariosService {
   }
 
 
-  addUsuario(nuevoUsuario: EditAddUsuarioDto){
+  addUsuario(nuevoUsuario: FormGroup){
     const requestOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',

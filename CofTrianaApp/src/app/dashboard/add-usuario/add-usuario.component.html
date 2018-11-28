@@ -1,0 +1,47 @@
+<div fxLayout="column" fFlexFill>
+
+  <form [formGroup]="createUser">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Nombre" formControlName="name" name="name" />
+  </mat-form-field>
+
+  <div *ngIf="createUser.controls['name'].invalid && (createUser.controls['name'].dirty || createUser.controls['name'].touched)" class="alert alert-danger">
+      <div *ngIf="createUser.controls['name'].errors.required">
+        Nombre obligatorio
+      </div>
+
+    </div>
+
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Email" formControlName="email" name="email" />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput type="password" placeholder="Contraseña" formControlName="password" name="password" />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Repite contraseña" formControlName="repetirPassword" name="repetirPassword" />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Teléfono" formControlName="phone" name="phone" />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <textarea
+      matInput
+      placeholder="Observaciones"
+      formControlName="notes"
+      name="content"
+    ></textarea>
+  </mat-form-field>
+
+</form>
+
+
+  <button mat-raised-button color="primary" (click)="nuevoUsuario()">
+    Crear usuario
+  </button>
+</div>

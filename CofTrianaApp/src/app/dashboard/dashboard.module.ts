@@ -9,7 +9,7 @@ import { DashboardRoutes } from './dashboard.routing';
 import { AdminRecursosComponent } from './admin-recursos/admin-recursos.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { AddRecursoComponent } from './add-recurso/add-recurso.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {HttpClientModule} from '@angular/common/http';
@@ -25,6 +25,7 @@ import { DeleteUsuarioComponent } from './delete-usuario/delete-usuario.componen
 import { EditUsuarioComponent } from './edit-usuario/edit-usuario.component';
 import { AdminTiposComponent } from './admin-tipos/admin-tipos.component';
 import { EditCategoriaComponent } from './edit-categoria/edit-categoria.component';
+import { AddUsuarioComponent } from './add-usuario/add-usuario.component';
 
 @NgModule({
   imports: [
@@ -46,7 +47,8 @@ import { EditCategoriaComponent } from './edit-categoria/edit-categoria.componen
     MatInputModule,
     NgxPaginationModule,
     MatSnackBarModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    ReactiveFormsModule
   ],
   entryComponents:[
     AddRecursoComponent,
@@ -55,9 +57,10 @@ import { EditCategoriaComponent } from './edit-categoria/edit-categoria.componen
     AddCategoriaComponent, 
     EditCategoriaComponent,
     DeleteUsuarioComponent,
-    EditUsuarioComponent
+    EditUsuarioComponent,
+    AddUsuarioComponent
   ],
-  declarations: [ DashboardComponent, AdminRecursosComponent, AddRecursoComponent, EditRecursoComponent, DeleteRecursoComponent, AdminCategoriasComponent, AddCategoriaComponent, AdminUsuariosComponent, DeleteUsuarioComponent, EditUsuarioComponent, AdminTiposComponent, EditCategoriaComponent ]
+  declarations: [ DashboardComponent, AdminRecursosComponent, AddRecursoComponent, EditRecursoComponent, DeleteRecursoComponent, AdminCategoriasComponent, AddCategoriaComponent, AdminUsuariosComponent, DeleteUsuarioComponent, EditUsuarioComponent, AdminTiposComponent, EditCategoriaComponent, AddUsuarioComponent ]
 })
 
 export class DashboardModule {}
