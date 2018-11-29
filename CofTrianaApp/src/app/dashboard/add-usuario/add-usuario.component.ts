@@ -11,7 +11,9 @@ import { EditAddUsuarioDto } from '../dto/edit-add-usuario.dto';
   styleUrls: ['./add-usuario.component.scss']
 })
 export class AddUsuarioComponent implements OnInit {
-
+  
+  hide = true;
+  
   createUser: FormGroup;
 
   passwordControl = new FormControl('', [Validators.required, Validators.minLength(4)]);
@@ -50,5 +52,20 @@ export class AddUsuarioComponent implements OnInit {
     }
     return validado;
   }
+
+  generarString(): string{
+    return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+  }
+
+  generarPassword(){
+    const passwordAleatoria = this.generarString();
+
+    this.createUser.controls['password'].setValue(passwordAleatoria);
+    this.createUser.controls['repetirPassword'].setValue(passwordAleatoria);
+
+
+  }
+
+
 
 }

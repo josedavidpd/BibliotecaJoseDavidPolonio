@@ -74,8 +74,8 @@ export class AdminUsuariosComponent implements OnInit {
 
   openDialogNuevoUsuario(){
     const dialogNuevoUsuario = this.dialog.open(AddUsuarioComponent,{
-      width:'20%',
-      height: '55%'
+      width:'24%',
+      height: '80%'
     });
 
     dialogNuevoUsuario.beforeClose().subscribe(response =>{

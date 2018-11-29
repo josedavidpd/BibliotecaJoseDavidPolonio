@@ -30,7 +30,8 @@
   </div>
 
   <mat-form-field class="example-full-width">
-    <input matInput required type="password" placeholder="Contraseña" formControlName="password" name="password" />
+    <input matInput required type="password" placeholder="Contraseña" formControlName="password" name="password" [type]="hide ? 'password' : 'text'" />
+    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
   </mat-form-field>
   <div *ngIf="createUser.controls['password'].invalid && (createUser.controls['password'].dirty || createUser.controls['password'].touched)">
       <div class="alert alert-danger" *ngIf="createUser.controls['password'].errors.required">
@@ -44,7 +45,8 @@
   </div>
 
   <mat-form-field class="example-full-width">
-    <input matInput required type="password" placeholder="Repita contraseña" formControlName="repetirPassword" name="repetirPassword" />
+    <input matInput required type="password" placeholder="Repita contraseña" formControlName="repetirPassword" name="repetirPassword" [type]="hide ? 'password' : 'text'" />
+    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
   </mat-form-field>
 
   <div *ngIf="createUser.controls['repetirPassword'].invalid && (createUser.controls['repetirPassword'].dirty || createUser.controls['repetirPassword'].touched)" class="alert alert-danger">
@@ -79,7 +81,9 @@
 
 </form>
 
-
+<button mat-raised-button class="btn-generate" color="primary"  (click)="generarPassword()">
+  Generar contraseña
+</button>
   <button mat-raised-button color="primary" [disabled]="!createUser.valid" (click)="nuevoUsuario()">
     Crear usuario
   </button>
