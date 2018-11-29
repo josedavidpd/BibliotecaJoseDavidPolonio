@@ -68,17 +68,6 @@ export class AdminRecursosComponent implements OnInit {
     );
   }
 
-  borrarRecurso(id: number) {
-    this.recursoService.deleteRecurso(id).subscribe(
-      response => {
-        this.getRecursos();
-      },
-      error => {
-        console.log(error);
-      }
-    );
-  }
-
   openDialogAddRecurso() {
     const dialogAddRecurso = this.dialog.open(AddRecursoComponent,{
       width:'24%',
@@ -116,6 +105,7 @@ export class AdminRecursosComponent implements OnInit {
 
   openDialogDeleteRecurso(recurso: Recursos){
     const dialogDeleteRecurso = this.dialog.open(DeleteRecursoComponent, {
+      height:'20%',
        data:{
         element:recurso
       }

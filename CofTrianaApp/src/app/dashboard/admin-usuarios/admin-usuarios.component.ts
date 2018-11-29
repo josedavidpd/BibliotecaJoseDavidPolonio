@@ -60,6 +60,7 @@ export class AdminUsuariosComponent implements OnInit {
 
   openDialogDeleteUsuario(usuario: Usuario){
     const dialogDeleteUsuario = this.dialog.open(DeleteUsuarioComponent, {
+      height:'20%',
       data:{
         element: usuario
       }
