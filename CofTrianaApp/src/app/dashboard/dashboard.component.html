@@ -1,6 +1,6 @@
 <div class="container">
 
-  <img class="image" src="http://www.coftriana.es/wp-content/uploads/2017/10/logo_we_top-03.jpg">
+  <img class="image" src="../../assets/images/imageHome.jpg">
 
   <h2 style="text-align:center; margin-top: 20px">Recursos</h2>
   <hr/>
@@ -55,72 +55,3 @@
  
 
 </div>
-<!--
-
-<div class="container">
-  
-
-
-
-
-
-<div class="card-wrapper">
-    <div
-      class="card"
-      *ngFor="
-        let recurso of (arrayRecursos
-          | paginate: { itemsPerPage: 6, currentPage: p })
-      "
-    >
-      <div id="imagen">
-        <img
-          src="https://http2.mlstatic.com/secreto-de-la-mente-millonaria-libro-pdf-gratis-D_NQ_NP_858052-MPA26462455618_112017-F.jpg"
-          width="120px"
-          height="196px"
-        />
-      </div>
-
-      <div class="card-content">
-        <h4 id="tituloLibro">{{ recurso.title }}</h4>
-        <p id="categoria">{{ recurso.type.name }}</p>
-        <p id="autor">
-          Autor:
-          <span style="font-weight:bold; font-size: 14px;">{{
-            recurso.autor
-          }}</span>
-        </p>
-        <p id="fechaPublicacion">
-          Año publicacion:
-          <span style="font-weight:bold; font-size: 14px;">{{
-            recurso.anyo
-          }}</span>
-        </p>
-        <p id="fechaPublicacion">
-          Categoría:
-          <span style="font-weight:bold; font-size: 14px;">{{
-            recurso.category.name
-          }}</span>
-        </p>
-        <p *ngIf="recurso.free == true" id="disponible">
-          {{ recurso.free ? "Disponible" : "En préstamo" }}
-        </p>
-        <p *ngIf="recurso.free == false" id="prestado">
-          {{ recurso.free ? "Disponible" : "En préstamo" }}
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="container-pagination">
-    <pagination-controls
-      class="pagination"
-      (pageChange)="p = $event"
-      previousLabel="Anterior"
-      nextLabel="Siguiente"
-      responsive="true"
-    ></pagination-controls>
-  </div>
- 
-</div>
-
-
--->

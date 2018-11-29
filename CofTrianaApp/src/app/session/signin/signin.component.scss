@@ -3,6 +3,11 @@
     text-align: center;
     
 }
+::ng-deep {
+    .mat-form-field-appearance-outline .mat-form-field-outline {
+       color: black;
+    }
+ }
 
 .alert{
     color: red;

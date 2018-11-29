@@ -1,28 +1,23 @@
 <div class="container">
   <div class="container-img">
-    <img
-      id="image"
-      src="../../../assets/images/imagenLogin.jpg"
-    />
+    <img id="image" src="../../../assets/images/imagenLogin.jpg" />
   </div>
 
   <div class="container-form">
-    <img
-      class="logo"
-      src="../../../assets/images/iconoLogin.jpg"
-    />
+    <img class="logo" src="../../../assets/images/iconoLogin.jpg" />
     <h1>COF TRIANA</h1>
 
     <div class="example-container">
 
-      <mat-form-field>
-        <input type="text" name="email" [(ngModel)]="email" matInput placeholder="Correo electrónico" />
+      <mat-form-field appearance="outline">
+        <mat-label>Correo electrónico</mat-label>
+        <input matInput type="email" placeholder="email@email.com" name="email" [(ngModel)]="email">
       </mat-form-field>
 
-      <mat-form-field>
-        <input matInput name="password" [(ngModel)]="password" type="password" placeholder="Contraseña" />
-      </mat-form-field>
-
+      <mat-form-field appearance="outline">
+          <mat-label>Contraseña</mat-label>
+          <input matInput type="password" placeholder="*************" name="password" [(ngModel)]="password">
+        </mat-form-field>
 
 
       <button id="login-btn" mat-raised-button color="primary" (click)="doLogin()">
@@ -32,4 +27,3 @@
     <a href="#">¿Olvidaste tu contraseña?</a>
   </div>
 </div>
-
