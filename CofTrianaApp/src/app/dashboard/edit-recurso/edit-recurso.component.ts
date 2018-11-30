@@ -19,6 +19,7 @@ export class EditRecursoComponent implements OnInit {
   title: string;
   autor: string;
   anyo: string;
+  url: string;
   content: string;
   tipoSeleccionado: number;
   categoriaSeleccionada: number;
@@ -36,6 +37,7 @@ export class EditRecursoComponent implements OnInit {
     this.title = this.data.element.title;
     this.autor = this.data.element.autor;
     this.anyo = this.data.element.anyo;
+    this.url = this.data.element.url;
     this.content = this.data.element.content;
     this.tipoSeleccionado = this.data.element.type.id;
     this.categoriaSeleccionada = this.data.element.category.id;
@@ -63,7 +65,7 @@ export class EditRecursoComponent implements OnInit {
   }
 
   editRecurso(){
-    const recursoEditado = new EditRecurso(this.id, this.title, this.autor, this.anyo, this.content, this.tipoSeleccionado, this.categoriaSeleccionada);
+    const recursoEditado = new EditRecurso(this.id, this.title, this.autor, this.anyo,this.url ,this.content, this.tipoSeleccionado, this.categoriaSeleccionada);
     this.recursoService.editarRecurso(this.id, recursoEditado).subscribe(recursoEditado =>{
 
       this.dialogRef.close();

@@ -26,6 +26,7 @@ import { EditUsuarioComponent } from './edit-usuario/edit-usuario.component';
 import { AdminTiposComponent } from './admin-tipos/admin-tipos.component';
 import { EditCategoriaComponent } from './edit-categoria/edit-categoria.component';
 import { AddUsuarioComponent } from './add-usuario/add-usuario.component';
+import { DeleteCategoriaComponent } from './delete-categoria/delete-categoria.component';
 
 @NgModule({
   imports: [
@@ -58,9 +59,10 @@ import { AddUsuarioComponent } from './add-usuario/add-usuario.component';
     EditCategoriaComponent,
     DeleteUsuarioComponent,
     EditUsuarioComponent,
-    AddUsuarioComponent
+    AddUsuarioComponent,
+    DeleteCategoriaComponent
   ],
-  declarations: [ DashboardComponent, AdminRecursosComponent, AddRecursoComponent, EditRecursoComponent, DeleteRecursoComponent, AdminCategoriasComponent, AddCategoriaComponent, AdminUsuariosComponent, DeleteUsuarioComponent, EditUsuarioComponent, AdminTiposComponent, EditCategoriaComponent, AddUsuarioComponent ]
+  declarations: [ DashboardComponent, AdminRecursosComponent, AddRecursoComponent, EditRecursoComponent, DeleteRecursoComponent, AdminCategoriasComponent, AddCategoriaComponent, AdminUsuariosComponent, DeleteUsuarioComponent, EditUsuarioComponent, AdminTiposComponent, EditCategoriaComponent, AddUsuarioComponent, DeleteCategoriaComponent ]
 })
 
 export class DashboardModule {}

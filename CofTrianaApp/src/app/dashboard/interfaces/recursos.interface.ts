@@ -7,6 +7,7 @@ export interface Recursos{
     title: string;
     autor: string;
     anyo: string;
+    url: string;
     content: string;
     free: boolean,
     category: Category,

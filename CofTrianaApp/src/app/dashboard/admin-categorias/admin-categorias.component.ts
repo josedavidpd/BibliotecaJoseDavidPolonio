@@ -4,6 +4,7 @@ import { Category } from '../interfaces/category.interface';
 import { AddCategoriaComponent } from '../add-categoria/add-categoria.component';
 import { MatDialog, MatPaginator, MatTableDataSource } from '@angular/material';
 import { EditCategoriaComponent } from '../edit-categoria/edit-categoria.component';
+import { DeleteCategoriaComponent } from '../delete-categoria/delete-categoria.component';
 
 const ELEMENT_DATA: Category[] = [];
 
@@ -64,6 +65,21 @@ export class AdminCategoriasComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  openDialogDeleteCategoria(categoria: Category){
+    const dialogDeleteCategoria = this.dialog.open(DeleteCategoriaComponent,{
+      height:'20%',
+      data :{
+        element: categoria
+      }
+    })
+
+    dialogDeleteCategoria.afterClosed().subscribe(response =>{
+      this.getAllCategorias();
+    }, error =>{
+      console.log(error);
+    })
   }
 
   openDialogEditCategoria(categoria: Category){

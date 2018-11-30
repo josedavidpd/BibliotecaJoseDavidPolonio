@@ -5,7 +5,8 @@ $mat-toolbar-height-mobile-portrait: 56px !default;
 $mat-toolbar-height-mobile-landscape: 48px !default;
 
 mat-sidenav.sidebar-panel {
-  background-color: #809fff;
+  //background-color: #809fff;
+  background-color: #566573;
   position: absolute!important;
   overflow-x: hidden;
   width: $sidebar-width;
@@ -27,6 +28,8 @@ mat-sidenav.sidebar-panel {
     transition: max-height .3s cubic-bezier(.35, 0, .25, 1);
   }
   .mat-list-item {
+    color: white;
+    font-family: 'Open Sans', 'Ubuntu', sans-serif !important;
     height: auto;
     margin-bottom: 12px;
     background-color: transparent;
