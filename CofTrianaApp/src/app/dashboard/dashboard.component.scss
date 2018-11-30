@@ -47,6 +47,12 @@
 .cards{
   border: solid 3px;
   box-shadow: 5px 10px #888888;
+
+}
+
+#cardw{
+  width: 24%;
+  height: 200px; 
 }
 
 #tituloLibro {
@@ -115,6 +121,20 @@
     margin-left: 50px;
     margin-top: 40px;
     box-shadow: 5px 10px #888888;
+  }
+
+  #cardw{
+    width: 25%;
+    height: 200px; 
+  }
+
+  .card-wrapper {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    margin-left:150px;
+  
   }
 
   .image{
