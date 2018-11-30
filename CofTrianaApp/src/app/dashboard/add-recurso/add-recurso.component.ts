@@ -6,7 +6,7 @@ import { Category } from "../interfaces/category.interface";
 import { Type } from "../interfaces/type.interface";
 import { CategoriasService } from "../services/categorias.service";
 import { RecursosService } from "../services/recursos.service";
-import { MatDialogRef } from "@angular/material";
+import { MatDialogRef, MatSnackBar } from "@angular/material";
 import { Title } from "@angular/platform-browser";
 
 @Component({
@@ -25,7 +25,8 @@ export class AddRecursoComponent implements OnInit {
     private categoriaService: CategoriasService,
     private tipoService: TiposService,
     private recursoService: RecursosService,
-    public dialogRef: MatDialogRef<AddRecursoComponent>
+    public dialogRef: MatDialogRef<AddRecursoComponent>,
+    public snackBar: MatSnackBar
   ) {}
 
   ngOnInit() {
@@ -34,9 +35,10 @@ export class AddRecursoComponent implements OnInit {
       title: new FormControl('', [Validators.required]),
       autor: new FormControl('', [Validators.required]),
       anyo: new FormControl('', [Validators.required, Validators.maxLength(4)]),
+      url: new FormControl('',[Validators.required]),
       content: new FormControl('', [Validators.required, Validators.maxLength(100)]),
-      tipoSeleccionado: new FormControl(''),
-      categoriaSeleccionada: new FormControl('')
+      typeId: new FormControl(''),
+      categoryId: new FormControl('')
     })
     this.getCategorias();
     this.getTipos();
@@ -48,6 +50,12 @@ export class AddRecursoComponent implements OnInit {
     this.recursoService.addRecurso(addRecursoDto).subscribe(
       nuevoRecurso => {
         this.dialogRef.close();
+
+        this.snackBar.open(`Recurso '${this.createRecurso.controls['title'].value}' creado correctamente`, 'x', {
+          duration: 2000,
+          verticalPosition: 'top'
+        })
+
       },
       error => {
         console.log(error);

@@ -41,6 +41,23 @@
   
   
   </div>
+
+  <mat-form-field class="example-full-width">
+    <input
+      matInput
+      placeholder="Url recurso"
+      formControlName="url"
+      name="url"
+    />
+  </mat-form-field>
+
+  <div *ngIf="createRecurso.controls['url'].invalid && (createRecurso.controls['url'].dirty || createRecurso.controls['url'].touched)">
+    <div class="alert alert-danger" *ngIf="createRecurso.controls['url'].errors.required">
+      <small><i class="fas fa-exclamation-circle icon-error"></i>Url de recurso obligatoria</small>
+    </div>
+
+
+</div>
   <mat-form-field class="example-full-width">
     <textarea
       matInput
@@ -61,8 +78,8 @@
   <mat-form-field>
     <mat-select
       placeholder="Tipo"
-      formControlName="tipoSeleccionado"
-      name="tipoSeleccionado"
+      formControlName="typeId"
+      name="typeId"
     >
       <mat-option *ngFor="let tipo of arrayTipos" [value]="tipo.id">
         {{ tipo.name }}
@@ -73,8 +90,8 @@
   <mat-form-field>
     <mat-select
       placeholder="Categoria"
-      formControlName="categoriaSeleccionada"
-      name="categoriaSeleccionada"
+      formControlName="categoryId"
+      name="categoryId"
     >
       <mat-option
         *ngFor="let categoria of arrayCategorias"

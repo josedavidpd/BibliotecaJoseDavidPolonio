@@ -1,6 +1,6 @@
 <div class="container">
     <mat-form-field>
-        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrar búsqueda">
+        <input matInput (keyup)="applyFilter($event.target.value)" class="filter" placeholder="Filtrar búsqueda">
       </mat-form-field>
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <ng-container matColumnDef="Id">

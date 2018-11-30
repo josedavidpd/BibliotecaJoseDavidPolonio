@@ -26,14 +26,13 @@ export class OptionsComponent {
     translate.use(browserLang.match(/en|fr/) ? browserLang : 'en');
   }
 
-  ngOnInit() {
-    this.options.collapsed = true;
+  ngOnInit(): void {
+    this.options.compact;
     this.messageEvent.emit(this.options);
-    
     
   }
 
-  sendOptions() {
+  /*sendOptions() {
       if (this.options.collapsed === true ) {
       this.options.compact = false;
     }
@@ -41,5 +40,5 @@ export class OptionsComponent {
       this.options.collapsed = false;
     }
     this.messageEvent.emit(this.options);
-  }
+  }*/
 }

@@ -1,11 +1,13 @@
 .container{
     width: 100%;
     margin-top: 40px;
+
+    margin-left: 40px;
     
 }
 
 table {
-    margin-left: 70px;
+    margin-left: 80px;
     width: 90%;
   }
   
