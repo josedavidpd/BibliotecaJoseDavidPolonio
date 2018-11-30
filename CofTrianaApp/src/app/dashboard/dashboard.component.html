@@ -11,13 +11,13 @@
       <div fxLayout="row">
         <div class="media-grid compact bg-cover" style="background-image: url('https://http2.mlstatic.com/secreto-de-la-mente-millonaria-libro-pdf-gratis-D_NQ_NP_858052-MPA26462455618_112017-F.jpg')" fxFlex="40">
           <figure>
-            <div class="product-badge"><span>{{recurso.type.name}}</span></div>
+            <div class="product-badge"><a target="_blank" href="{{recurso.url}}"><span>{{recurso.type.name}}</span></a></div>
           </figure>
         </div>
         <div class="pa-1" fxFlex>
           <div fxLayout="column" fxFill>
             <div>
-              <h3 id="tituloLibro" class="ma-0">{{(recurso.title.length>20)? (recurso.title | slice:0:20)+'..':(recurso.title)}}</h3>
+              <h3 id="tituloLibro" title="{{recurso.title}}" class="ma-0">{{(recurso.title.length>20)? (recurso.title | slice:0:20)+'..':(recurso.title)}}</h3>
               <p id="autor" class="ma-0 pa-0 text-md">{{(recurso.autor.length>20)? (recurso.autor | slice:0:20)+'..':(recurso.autor)}}</p>
               <p style="text-transform: capitalize" class="ma-0 pa-0 text-md">{{recurso.anyo}}</p>
             </div>

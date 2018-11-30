@@ -21,7 +21,14 @@ export interface Menu {
 }
 
 const MENUITEMS = [
-   {
+
+  {
+    state: '/recursos',
+    name: 'Recursos',
+    type: 'extTabLink',
+    icon: 'list'
+  },
+  {
     state: '/categorias',
     name: 'Categorias',
     type: 'extTabLink',
