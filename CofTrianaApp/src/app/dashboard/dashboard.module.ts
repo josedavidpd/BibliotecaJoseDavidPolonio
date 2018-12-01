@@ -27,6 +27,9 @@ import { AdminTiposComponent } from './admin-tipos/admin-tipos.component';
 import { EditCategoriaComponent } from './edit-categoria/edit-categoria.component';
 import { AddUsuarioComponent } from './add-usuario/add-usuario.component';
 import { DeleteCategoriaComponent } from './delete-categoria/delete-categoria.component';
+import { AdminSupercategoriasComponent } from './admin-supercategorias/admin-supercategorias.component';
+import { AddSupercategoriaComponent } from './add-supercategoria/add-supercategoria.component';
+import { EditSupercategoriaComponent } from './edit-supercategoria/edit-supercategoria.component';
 
 @NgModule({
   imports: [
@@ -60,9 +63,11 @@ import { DeleteCategoriaComponent } from './delete-categoria/delete-categoria.co
     DeleteUsuarioComponent,
     EditUsuarioComponent,
     AddUsuarioComponent,
-    DeleteCategoriaComponent
+    DeleteCategoriaComponent,
+    AddSupercategoriaComponent,
+    EditSupercategoriaComponent
   ],
-  declarations: [ DashboardComponent, AdminRecursosComponent, AddRecursoComponent, EditRecursoComponent, DeleteRecursoComponent, AdminCategoriasComponent, AddCategoriaComponent, AdminUsuariosComponent, DeleteUsuarioComponent, EditUsuarioComponent, AdminTiposComponent, EditCategoriaComponent, AddUsuarioComponent, DeleteCategoriaComponent ]
+  declarations: [ DashboardComponent, AdminRecursosComponent, AddRecursoComponent, EditRecursoComponent, DeleteRecursoComponent, AdminCategoriasComponent, AddCategoriaComponent, AdminUsuariosComponent, DeleteUsuarioComponent, EditUsuarioComponent, AdminTiposComponent, EditCategoriaComponent, AddUsuarioComponent, DeleteCategoriaComponent, AdminSupercategoriasComponent, AddSupercategoriaComponent, EditSupercategoriaComponent ]
 })
 
 export class DashboardModule {}

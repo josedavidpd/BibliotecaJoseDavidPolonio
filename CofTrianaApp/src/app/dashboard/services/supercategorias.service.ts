@@ -26,8 +26,8 @@ export class SupercategoriasService {
 
 
 
-  getAllSuperCategorias(): Observable<SuperCategoriaResp>{
-    return this.http.get<SuperCategoriaResp>(`${urlSuperCat}/all`, this.requestOptions);
+  getAllSuperCategorias(): Observable<SuperCategoriaResp[]>{
+    return this.http.get<SuperCategoriaResp[]>(`${urlSuperCat}/all`, this.requestOptions);
   }
 
 

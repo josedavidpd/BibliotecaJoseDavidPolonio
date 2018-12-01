@@ -57,6 +57,12 @@ const MENUITEMS = [
     name: 'Admin-Usuarios',
     type: 'extTabLink',
     icon: 'supervisor_account'
+  },
+  {
+    state: '/admin/supercategorias',
+    name: 'Admin-Supercategorias',
+    type: 'extTabLink',
+    icon: 'supervisor_account'
   }
 ];
 

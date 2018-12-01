@@ -1,0 +1,26 @@
+<div fxLayout="column" fFlexFill>
+
+  <form [formGroup]="editSuperCategoria"> 
+  <mat-form-field class="example-full-width">
+    <input readonly matInput placeholder="Id" formControlName="id" name="id" />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Nombre supercategoria" formControlName="name" name="name" />
+  </mat-form-field>
+
+  <div *ngIf="editSuperCategoria.controls['name'].invalid && (editSuperCategoria.controls['name'].dirty || editSuperCategoria.controls['name'].touched)">
+      <div class="alert alert-danger" *ngIf="editSuperCategoria.controls['name'].errors.required">
+        <small><i class="fas fa-exclamation-circle icon-error"></i>Nombre de supercategoria obligatorio</small>
+      </div>
+  
+  
+  </div>
+
+</form>
+
+
+  <button mat-raised-button color="primary" [disabled]="!editSuperCategoria.valid" (click)="editarSuperCategoria()">
+    Editar categoria
+  </button>
+</div>

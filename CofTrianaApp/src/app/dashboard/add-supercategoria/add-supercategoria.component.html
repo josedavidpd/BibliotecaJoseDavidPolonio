@@ -1,0 +1,21 @@
+<div fxLayout="column" fFlexFill>
+
+  <form [formGroup]="createSuperCategoria">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Nombre" formControlName="name" name="name" />
+  </mat-form-field>
+
+  <div *ngIf="createSuperCategoria.controls['name'].invalid && (createSuperCategoria.controls['name'].dirty || createSuperCategoria.controls['name'].touched)">
+      <div class="alert alert-danger" *ngIf="createSuperCategoria.controls['name'].errors.required">
+        <small><i class="fas fa-exclamation-circle icon-error"></i>Nombre de supercategoria obligatorio</small>
+      </div>
+
+  </div>
+
+</form>
+
+
+  <button mat-raised-button color="primary" [disabled]="!createSuperCategoria.valid" (click)="addSuperCategoria()">
+    Crear supercategoria
+  </button>
+</div>
