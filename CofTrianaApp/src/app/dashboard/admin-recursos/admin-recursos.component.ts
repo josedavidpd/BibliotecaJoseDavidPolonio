@@ -45,6 +45,7 @@ export class AdminRecursosComponent implements OnInit {
     "Categoria",
     "Autor",
     "Fecha de publicacion",
+    "Url",
     "¿Disponible?",
     "Acciones"
   ];

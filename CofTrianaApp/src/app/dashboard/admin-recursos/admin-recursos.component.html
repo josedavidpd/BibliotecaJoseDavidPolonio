@@ -15,7 +15,7 @@
 
     <ng-container matColumnDef="Descripcion">
         <th mat-header-cell *matHeaderCellDef>Descripción</th>
-        <td mat-cell *matCellDef="let element">{{ (element.content.length>50)? (element.content | slice:0:50)+'...':(element.content) }}</td>
+        <td mat-cell *matCellDef="let element" title="{{element.content}}">{{ (element.content.length>50)? (element.content | slice:0:50)+'...':(element.content) }}</td>
       </ng-container>
 
 
@@ -38,6 +38,13 @@
       <th mat-header-cell *matHeaderCellDef>Fecha de publicación</th>
       <td mat-cell *matCellDef="let element">{{ element.anyo }}</td>
     </ng-container>
+
+    <ng-container matColumnDef="Url">
+      <th mat-header-cell *matHeaderCellDef>Url recurso</th>
+      <td mat-cell *matCellDef="let element" title="{{element.url}}"><a href="{{element.url}}">{{(element.url.length>20)? (element.url | slice:0:20)+'...':(element.url)}}</a></td>
+    </ng-container>
+
+
     <ng-container matColumnDef="¿Disponible?">
         <th mat-header-cell *matHeaderCellDef>¿Disponible?</th>
         <td mat-cell *matCellDef="let element">{{ element.free ? 'Sí' : 'En préstamo' }}</td>
