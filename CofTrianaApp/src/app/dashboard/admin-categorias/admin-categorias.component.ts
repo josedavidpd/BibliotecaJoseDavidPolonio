@@ -21,6 +21,7 @@ export class AdminCategoriasComponent implements OnInit {
   displayedColumns: string[] = [
     "Id",
     "Nombre",
+    "SuperCategoria",
     "Acciones"
   ];
 

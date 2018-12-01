@@ -1,3 +1,4 @@
+import { SuperCategoriaResp } from './../interfaces/supercategoria.interface';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { AddRecursoDto } from "./../dto/add-recurso.dto";
 import { TiposService } from "./../services/tipos.service";
@@ -8,6 +9,7 @@ import { CategoriasService } from "../services/categorias.service";
 import { RecursosService } from "../services/recursos.service";
 import { MatDialogRef, MatSnackBar } from "@angular/material";
 import { Title } from "@angular/platform-browser";
+import { SupercategoriasService } from '../services/supercategorias.service';
 
 @Component({
   selector: "app-add-recurso",
@@ -20,13 +22,15 @@ export class AddRecursoComponent implements OnInit {
 
   arrayCategorias: Category[];
   arrayTipos: Type[];
+  arraySuperCategorias: SuperCategoriaResp[];
 
   constructor(
     private categoriaService: CategoriasService,
     private tipoService: TiposService,
     private recursoService: RecursosService,
     public dialogRef: MatDialogRef<AddRecursoComponent>,
-    public snackBar: MatSnackBar
+    public snackBar: MatSnackBar,
+    private superCategoriaService: SupercategoriasService
   ) {}
 
   ngOnInit() {
@@ -42,6 +46,7 @@ export class AddRecursoComponent implements OnInit {
     })
     this.getCategorias();
     this.getTipos();
+    this.getSuperCategorias();
   }
 
   addRecurso() {
@@ -83,5 +88,14 @@ export class AddRecursoComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  getSuperCategorias(){
+    this.superCategoriaService.getAllSuperCategorias().subscribe(superCategorias =>{
+      this.arraySuperCategorias = superCategorias;
+    }, error =>{
+      console.log(error);
+    })
+
   }
 }

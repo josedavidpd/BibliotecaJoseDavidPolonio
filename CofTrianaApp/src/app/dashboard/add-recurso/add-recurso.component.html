@@ -88,17 +88,21 @@
   </mat-form-field>
 
   <mat-form-field>
-    <mat-select
-      placeholder="Categoria"
-      formControlName="categoryId"
-      name="categoryId"
-    >
-      <mat-option
-        *ngFor="let categoria of arrayCategorias"
-        [value]="categoria.id"
-      >
+
+    <!--
+<mat-option *ngFor="let categoria of arrayCategorias" [value]="categoria.id">
         {{ categoria.name }}
       </mat-option>
+
+    -->
+    <mat-select placeholder="Categoria" formControlName="categoryId" name="categoryId">
+      
+        
+        <mat-optgroup *ngFor="let categoria of arrayCategorias" [label]="categoria.name" [disabled]="categoria.disabled">
+          <mat-option *ngFor="let superCat of arraySuperCategorias" [value]="categoria.id">
+            {{superCat.name}}
+          </mat-option>
+        </mat-optgroup>
     </mat-select>
   </mat-form-field>
 
