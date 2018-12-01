@@ -19,68 +19,44 @@ export class UsuariosService {
   constructor(private http: HttpClient, private sessionService: SessionService) { }
 
 
+  requestOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${this.sessionService.getToken()}`,
+      'Access-Control-Allow-Origin': '*'
+    })
+  };
 
   getAllUsuarios(){
-    const requestOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${this.sessionService.getToken()}`,
-        'Access-Control-Allow-Origin': '*'
-      })
-    };
-
-    return this.http.get<Usuario[]>(`${usuarioUrl}/all`,requestOptions);
+    
+    return this.http.get<Usuario[]>(`${usuarioUrl}/all`,this.requestOptions);
   }
 
 
   deleteUsuario(id :number){
-    const requestOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${this.sessionService.getToken()}`,
-        'Access-Control-Allow-Origin': '*'
-      })
-    };
+    
 
-    return this.http.delete(`${usuarioUrl}/${id}`,requestOptions);
+    return this.http.delete(`${usuarioUrl}/${id}`,this.requestOptions);
 
 
   }
 
   editUsuario(id:number, usuarioEditado: EditAddUsuarioDto){
-    const requestOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${this.sessionService.getToken()}`,
-        'Access-Control-Allow-Origin': '*'
-      })
-    };
+    
 
-    return this.http.put<EditAddUsuarioDto>(`${usuarioUrl}/${id}`,usuarioEditado,requestOptions);
+    return this.http.put<EditAddUsuarioDto>(`${usuarioUrl}/${id}`,usuarioEditado,this.requestOptions);
   }
 
 
   addUsuario(nuevoUsuario: EditAddUsuarioDto){
-    const requestOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${this.sessionService.getToken()}`,
-        'Access-Control-Allow-Origin': '*'
-      })
-    };
+    
 
-    return this.http.post<EditAddUsuarioResponse>(`${usuarioUrl}/create`,nuevoUsuario,requestOptions);
+    return this.http.post<EditAddUsuarioResponse>(`${usuarioUrl}/create`,nuevoUsuario,this.requestOptions);
   }
 
   getOneUsuario(id:number){
-    const requestOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${this.sessionService.getToken()}`,
-        'Access-Control-Allow-Origin': '*'
-      })
-    };
+    
 
-    return this.http.get<OneUsuario>(`${usuarioUrl}/${id}`,requestOptions);
+    return this.http.get<OneUsuario>(`${usuarioUrl}/${id}`,this.requestOptions);
   }
 }

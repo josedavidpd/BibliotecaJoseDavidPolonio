@@ -17,60 +17,45 @@ export class RecursosService {
 
   constructor(private http: HttpClient, private sessionService: SessionService) { }
 
+  requestOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${this.sessionService.getToken()}`,
+      'Access-Control-Allow-Origin': '*'
+    })
+  };
+
+
 
   getAllRecursos(){
-    const requestOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${this.sessionService.getToken()}`,
-        'Access-Control-Allow-Origin': '*'
-      })
-    };
+    
 
-      return this.http.get<Recursos[]>(`${recursoUrl}/all`,requestOptions);
+      return this.http.get<Recursos[]>(`${recursoUrl}/all`,this.requestOptions);
     
 
   }
 
   deleteRecurso(id:number){
 
-    const requestOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${this.sessionService.getToken()}`,
-        'Access-Control-Allow-Origin': '*'
-      })
-    };
+    
 
-    return this.http.delete(`${recursoUrl}/${id}`,requestOptions);
+    return this.http.delete(`${recursoUrl}/${id}`,this.requestOptions);
 
   }
 
 
   addRecurso(nuevoRecursoDto: AddRecursoDto){
 
-    const requestOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${this.sessionService.getToken()}`,
-        'Access-Control-Allow-Origin': '*'
-      })
-    };
+    
 
-    return this.http.post<AddRecurso>(`${recursoUrl}/create`,nuevoRecursoDto,requestOptions);
+    return this.http.post<AddRecurso>(`${recursoUrl}/create`,nuevoRecursoDto, this.requestOptions);
 
   }
 
 
   editarRecurso(id:number, recursoEditado: EditRecurso){
-    const requestOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${this.sessionService.getToken()}`,
-        'Access-Control-Allow-Origin': '*'
-      })
-    };
+    
 
-    return this.http.put<EditRecurso>(`${recursoUrl}/edit/${id}`,recursoEditado,requestOptions);
+    return this.http.put<EditRecurso>(`${recursoUrl}/edit/${id}`,recursoEditado,this.requestOptions);
   }
 }

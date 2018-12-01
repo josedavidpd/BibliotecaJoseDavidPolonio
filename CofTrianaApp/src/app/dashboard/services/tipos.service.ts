@@ -15,16 +15,18 @@ export class TiposService {
   constructor(private http: HttpClient, private sessionService: SessionService) { }
 
 
-  getAllTipos(){
-    const requestOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${this.sessionService.getToken()}`,
-        'Access-Control-Allow-Origin': '*'
-      })
-    };
+  requestOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${this.sessionService.getToken()}`,
+      'Access-Control-Allow-Origin': '*'
+    })
+  };
 
-    return this.http.get<Type[]>(`${tipoUrl}/all`,requestOptions);
+  getAllTipos(){    
+
+    return this.http.get<Type[]>(`${tipoUrl}/all`,this.requestOptions);
+    
   }
 
 
