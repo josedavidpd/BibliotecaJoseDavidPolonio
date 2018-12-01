@@ -71,8 +71,8 @@ export class AdminRecursosComponent implements OnInit {
 
   openDialogAddRecurso() {
     const dialogAddRecurso = this.dialog.open(AddRecursoComponent,{
-      width:'24%',
-      height:'80%'
+      width:'20%',
+      height:'75%'
     });
 
     dialogAddRecurso.afterClosed().subscribe(

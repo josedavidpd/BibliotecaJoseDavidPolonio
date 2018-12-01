@@ -1,3 +1,4 @@
+import { SupercategoriasService } from './../services/supercategorias.service';
 import { element } from 'protractor';
 import { CategoriasService } from './../services/categorias.service';
 import { Component, OnInit, Inject} from '@angular/core';
@@ -8,6 +9,7 @@ import { TiposService } from '../services/tipos.service';
 import { MatDialogRef } from '@angular/material';
 import {MAT_DIALOG_DATA} from '@angular/material'
 import { EditRecurso } from '../dto/edit-recurso.dto';
+import { SuperCategoriaResp } from '../interfaces/supercategoria.interface';
 
 @Component({
   selector: 'app-edit-recurso',
@@ -26,8 +28,9 @@ export class EditRecursoComponent implements OnInit {
 
   arrayCategorias: Category[];
   arrayTipos: Type[];
+  arraySuperCategorias : SuperCategoriaResp[];
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any,private recursoService: RecursosService, private categoriaService: CategoriasService, private tipoService: TiposService, public dialogRef: MatDialogRef<EditRecursoComponent>) {
+  constructor(private superCategoriaService: SupercategoriasService,@Inject(MAT_DIALOG_DATA) public data: any,private recursoService: RecursosService, private categoriaService: CategoriasService, private tipoService: TiposService, public dialogRef: MatDialogRef<EditRecursoComponent>) {
 
     
    }
@@ -44,6 +47,7 @@ export class EditRecursoComponent implements OnInit {
 
     this.getCategorias();
     this.getTipos();
+    this.getSuperCategorias();
   }
 
   getCategorias(){
@@ -62,6 +66,14 @@ export class EditRecursoComponent implements OnInit {
       console.log(error);
     }
     )
+  }
+
+  getSuperCategorias(){
+    this.superCategoriaService.getAllSuperCategorias().subscribe(superCategorias =>{
+      this.arraySuperCategorias = superCategorias;
+    }, error =>{
+      console.log(error);
+    })
   }
 
   editRecurso(){

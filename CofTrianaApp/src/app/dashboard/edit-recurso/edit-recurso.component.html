@@ -41,7 +41,24 @@
     </mat-select>
   </mat-form-field>
 
+
   <mat-form-field>
+
+   
+      <mat-select placeholder="Categoria"  [(value)]="categoriaSeleccionada" name="categoriaSeleccionada">
+        
+          
+          <mat-optgroup *ngFor="let categoria of arrayCategorias" [label]="categoria.name" [disabled]="categoria.disabled">
+            <mat-option *ngFor="let superCat of arraySuperCategorias" [value]="categoria.id">
+              {{superCat.name}}
+            </mat-option>
+          </mat-optgroup>
+      </mat-select>
+    </mat-form-field>
+
+    <!--
+
+ <mat-form-field>
     <mat-select
       placeholder="Categoria"
       [(value)]="categoriaSeleccionada"
@@ -55,6 +72,8 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
+    -->
+ 
 
   <button mat-raised-button color="primary" (click)="editRecurso()">
     Editar recurso
