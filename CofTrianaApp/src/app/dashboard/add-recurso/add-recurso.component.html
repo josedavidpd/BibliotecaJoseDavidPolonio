@@ -101,9 +101,9 @@
     <mat-select placeholder="Categoria" formControlName="categoryId" name="categoryId">
       
         
-        <mat-optgroup *ngFor="let categoria of arrayCategorias" [label]="categoria.name" [disabled]="categoria.disabled">
-          <mat-option *ngFor="let superCat of arraySuperCategorias" [value]="categoria.id">
-            {{superCat.name}}
+        <mat-optgroup *ngFor="let superCat of arraySuperCategorias" [label]="superCat.name" [disabled]="superCat.disabled">
+          <mat-option *ngFor="let categoria of superCat.categories" [value]="categoria.id">
+            {{categoria.name}}
           </mat-option>
         </mat-optgroup>
     </mat-select>
