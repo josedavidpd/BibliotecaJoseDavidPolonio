@@ -28,9 +28,9 @@ export class EditCategoriaComponent implements OnInit {
     })
   }
 
-  editarCategoria(id:number){
+  editarCategoria(){
     const updatedCategoria = <EditCategoriaDto>this.editCategoria.value;
-    this.categoriaService.editCategoria(id, updatedCategoria).subscribe(categoriaEditada =>{
+    this.categoriaService.editCategoria(this.id, updatedCategoria).subscribe(categoriaEditada =>{
 
       this.dialogRef.close();
     }, error =>{
