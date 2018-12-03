@@ -71,8 +71,8 @@ export class AdminRecursosComponent implements OnInit {
 
   openDialogAddRecurso() {
     const dialogAddRecurso = this.dialog.open(AddRecursoComponent,{
-      width:'20%',
-      height:'75%'
+      width:'30%',
+      height:'90%'
     });
 
     dialogAddRecurso.afterClosed().subscribe(
@@ -106,7 +106,7 @@ export class AdminRecursosComponent implements OnInit {
 
   openDialogDeleteRecurso(recurso: Recursos){
     const dialogDeleteRecurso = this.dialog.open(DeleteRecursoComponent, {
-      height:'20%',
+      height:'30%',
        data:{
         element:recurso
       }

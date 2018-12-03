@@ -60,7 +60,7 @@ export class AdminUsuariosComponent implements OnInit {
 
   openDialogDeleteUsuario(usuario: Usuario){
     const dialogDeleteUsuario = this.dialog.open(DeleteUsuarioComponent, {
-      height:'20%',
+      height:'30%',
       data:{
         element: usuario
       }
@@ -76,7 +76,7 @@ export class AdminUsuariosComponent implements OnInit {
   openDialogNuevoUsuario(){
     const dialogNuevoUsuario = this.dialog.open(AddUsuarioComponent,{
       width:'22%',
-      height: '80%'
+      height: '81%'
     });
 
     dialogNuevoUsuario.beforeClose().subscribe(response =>{
@@ -94,7 +94,7 @@ export class AdminUsuariosComponent implements OnInit {
       console.log(error);
     })
     const dialogEditUsuario = this.dialog.open(EditUsuarioComponent,{
-      width: '20%',
+      width: '30%',
       data:{
         element: usuario
       }

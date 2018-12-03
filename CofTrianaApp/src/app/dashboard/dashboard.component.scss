@@ -141,6 +141,17 @@
   justify-content: center;
   margin-top: 40px;
 }
+
+.capitalize{
+  text-transform: capitalize;
+}
+
+.disponible{
+  color: green;
+}
+.prestamo{
+  color: red;
+}
 :host {
   margin-left: -5px;
   margin-right: -5px;

@@ -30,6 +30,7 @@ import { DeleteCategoriaComponent } from './delete-categoria/delete-categoria.co
 import { AdminSupercategoriasComponent } from './admin-supercategorias/admin-supercategorias.component';
 import { AddSupercategoriaComponent } from './add-supercategoria/add-supercategoria.component';
 import { EditSupercategoriaComponent } from './edit-supercategoria/edit-supercategoria.component';
+import { MiPerfilComponent } from './mi-perfil/mi-perfil.component';
 
 @NgModule({
   imports: [
@@ -67,7 +68,7 @@ import { EditSupercategoriaComponent } from './edit-supercategoria/edit-supercat
     AddSupercategoriaComponent,
     EditSupercategoriaComponent
   ],
-  declarations: [ DashboardComponent, AdminRecursosComponent, AddRecursoComponent, EditRecursoComponent, DeleteRecursoComponent, AdminCategoriasComponent, AddCategoriaComponent, AdminUsuariosComponent, DeleteUsuarioComponent, EditUsuarioComponent, AdminTiposComponent, EditCategoriaComponent, AddUsuarioComponent, DeleteCategoriaComponent, AdminSupercategoriasComponent, AddSupercategoriaComponent, EditSupercategoriaComponent ]
+  declarations: [ DashboardComponent, AdminRecursosComponent, AddRecursoComponent, EditRecursoComponent, DeleteRecursoComponent, AdminCategoriasComponent, AddCategoriaComponent, AdminUsuariosComponent, DeleteUsuarioComponent, EditUsuarioComponent, AdminTiposComponent, EditCategoriaComponent, AddUsuarioComponent, DeleteCategoriaComponent, AdminSupercategoriasComponent, AddSupercategoriaComponent, EditSupercategoriaComponent, MiPerfilComponent ]
 })
 
 export class DashboardModule {}

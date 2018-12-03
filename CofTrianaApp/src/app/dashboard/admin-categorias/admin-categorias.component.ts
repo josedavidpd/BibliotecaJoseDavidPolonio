@@ -70,7 +70,7 @@ export class AdminCategoriasComponent implements OnInit {
 
   openDialogDeleteCategoria(categoria: Category){
     const dialogDeleteCategoria = this.dialog.open(DeleteCategoriaComponent,{
-      height:'20%',
+      height:'30%',
       data :{
         element: categoria
       }
@@ -85,7 +85,7 @@ export class AdminCategoriasComponent implements OnInit {
 
   openDialogEditCategoria(categoria: Category){
     const dialogEditCategoria = this.dialog.open(EditCategoriaComponent, {
-      width: '20%',
+      width: '30%',
       data: {
         element: categoria
       }
