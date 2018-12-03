@@ -23,45 +23,33 @@ export interface Menu {
 const MENUITEMS = [
 
   {
-    state: '/recursos',
-    name: 'Recursos',
-    type: 'extTabLink',
-    icon: 'list'
-  },
-  {
-    state: '/categorias',
-    name: 'Categorias',
-    type: 'extTabLink',
-    icon: 'view_module'
-  },
-  {
-    state: '/admin/recursos',
+    state: 'admin-recursos',
     name: 'Admin-Recursos',
-    type: 'extTabLink',
+    type: 'link',
     icon: 'assignment'
   },
   {
-    state: '/admin/categorias',
+    state: 'admin-categorias',
     name: 'Admin-Categorias',
-    type: 'extTabLink',
+    type: 'link',
     icon: 'scatter_plot'
   },
   {
-    state: '/admin/tipos',
+    state: 'admin-tipos',
     name: 'Admin-Tipos',
-    type: 'extTabLink',
+    type: 'link',
     icon: 'style'
   },
   {
-    state: '/admin/usuarios',
+    state: 'admin-usuarios',
     name: 'Admin-Usuarios',
-    type: 'extTabLink',
+    type: 'link',
     icon: 'supervisor_account'
   },
   {
-    state: '/admin/supercategorias',
+    state: 'admin-supercategorias',
     name: 'Admin-Supercategorias',
-    type: 'extTabLink',
+    type: 'link',
     icon: 'supervisor_account'
   }
 ];

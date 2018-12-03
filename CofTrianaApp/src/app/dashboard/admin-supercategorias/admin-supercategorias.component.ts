@@ -52,8 +52,8 @@ export class AdminSupercategoriasComponent implements OnInit {
 
   openDialogEditSuperCat(superCategoriaEdit: SuperCategoriaDto){
     const dialogEditSuperCat = this.dialog.open(EditSupercategoriaComponent, {
-      width: '15%',
-      height: '20%',
+      width: '20%',
+      height: '30%',
       data:{
         element: superCategoriaEdit
       }
