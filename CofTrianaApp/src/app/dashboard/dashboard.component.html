@@ -1,3 +1,5 @@
+<!--
+
 <div class="container">
 
   <img class="image" src="../../assets/images/imageHome.jpg">
@@ -55,3 +57,52 @@
  
 
 </div>
+
+
+
+
+-->
+<img class="image" src="../../assets/images/imageHome.jpg">
+
+  <h2 style="text-align:center; margin-top: 20px">Recursos</h2>
+  <hr/>
+<div fxLayout="row wrap">
+  <div fxFlex.gt-md="33.33%" fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="100" *ngFor="let recurso of arrayRecursos| paginate: { itemsPerPage: 9, currentPage: p }">
+    <mat-card class="pa-0">
+      <div fxLayout="row">
+        <div class="media-grid compact bg-cover" style="background-image: url('https://http2.mlstatic.com/secreto-de-la-mente-millonaria-libro-pdf-gratis-D_NQ_NP_858052-MPA26462455618_112017-F.jpg')"  fxFlex="40">
+          <figure>
+            <div class="product-badge"><span>{{recurso.type.name}}</span></div>
+          </figure>
+        </div>
+        <div class="pa-1" fxFlex>
+          <div fxLayout="column">
+            
+            <div>
+              <p class="ma-0">{{ recurso.title }}</p>
+              <p class="ma-0 pa-0 text-md">{{ recurso.autor }}</p>
+            </div>
+
+            <div class="mat-text-primary text-xl">
+              <span *ngIf="recurso.free == true">{{ recurso.free ? 'Disponible' : 'En préstamo' }}</span>
+              <span *ngIf="recurso.free == false">{{ recurso.free ? 'Disponible' : 'En préstamo' }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+
+  
+</div>
+<div class="container-pagination">
+  <pagination-controls
+    class="pagination"
+    (pageChange)="p = $event"
+    previousLabel="Anterior"
+    nextLabel="Siguiente"
+    responsive="true"
+  ></pagination-controls>
+</div>
+
