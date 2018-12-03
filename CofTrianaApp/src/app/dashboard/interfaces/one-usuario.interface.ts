@@ -3,7 +3,7 @@ export interface OneUsuario{
     name: string;
     email: string;
     password: string;
-    phones: string;
+    phone: string;
     notes: string;
     role: string;
 }

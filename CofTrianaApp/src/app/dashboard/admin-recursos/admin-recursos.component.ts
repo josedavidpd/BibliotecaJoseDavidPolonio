@@ -6,6 +6,8 @@ import { AddRecursoComponent } from "../add-recurso/add-recurso.component";
 import { Title } from "@angular/platform-browser";
 import { EditRecursoComponent } from "../edit-recurso/edit-recurso.component";
 import { DeleteRecursoComponent } from "../delete-recurso/delete-recurso.component";
+import { PrestarRecursoComponent } from "../prestar-recurso/prestar-recurso.component";
+import { DevolverRecursoComponent } from "../devolver-recurso/devolver-recurso.component";
 
 const ELEMENT_DATA: Recursos[] = [];
 
@@ -47,7 +49,8 @@ export class AdminRecursosComponent implements OnInit {
     "Fecha de publicacion",
     "Url",
     "¿Disponible?",
-    "Acciones"
+    "Acciones",
+    "Prestar/Devolver"
   ];
 
   
@@ -83,6 +86,37 @@ export class AdminRecursosComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  openDialogPrestarRecurso(recurso: Recursos){
+    const dialogPrestarRecurso = this.dialog.open(PrestarRecursoComponent, {
+      width: '50%',
+      data: {
+        element: recurso
+      }
+    })
+
+    dialogPrestarRecurso.afterClosed().subscribe(response =>{
+      this.getRecursos();
+    }, error =>{
+      console.log(error);
+    })
+  }
+
+  openDialogDevolverRecurso(recurso: Recursos){
+    const dialogDevolverRecurso = this.dialog.open(DevolverRecursoComponent, {
+      width: '20%',
+      height: '30%',
+      data: {
+        element: recurso
+      }
+    })
+
+    dialogDevolverRecurso.afterClosed().subscribe(response =>{
+      this.getRecursos();
+    }, error =>{
+      console.log(error);
+    })
   }
 
   openDialogEditRecurso(recurso : Recursos){

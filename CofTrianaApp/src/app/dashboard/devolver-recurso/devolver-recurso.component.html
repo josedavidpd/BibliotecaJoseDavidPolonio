@@ -1,0 +1,11 @@
+<div fxLayout="column" fxFlexFill>
+  <h3>Devolver: <span id="name">'{{title}}'</span></h3>
+  
+  
+  <mat-form-field>
+    <input matInput type="text" [(ngModel)]="palabraDevolver"  placeholder="Escriba 'DEVOLVER'">
+  </mat-form-field>
+  
+  <button mat-raised-button color="primary" [disabled]="!validarDevolver()" (click)="devolverRecurso()">Devolver recurso</button>
+  
+  </div>

@@ -1,3 +1,5 @@
+import { PrestarDto } from './../dto/prestarRecurso.dto';
+
 import { AddRecursoDto } from './../dto/add-recurso.dto';
 import { Recursos } from './../interfaces/recursos.interface';
 import { SessionService } from './../../session/services/session.service';
@@ -6,6 +8,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { AddRecurso } from '../interfaces/add-recurso.interface';
 import { EditRecurso } from '../dto/edit-recurso.dto';
+import { PrestarDevolverRecursoResp } from '../interfaces/prestar-recurso.interface';
+import { DevolverRecursoDto } from '../dto/devolver-recurso.dto';
 
 
 const recursoUrl = `${environment.apiUrl}/recurso`;
@@ -57,5 +61,13 @@ export class RecursosService {
     
 
     return this.http.put<EditRecurso>(`${recursoUrl}/edit/${id}`,recursoEditado,this.requestOptions);
+  }
+
+  prestarRecurso(idRecurso:number, userId: PrestarDto){
+    return this.http.put<PrestarDevolverRecursoResp>(`${recursoUrl}/prestar/${idRecurso}`,userId,this.requestOptions);
+  }
+
+  devolverRecurso(idRecurso:number, devolverDto: DevolverRecursoDto){
+    return this.http.put<PrestarDevolverRecursoResp>(`${recursoUrl}/devolver/${idRecurso}`,devolverDto,this.requestOptions);
   }
 }

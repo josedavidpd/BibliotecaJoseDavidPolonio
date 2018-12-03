@@ -31,6 +31,8 @@ import { AdminSupercategoriasComponent } from './admin-supercategorias/admin-sup
 import { AddSupercategoriaComponent } from './add-supercategoria/add-supercategoria.component';
 import { EditSupercategoriaComponent } from './edit-supercategoria/edit-supercategoria.component';
 import { MiPerfilComponent } from './mi-perfil/mi-perfil.component';
+import { PrestarRecursoComponent } from './prestar-recurso/prestar-recurso.component';
+import { DevolverRecursoComponent } from './devolver-recurso/devolver-recurso.component';
 
 @NgModule({
   imports: [
@@ -66,9 +68,11 @@ import { MiPerfilComponent } from './mi-perfil/mi-perfil.component';
     AddUsuarioComponent,
     DeleteCategoriaComponent,
     AddSupercategoriaComponent,
-    EditSupercategoriaComponent
+    EditSupercategoriaComponent,
+    PrestarRecursoComponent,
+    DevolverRecursoComponent
   ],
-  declarations: [ DashboardComponent, AdminRecursosComponent, AddRecursoComponent, EditRecursoComponent, DeleteRecursoComponent, AdminCategoriasComponent, AddCategoriaComponent, AdminUsuariosComponent, DeleteUsuarioComponent, EditUsuarioComponent, AdminTiposComponent, EditCategoriaComponent, AddUsuarioComponent, DeleteCategoriaComponent, AdminSupercategoriasComponent, AddSupercategoriaComponent, EditSupercategoriaComponent, MiPerfilComponent ]
+  declarations: [ DashboardComponent, AdminRecursosComponent, AddRecursoComponent, EditRecursoComponent, DeleteRecursoComponent, AdminCategoriasComponent, AddCategoriaComponent, AdminUsuariosComponent, DeleteUsuarioComponent, EditUsuarioComponent, AdminTiposComponent, EditCategoriaComponent, AddUsuarioComponent, DeleteCategoriaComponent, AdminSupercategoriasComponent, AddSupercategoriaComponent, EditSupercategoriaComponent, MiPerfilComponent, PrestarRecursoComponent, DevolverRecursoComponent ]
 })
 
 export class DashboardModule {}
