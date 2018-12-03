@@ -1,6 +1,6 @@
 <div fxLayout="column" fFlexFill>
 
-  <form [formGroup]="createCategoria">
+  <form [formGroup]="createCategoria" fxLayout="column">
   <mat-form-field class="example-full-width">
     <input matInput placeholder="Nombre" formControlName="name" name="name" />
   </mat-form-field>
@@ -11,6 +11,25 @@
       </div>
 
   </div>
+
+  <mat-form-field>
+    <mat-select
+      placeholder="Supercategoria"
+      formControlName="idSuperCategoria"
+      name="idSuperCategoria"
+    >
+      <mat-option *ngFor="let superCat of arraySuperCategorias" [value]="superCat.id">
+        {{ superCat.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div *ngIf="createCategoria.controls['idSuperCategoria'].invalid && (createCategoria.controls['idSuperCategoria'].dirty || createCategoria.controls['idSuperCategoria'].touched)">
+    <div class="alert alert-danger" *ngIf="createCategoria.controls['idSuperCategoria'].errors.required">
+      <small><i class="fas fa-exclamation-circle icon-error"></i>Seleccione una categoria</small>
+    </div>
+
+</div>
 
 </form>
 

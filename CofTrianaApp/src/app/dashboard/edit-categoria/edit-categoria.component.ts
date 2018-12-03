@@ -4,6 +4,8 @@ import { CategoriasService } from './../services/categorias.service';
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { EditCategoriaDto } from '../dto/edit-categoria.dto';
+import { SupercategoriasService } from '../services/supercategorias.service';
+import { SuperCategoriaResp } from '../interfaces/supercategoria.interface';
 
 @Component({
   selector: 'app-edit-categoria',
@@ -13,6 +15,8 @@ import { EditCategoriaDto } from '../dto/edit-categoria.dto';
 export class EditCategoriaComponent implements OnInit {
   editCategoria: FormGroup;
   id: number;
+  arraySuperCategorias: SuperCategoriaResp[];
+  superCategoriaSeleccionada: number;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, private categoriaService: CategoriasService, public dialogRef: MatDialogRef<EditCategoriaComponent>) { }
 
@@ -33,5 +37,7 @@ export class EditCategoriaComponent implements OnInit {
       console.log(error);
     })
   }
+
+  
 
 }
