@@ -39,4 +39,8 @@ export class HeaderComponent {
     return this.sessionService.getNombre();
   }
 
+  miPerfil(){
+    this.router.navigate(['mi-perfil']);
+  }
+
 }

@@ -6,6 +6,7 @@ import { Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
 import { AdminCategoriasComponent } from './admin-categorias/admin-categorias.component';
 import { AdminUsuariosComponent } from './admin-usuarios/admin-usuarios.component';
+import { MiPerfilComponent } from './mi-perfil/mi-perfil.component';
 
 export const DashboardRoutes: Routes = [
   {path: 'dashboard',component: DashboardComponent},
@@ -13,7 +14,9 @@ export const DashboardRoutes: Routes = [
   {path: 'admin/categorias',component: AdminCategoriasComponent},
   {path: 'admin/usuarios',component: AdminUsuariosComponent},
   {path: 'admin/tipos',component: AdminTiposComponent},
-  {path: 'admin/supercategorias',component: AdminSupercategoriasComponent}
+  {path: 'admin/supercategorias',component: AdminSupercategoriasComponent},
+  {path: 'mi-perfil',component: MiPerfilComponent}
+
 
 
 
