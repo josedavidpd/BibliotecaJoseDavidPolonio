@@ -106,7 +106,7 @@ export class AdminRecursosComponent implements OnInit {
   openDialogDevolverRecurso(recurso: Recursos){
     const dialogDevolverRecurso = this.dialog.open(DevolverRecursoComponent, {
       width: '20%',
-      height: '30%',
+      height: '40%',
       data: {
         element: recurso
       }

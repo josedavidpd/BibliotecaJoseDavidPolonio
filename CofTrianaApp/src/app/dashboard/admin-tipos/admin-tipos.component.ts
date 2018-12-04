@@ -2,6 +2,10 @@ import { Type } from './../interfaces/type.interface';
 import { TiposService } from './../services/tipos.service';
 
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material';
+
+
+const ELEMENT_DATA: Type[] = [];
 
 @Component({
   selector: 'app-admin-tipos',
@@ -10,7 +14,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminTiposComponent implements OnInit {
 
-  dataSource: Type[];
 
   displayedColumns: string[] = [
     "Id",
@@ -25,10 +28,16 @@ export class AdminTiposComponent implements OnInit {
     this.getTipos();
   }
 
+  dataSource = new MatTableDataSource(ELEMENT_DATA);
+
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
 
   getTipos(){
     this.tipoService.getAllTipos().subscribe(tipos =>{
-      this.dataSource = tipos;
+      this.dataSource.data = tipos;
     }, error =>{
       console.log(error);
     })

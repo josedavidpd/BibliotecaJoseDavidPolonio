@@ -3,10 +3,12 @@ import { SuperCategoriaDto } from './../dto/add-supercategoria.dto';
 import { SuperCategoriaResp } from './../interfaces/supercategoria.interface';
 import { Component, OnInit } from '@angular/core';
 import { SupercategoriasService } from '../services/supercategorias.service';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatTableDataSource } from '@angular/material';
 import { Title } from '@angular/platform-browser';
 import { EditSupercategoriaComponent } from '../edit-supercategoria/edit-supercategoria.component';
 
+
+const ELEMENT_DATA: SuperCategoriaResp[] = [];
 @Component({
   selector: 'app-admin-supercategorias',
   templateUrl: './admin-supercategorias.component.html',
@@ -16,7 +18,6 @@ export class AdminSupercategoriasComponent implements OnInit {
 
   constructor(private superCategoriaService: SupercategoriasService, public dialog: MatDialog, private title: Title) { }
 
-  dataSource: SuperCategoriaResp[];
   displayedColumns: string[] = [
     "Id",
     "Nombre",
@@ -30,10 +31,16 @@ export class AdminSupercategoriasComponent implements OnInit {
     this.getAllSuperCategorias();
   }
 
+  dataSource = new MatTableDataSource(ELEMENT_DATA);
+
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
 
   getAllSuperCategorias(){
     this.superCategoriaService.getAllSuperCategorias().subscribe(superCategorias =>{
-      this.dataSource = superCategorias;
+      this.dataSource.data = superCategorias;
     }, error =>{
       console.log(error);
     })
