@@ -33,7 +33,7 @@ import { EditSupercategoriaComponent } from './edit-supercategoria/edit-supercat
 import { MiPerfilComponent } from './mi-perfil/mi-perfil.component';
 import { PrestarRecursoComponent } from './prestar-recurso/prestar-recurso.component';
 import { DevolverRecursoComponent } from './devolver-recurso/devolver-recurso.component';
-
+import { FilterPipeModule } from 'ngx-filter-pipe';
 @NgModule({
   imports: [
     CommonModule,
@@ -55,7 +55,8 @@ import { DevolverRecursoComponent } from './devolver-recurso/devolver-recurso.co
     NgxPaginationModule,
     MatSnackBarModule,
     MatPaginatorModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FilterPipeModule
   ],
   entryComponents:[
     AddRecursoComponent,

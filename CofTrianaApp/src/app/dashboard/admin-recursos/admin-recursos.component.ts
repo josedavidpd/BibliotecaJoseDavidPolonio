@@ -64,7 +64,7 @@ export class AdminRecursosComponent implements OnInit {
   getRecursos() {
     this.recursoService.getAllRecursos().subscribe(
       recursos => {
-        this.dataSource.data = recursos;
+        //this.dataSource.data = recursos;
       },
       error => {
         console.log(error);
