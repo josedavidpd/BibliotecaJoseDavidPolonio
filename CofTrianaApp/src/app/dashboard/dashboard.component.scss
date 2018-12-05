@@ -136,7 +136,7 @@
   width:100%;
 }
 .container{
-  height: 100vh;
+  height: 100%;
 }
 .container-pagination {
   display: flex;
@@ -176,9 +176,9 @@
   display: block;
 }
 
-.filter{
-  display: flex;
-  justify-content: end;
+.filterSearch{
+  margin-bottom: 20px;
+  margin-right: 10px;
 }
 
 .font{

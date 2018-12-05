@@ -13,11 +13,7 @@
   </div>
 
   <mat-form-field>
-    <mat-select
-      placeholder="Supercategoria"
-      formControlName="idSuperCategoria"
-      name="idSuperCategoria"
-    >
+    <mat-select placeholder="Supercategoria" formControlName="idSuperCategoria" name="idSuperCategoria">
       <mat-option *ngFor="let superCat of arraySuperCategorias" [value]="superCat.id">
         {{ superCat.name }}
       </mat-option>

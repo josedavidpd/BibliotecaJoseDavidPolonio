@@ -55,7 +55,7 @@ export class AdminCategoriasComponent implements OnInit {
   }
   openDialogAddCategoria(){
     const dialogAddCategoria = this.dialog.open(AddCategoriaComponent,{
-      height:'20%'
+      height:'30%'
     });
 
     dialogAddCategoria.afterClosed().subscribe(

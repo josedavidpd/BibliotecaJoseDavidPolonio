@@ -14,6 +14,7 @@ export class DashboardComponent {
   arrayRecursos: Recursos[];
   free: boolean;
   titleFilter: any = { title: '' };
+  p:any;
 
   constructor(private router: Router, private recursoService: RecursosService, private title: Title) { }
 

@@ -4,11 +4,15 @@
 
 
   <h2 style="text-align:center; margin-top: 20px">Recursos</h2>
-  <input class="filter" type="text" [(ngModel)]="titleFilter.title" placeholder="Filtrar">
+  
   <hr/>
+
+  <div fxLayoutAlign="end" class="filterSearch">
+    <input class="filter" type="text" [(ngModel)]="titleFilter.title" placeholder="Buscar por título...">
+  </div>
 <div fxLayout="row wrap">
   
-  <div fxFlex.gt-md="33.33%" fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="100" *ngFor="let recurso of arrayRecursos | filterBy: titleFilter | paginate: { itemsPerPage: 9, currentPage: p }">
+  <div fxFlex.gt-md="33.33%" fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="100" *ngFor="let recurso of arrayRecursos | filterBy: titleFilter | paginate: { itemsPerPage: 9, currentPage: p } ">
     <mat-card class="pa-0">
 
 
