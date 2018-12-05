@@ -33,6 +33,7 @@ export class SessionService {
     localStorage.setItem('email', loginResponse.email);
     localStorage.setItem('nombre', loginResponse.name);
     localStorage.setItem('role', loginResponse.role);
+    localStorage.setItem('phone', loginResponse.phone);
   }
 
   getToken(): string{
@@ -41,6 +42,12 @@ export class SessionService {
 
   getNombre(): string{
     return localStorage.getItem('nombre');
+  }
+  getEmail():string{
+    return localStorage.getItem('email');
+  }
+  getPhone(): string{
+    return localStorage.getItem('phone');
   }
 
 }

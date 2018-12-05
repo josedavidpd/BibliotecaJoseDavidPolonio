@@ -1,3 +1,4 @@
+import { Recursos } from './recursos.interface';
 export interface OneUsuario{
     id:number;
     name: string;
@@ -6,4 +7,5 @@ export interface OneUsuario{
     phone: string;
     notes: string;
     role: string;
+    recursos: Recursos[];
 }

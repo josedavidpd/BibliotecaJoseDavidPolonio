@@ -1,3 +1,255 @@
-<p>
-  mi-perfil works!
-</p>
+<div class="wrapper">
+  <div fxLayout="row wrap">
+    <div fxFlex.gt-sm="40" fxFlex="100">
+      <div>
+        <mat-card>
+          <mat-card-content style="width:100%;">
+            <div fxLayout="row" class="wrapperForm">
+              <div class="wrapperForm">
+                <h1 class="ma-0">Actualizar perfil</h1>
+                <hr />
+                <form [formGroup]="updatePerfil">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Nombre</mat-label>
+                    <input
+                      matInput
+                      type="text"
+                      placeholder="Nombre"
+                      name="name"
+                      formControlName="name"
+                    />
+                  </mat-form-field>
+                  <div
+                    *ngIf="
+                      updatePerfil.controls['name'].invalid &&
+                      (updatePerfil.controls['name'].dirty ||
+                        updatePerfil.controls['name'].touched)
+                    "
+                  >
+                    <div
+                      class="alert alert-danger"
+                      *ngIf="updatePerfil.controls['name'].errors.required"
+                    >
+                      <small
+                        ><i class="fas fa-exclamation-circle icon-error"></i
+                        >Nombre obligatorio</small
+                      >
+                    </div>
+                  </div>
+                  <mat-form-field appearance="outline">
+                    <mat-label>Correo electrónico</mat-label>
+                    <input
+                      matInput
+                      type="email"
+                      placeholder="Correo electrónico"
+                      formControlName="email"
+                      name="email"
+                    />
+                  </mat-form-field>
+
+                  <div
+                    *ngIf="
+                      updatePerfil.controls['email'].invalid &&
+                      (updatePerfil.controls['email'].dirty ||
+                        updatePerfil.controls['email'].touched)
+                    "
+                  >
+                    <div
+                      class="alert alert-danger"
+                      *ngIf="updatePerfil.controls['email'].errors.required"
+                    >
+                      <small
+                        ><i class="fas fa-exclamation-circle icon-error"></i
+                        >Email obligatorio</small
+                      >
+                    </div>
+                  </div>
+
+                  <mat-form-field appearance="outline">
+                    <mat-label>Correo electrónico</mat-label>
+                    <input
+                      matInput
+                      type="text"
+                      placeholder="Teléfono"
+                      formControlName="phone"
+                      name="phone"
+                    />
+                  </mat-form-field>
+
+                  <div
+                    *ngIf="
+                      updatePerfil.controls['phone'].invalid &&
+                      (updatePerfil.controls['phone'].dirty ||
+                        updatePerfil.controls['phone'].touched)
+                    "
+                  >
+                    <div
+                      class="alert alert-danger"
+                      *ngIf="updatePerfil.controls['phone'].errors.required"
+                    >
+                      <small
+                        ><i class="fas fa-exclamation-circle icon-error"></i
+                        >Teléfono obligatorio</small
+                      >
+                    </div>
+                  </div>
+                  <mat-form-field appearance="outline">
+                    <mat-label>Observaciones (Opcional)</mat-label>
+                    <textarea
+                      matInput
+                      type="text"
+                      placeholder="Observaciones"
+                      name="email"
+                      formControlName="notes"
+                      rows="5"
+                    ></textarea>
+                  </mat-form-field>
+                </form>
+              </div>
+            </div>
+          </mat-card-content>
+
+          <div fFlexFill>
+            <button
+              class="maxWidthBtn"
+              mat-raised-button
+              color="primary"
+              [disabled]="!updatePerfil.valid"
+              (click)="actualizarPerfil()"
+            >
+              Editar perfil
+            </button>
+          </div>
+        </mat-card>
+
+        <mat-card>
+          <mat-card-content style="width:100%;">
+            <div fxLayout="row" class="wrapperForm">
+              <div class="wrapperForm">
+                <h1 class="ma-0">Cambiar contraseña</h1>
+                <hr />
+                <form [formGroup]="updatePassword">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Contraseña actual</mat-label>
+                    <input
+                      matInput
+                      type="password"
+                      placeholder="Contraseña actual"
+                      name="password"
+                      formControlName="password"
+                    />
+                  </mat-form-field>
+                  <div
+                    *ngIf="
+                      updatePassword.controls['password'].invalid &&
+                      (updatePassword.controls['password'].dirty ||
+                        updatePassword.controls['password'].touched)
+                    "
+                  >
+                    <div
+                      class="alert alert-danger"
+                      *ngIf="
+                        updatePassword.controls['password'].errors.required
+                      "
+                    >
+                      <small
+                        ><i class="fas fa-exclamation-circle icon-error"></i
+                        >Contraseña actual obligatoria</small
+                      >
+                    </div>
+                  </div>
+                  <mat-form-field appearance="outline">
+                    <mat-label>Nueva contraseña</mat-label>
+                    <input
+                      matInput
+                      type="password"
+                      placeholder="Nueva contraseña"
+                      formControlName="newpassword"
+                      name="newPassword"
+                    />
+                  </mat-form-field>
+
+                  <div
+                    *ngIf="
+                      updatePassword.controls['newpassword'].invalid &&
+                      (updatePassword.controls['newpassword'].dirty ||
+                        updatePassword.controls['newpassword'].touched)
+                    "
+                  >
+                    <div
+                      class="alert alert-danger"
+                      *ngIf="
+                        updatePassword.controls['newpassword'].errors.required
+                      "
+                    >
+                      <small
+                        ><i class="fas fa-exclamation-circle icon-error"></i
+                        >Nueva contraseña obligatoria</small
+                      >
+                    </div>
+                  </div>
+                  <mat-form-field appearance="outline">
+                    <mat-label>Repita nueva contraseña</mat-label>
+                    <input
+                      matInput
+                      type="password"
+                      placeholder="Repita contraseña"
+                      name="repeatPassword"
+                      formControlName="repeatPassword"
+                    />
+                  </mat-form-field>
+
+                  <div
+                    *ngIf="
+                      updatePassword.controls['repeatPassword'].invalid &&
+                      (updatePassword.controls['repeatPassword'].dirty ||
+                        updatePassword.controls['repeatPassword'].touched)
+                    "
+                  >
+                    <div
+                      class="alert alert-danger"
+                      *ngIf="
+                        updatePassword.controls['repeatPassword'].errors
+                          .required
+                      "
+                    >
+                      <small
+                        ><i class="fas fa-exclamation-circle icon-error"></i
+                        >Contraseña obligatoria</small
+                      >
+                    </div>
+
+                    <div
+                      class="alert alert-danger"
+                      *ngIf="
+                        updatePassword.controls['newpassword'].value !==
+                        updatePassword.controls['repeatPassword'].value
+                      "
+                    >
+                      <small
+                        ><i class="fas fa-times icon-error"></i>Las contraseñas
+                        no coindicen</small
+                      >
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </mat-card-content>
+
+          <div fFlexFill>
+            <button
+              class="maxWidthBtn"
+              mat-raised-button
+              color="primary"
+              
+              (click)="actualizarPassword()"
+            >
+              Cambiar contraseña
+            </button>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

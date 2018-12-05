@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { MatIconModule, MatCardModule, MatButtonModule, MatListModule, MatProgressBarModule, MatMenuModule, MatTableModule, MatInputModule, MatSnackBar, MatSnackBarModule, MatPaginatorIntl } from '@angular/material';
+import { MatIconModule, MatCardModule, MatButtonModule, MatListModule, MatProgressBarModule, MatMenuModule, MatTableModule, MatInputModule, MatSnackBar, MatSnackBarModule, MatPaginatorIntl, MatGridListModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { DashboardComponent } from './dashboard.component';
@@ -34,6 +34,7 @@ import { MiPerfilComponent } from './mi-perfil/mi-perfil.component';
 import { PrestarRecursoComponent } from './prestar-recurso/prestar-recurso.component';
 import { DevolverRecursoComponent } from './devolver-recurso/devolver-recurso.component';
 import { FilterPipeModule } from 'ngx-filter-pipe';
+import {MatTabsModule} from '@angular/material/tabs';
 @NgModule({
   imports: [
     CommonModule,
@@ -56,7 +57,9 @@ import { FilterPipeModule } from 'ngx-filter-pipe';
     MatSnackBarModule,
     MatPaginatorModule,
     ReactiveFormsModule,
-    FilterPipeModule
+    FilterPipeModule,
+    MatTabsModule,
+    MatGridListModule
   ],
   entryComponents:[
     AddRecursoComponent,
@@ -73,7 +76,7 @@ import { FilterPipeModule } from 'ngx-filter-pipe';
     PrestarRecursoComponent,
     DevolverRecursoComponent
   ],
-  declarations: [ DashboardComponent, AdminRecursosComponent, AddRecursoComponent, EditRecursoComponent, DeleteRecursoComponent, AdminCategoriasComponent, AddCategoriaComponent, AdminUsuariosComponent, DeleteUsuarioComponent, EditUsuarioComponent, AdminTiposComponent, EditCategoriaComponent, AddUsuarioComponent, DeleteCategoriaComponent, AdminSupercategoriasComponent, AddSupercategoriaComponent, EditSupercategoriaComponent, MiPerfilComponent, PrestarRecursoComponent, DevolverRecursoComponent ]
+  declarations: [ DashboardComponent, AdminRecursosComponent, AddRecursoComponent, EditRecursoComponent, DeleteRecursoComponent, AdminCategoriasComponent, AddCategoriaComponent, AdminUsuariosComponent, DeleteUsuarioComponent, EditUsuarioComponent, AdminTiposComponent, EditCategoriaComponent, AddUsuarioComponent, DeleteCategoriaComponent, AdminSupercategoriasComponent, AddSupercategoriaComponent, EditSupercategoriaComponent, MiPerfilComponent, PrestarRecursoComponent, DevolverRecursoComponent]
 })
 
 export class DashboardModule {}

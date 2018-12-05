@@ -1,3 +1,6 @@
+import { UpdatePasswordDto } from './../dto/updatePassword.dto';
+import { UpdateProfileDto } from './../dto/updateProfile.dto';
+import { UpdateProfileResp } from './../interfaces/updatePerfil.interface';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
@@ -58,5 +61,13 @@ export class UsuariosService {
     
 
     return this.http.get<OneUsuario>(`${usuarioUrl}/${id}`,this.requestOptions);
+  }
+
+  updateProfile(updateUser: UpdateProfileDto){
+    return this.http.put<UpdateProfileResp>(`${usuarioUrl}/update/profile`,updateUser,this.requestOptions);
+  }
+
+  updatePassword(passwordUpdated: UpdatePasswordDto){
+    return this.http.put<UpdatePasswordDto>(`${usuarioUrl}/change/password`,passwordUpdated,this.requestOptions);
   }
 }
