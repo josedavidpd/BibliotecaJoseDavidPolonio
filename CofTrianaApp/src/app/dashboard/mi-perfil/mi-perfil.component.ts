@@ -49,13 +49,13 @@ export class MiPerfilComponent implements OnInit {
     this.usuarioService.updatePassword(updatedPassword).subscribe(updatedPassword =>{
       this.snackBar.open('Contraseña actualizada correctamente', 'x',{
         duration:3000,
-        verticalPosition: 'top';
+        verticalPosition: 'top'
       });
 
     }, error =>{
       this.snackBar.open('Error al actualizar la contraseña', 'x',{
         duration:3000,
-        verticalPosition: 'top';
+        verticalPosition: 'top'
       });
       console.log(error);
     })
@@ -75,7 +75,7 @@ export class MiPerfilComponent implements OnInit {
     }, error =>{
       this.snackBar.open('Error al actualizar el perfil', 'x',{
         duration:3000,
-        verticalPosition: 'top';
+        verticalPosition: 'top'
       });
       console.log(error);
     })
