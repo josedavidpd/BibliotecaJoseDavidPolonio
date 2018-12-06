@@ -17,8 +17,7 @@ export class AdminTiposComponent implements OnInit {
 
   displayedColumns: string[] = [
     "Id",
-    "Nombre",
-    "Acciones"
+    "Nombre"
   ];
 
 

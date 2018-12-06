@@ -165,7 +165,7 @@
                       type="password"
                       placeholder="Nueva contraseña"
                       formControlName="newpassword"
-                      name="newPassword"
+                      name="newpassword"
                     />
                   </mat-form-field>
 
@@ -199,25 +199,11 @@
                     />
                   </mat-form-field>
 
-                  <div
-                    *ngIf="
-                      updatePassword.controls['repeatPassword'].invalid &&
+                  <div *ngIf="updatePassword.controls['repeatPassword'].invalid &&
                       (updatePassword.controls['repeatPassword'].dirty ||
                         updatePassword.controls['repeatPassword'].touched)
                     "
                   >
-                    <div
-                      class="alert alert-danger"
-                      *ngIf="
-                        updatePassword.controls['repeatPassword'].errors
-                          .required
-                      "
-                    >
-                      <small
-                        ><i class="fas fa-exclamation-circle icon-error"></i
-                        >Contraseña obligatoria</small
-                      >
-                    </div>
 
                     <div
                       class="alert alert-danger"

@@ -33,36 +33,6 @@
 
 
   <mat-form-field class="example-full-width">
-    <input matInput type="password" placeholder="Contraseña"formControlName="password" name="password" />
-  </mat-form-field>
-
-  <div *ngIf="editUsuario.controls['password'].invalid && (editUsuario.controls['password'].dirty || editUsuario.controls['password'].touched)">
-      <div class="alert alert-danger" *ngIf="editUsuario.controls['password'].errors.required">
-        <small><i class="fas fa-exclamation-circle icon-error"></i>Contraseña obligatorio</small>
-      </div>
-  
-      <div class="alert alert-danger" *ngIf="editUsuario.controls['password'].errors.minlength">
-        <small><i class="fas fa-times icon-error"></i>Mínimo 4 caracteres</small>
-      </div>
-  
-  
-  </div>
-
-
-  <mat-form-field class="example-full-width">
-    <input matInput type="password" placeholder="Repite contraseña" formControlName="repeatPassword" name="repeatPassword" />
-  </mat-form-field>
-  <div *ngIf="editUsuario.controls['repeatPassword'].invalid && (editUsuario.controls['repeatPassword'].dirty || editUsuario.controls['repeatPassword'].touched)" class="alert alert-danger">
-      <div *ngIf="editUsuario.controls['password'].value !== editUsuario.controls['repeatPassword'].value">
-        <small><i class="fas fa-times icon-error"></i>Las contraseñas no coindicen</small>
-      </div>
-      
-    
-  
-    </div>
-
-
-  <mat-form-field class="example-full-width">
     <input
       matInput
       placeholder="Teléfono"

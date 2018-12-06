@@ -54,7 +54,7 @@ export class AddUsuarioComponent implements OnInit {
   }
 
   generarString(): string{
-    return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+    return Math.random().toString(36).substring(2, 6) + Math.random().toString(36).substring(2, 6);
   }
 
   generarPassword(){

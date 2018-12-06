@@ -135,6 +135,13 @@
   border: 2px solid;
   width:100%;
 }
+
+::placeholder { color: red; }
+
+mat-form-field{
+  margin-top: 10px;
+  width: 30%;
+}
 .container{
   height: 100%;
 }

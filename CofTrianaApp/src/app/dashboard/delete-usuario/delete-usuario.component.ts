@@ -9,11 +9,12 @@ import { UsuariosService } from '../services/usuarios.service';
 })
 export class DeleteUsuarioComponent implements OnInit {
 
+  
+
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private usuarioService: UsuariosService, public dialogRef: MatDialogRef<DeleteUsuarioComponent>) { }
   idUsuario = this.data.element.id;
   name = this.data.element.name;
   palabraBorrar: string;
-
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private usuarioService: UsuariosService, public dialogRef: MatDialogRef<DeleteUsuarioComponent>) { }
 
   ngOnInit() {
   }

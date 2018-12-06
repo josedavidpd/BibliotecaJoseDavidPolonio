@@ -26,8 +26,6 @@ export class EditUsuarioComponent implements OnInit {
       id: new FormControl(this.data.element.id),
       name: new FormControl(this.data.element.name, [Validators.required]),
       email: new FormControl(this.data.element.email, [Validators.email, Validators.required]),
-      password: this.password,
-      repeatPassword: new FormControl('',[Validators.required,CustomValidators.equalTo(this.password)]),
       phone: new FormControl(this.data.element.phone, [Validators.required]),
       notes: new FormControl(this.data.element.notes)
 

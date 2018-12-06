@@ -7,8 +7,10 @@
   
   <hr/>
 
-  <div fxLayoutAlign="end" class="filterSearch">
-    <input class="filter" type="text" [(ngModel)]="titleFilter.title" placeholder="Buscar por título...">
+  <div fxLayoutAlign="center" class="filterSearch">
+      <mat-form-field appearance="outline">
+    <input  matInput class="filter" type="text" [(ngModel)]="titleFilter.title" placeholder="Buscar por título...">
+    </mat-form-field>
   </div>
 <div fxLayout="row wrap">
   
@@ -26,7 +28,7 @@
           <div fxLayout="column">
             
             <div>
-              <a href="{{recurso.url}}"><h3 class="ma-0 capitalize font" title="{{recurso.title}}">{{(recurso.title.length>20)? (recurso.title | slice:0:20)+'..':(recurso.title)}}</h3></a>
+             <h3 class="ma-0 capitalize font" title="{{recurso.title}}">{{(recurso.title.length>20)? (recurso.title | slice:0:20)+'..':(recurso.title)}} <a href="{{recurso.url}}"><span><i class="far fa-eye"></i></span></a></h3>
               <p class="capitalize autor font">{{ recurso.autor }}</p>
             </div>
 
