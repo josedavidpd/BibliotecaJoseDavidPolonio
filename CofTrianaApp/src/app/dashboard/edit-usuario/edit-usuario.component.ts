@@ -1,10 +1,7 @@
-import { element } from 'protractor';
-import { CustomValidators } from 'ng2-validation';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { UsuariosService } from '../services/usuarios.service';
-import { EditAddUsuarioDto } from '../dto/edit-add-usuario.dto';
 import { EditUsuarioDto } from '../dto/edit-usuario.dto';
 
 @Component({
@@ -32,10 +29,8 @@ export class EditUsuarioComponent implements OnInit {
     })
   }
 
-  editarUsuario(){
-    
-    const usuarioEditado = <EditUsuarioDto>this.editUsuario.value;
-    
+  editarUsuario(){    
+    const usuarioEditado = <EditUsuarioDto>this.editUsuario.value;    
     this.usuarioService.editUsuario(this.id, usuarioEditado).subscribe(usuarioEditado =>{
       this.dialogRef.close();
     }, error =>{

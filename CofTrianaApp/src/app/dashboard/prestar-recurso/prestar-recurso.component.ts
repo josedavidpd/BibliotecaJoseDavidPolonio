@@ -5,7 +5,6 @@ import { UsuariosService } from '../services/usuarios.service';
 import { Usuario } from '../interfaces/usuario.interface';
 import { PrestarDto } from '../dto/prestarRecurso.dto';
 
-
 const ELEMENT_DATA: Usuario[] = [];
 
 @Component({

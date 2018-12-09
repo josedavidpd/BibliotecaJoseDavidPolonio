@@ -7,9 +7,7 @@ import { MAT_DIALOG_DATA, MatSnackBar, MatDialogRef } from '@angular/material';
   templateUrl: './delete-categoria.component.html',
   styleUrls: ['./delete-categoria.component.scss']
 })
-export class DeleteCategoriaComponent implements OnInit {
-
- 
+export class DeleteCategoriaComponent implements OnInit { 
 
   constructor(public snackBar: MatSnackBar,public dialogRef: MatDialogRef<DeleteCategoriaComponent>,@Inject(MAT_DIALOG_DATA) public data: any, private categoriaService: CategoriasService) { }
 
@@ -28,18 +26,13 @@ export class DeleteCategoriaComponent implements OnInit {
     })
   }
 
-
-
-
   validarDelete():boolean{
-
     let validar = true;
 
     if(this.palabraBorrar != 'ELIMINAR'){
       validar = false;
     }
     return validar;
-
   }
 
 }

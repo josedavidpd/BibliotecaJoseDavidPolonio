@@ -8,8 +8,6 @@ import { AddCategoriaDto } from "../dto/add-categoria.dto";
 
 const categoriaUrl = `${environment.apiUrl}/categoria`;
 
-
-
 @Injectable({
   providedIn: "root"
 })

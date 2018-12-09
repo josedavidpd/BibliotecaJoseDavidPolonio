@@ -33,7 +33,6 @@ export class AdminTiposComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-
   getTipos(){
     this.tipoService.getAllTipos().subscribe(tipos =>{
       this.dataSource.data = tipos;

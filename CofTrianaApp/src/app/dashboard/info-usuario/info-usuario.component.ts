@@ -25,7 +25,6 @@ export class InfoUsuarioComponent implements OnInit {
     this.getOneUsuario();
   }
 
-
   getOneUsuario(){
     this.usuarioService.getOneUsuario(this.data.element.id).subscribe(usuario =>{
       this.name = usuario.name;

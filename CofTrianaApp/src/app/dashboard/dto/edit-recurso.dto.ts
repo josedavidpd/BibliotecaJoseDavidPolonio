@@ -1,4 +1,4 @@
-export class EditRecurso{
+export class EditRecurso {
     id:number
     title: string;
     autor: string;

@@ -1,22 +1,18 @@
 <div fxLayout="column" fFlexFill>
 
-  <form [formGroup]="editCategoria" fxLayout="column"> 
-  
+  <form [formGroup]="editCategoria" fxLayout="column">  
 
   <mat-form-field class="example-full-width">
     <input matInput placeholder="Nombre categoria" formControlName="name" name="name" />
   </mat-form-field>
 
   <div *ngIf="editCategoria.controls['name'].invalid && (editCategoria.controls['name'].dirty || editCategoria.controls['name'].touched)">
-      <div class="alert alert-danger" *ngIf="editCategoria.controls['name'].errors.required">
-        <small><i class="fas fa-exclamation-circle icon-error"></i>Nombre de categoria obligatorio</small>
-      </div>
-  
-  
+    <div class="alert alert-danger" *ngIf="editCategoria.controls['name'].errors.required">
+      <small><i class="fas fa-exclamation-circle icon-error"></i>Nombre de categoria obligatorio</small>
+    </div>  
   </div>
 
 </form>
-
 
   <button mat-raised-button color="primary" [disabled]="!editCategoria.valid" (click)="editarCategoria()">
     Editar categoria

@@ -11,98 +11,37 @@
                 <form [formGroup]="updatePerfil">
                   <mat-form-field appearance="outline">
                     <mat-label>Nombre</mat-label>
-                    <input
-                      matInput
-                      type="text"
-                      placeholder="Nombre"
-                      name="name"
-                      formControlName="name"
-                    />
+                    <input matInput type="text" placeholder="Nombre" name="name" formControlName="name"/>
                   </mat-form-field>
-                  <div
-                    *ngIf="
-                      updatePerfil.controls['name'].invalid &&
-                      (updatePerfil.controls['name'].dirty ||
-                        updatePerfil.controls['name'].touched)
-                    "
-                  >
-                    <div
-                      class="alert alert-danger"
-                      *ngIf="updatePerfil.controls['name'].errors.required"
-                    >
-                      <small
-                        ><i class="fas fa-exclamation-circle icon-error"></i
-                        >Nombre obligatorio</small
-                      >
+                  <div *ngIf="updatePerfil.controls['name'].invalid && (updatePerfil.controls['name'].dirty || updatePerfil.controls['name'].touched)">
+                    <div class="alert alert-danger" *ngIf="updatePerfil.controls['name'].errors.required">
+                      <small><i class="fas fa-exclamation-circle icon-error"></i>Nombre obligatorio</small>
                     </div>
                   </div>
                   <mat-form-field appearance="outline">
                     <mat-label>Correo electrónico</mat-label>
-                    <input
-                      matInput
-                      type="email"
-                      placeholder="Correo electrónico"
-                      formControlName="email"
-                      name="email"
-                    />
+                    <input matInput type="email" placeholder="Correo electrónico" formControlName="email" name="email"/>
                   </mat-form-field>
 
-                  <div
-                    *ngIf="
-                      updatePerfil.controls['email'].invalid &&
-                      (updatePerfil.controls['email'].dirty ||
-                        updatePerfil.controls['email'].touched)
-                    "
-                  >
-                    <div
-                      class="alert alert-danger"
-                      *ngIf="updatePerfil.controls['email'].errors.required"
-                    >
-                      <small
-                        ><i class="fas fa-exclamation-circle icon-error"></i
-                        >Email obligatorio</small
-                      >
+                  <div *ngIf="updatePerfil.controls['email'].invalid && (updatePerfil.controls['email'].dirty || updatePerfil.controls['email'].touched)">
+                    <div class="alert alert-danger" *ngIf="updatePerfil.controls['email'].errors.required">
+                      <small><i class="fas fa-exclamation-circle icon-error"></i>Email obligatorio</small>
                     </div>
                   </div>
 
                   <mat-form-field appearance="outline">
                     <mat-label>Correo electrónico</mat-label>
-                    <input
-                      matInput
-                      type="text"
-                      placeholder="Teléfono"
-                      formControlName="phone"
-                      name="phone"
-                    />
+                    <input matInput type="text" placeholder="Teléfono" formControlName="phone" name="phone"/>
                   </mat-form-field>
 
-                  <div
-                    *ngIf="
-                      updatePerfil.controls['phone'].invalid &&
-                      (updatePerfil.controls['phone'].dirty ||
-                        updatePerfil.controls['phone'].touched)
-                    "
-                  >
-                    <div
-                      class="alert alert-danger"
-                      *ngIf="updatePerfil.controls['phone'].errors.required"
-                    >
-                      <small
-                        ><i class="fas fa-exclamation-circle icon-error"></i
-                        >Teléfono obligatorio</small
-                      >
+                  <div *ngIf="updatePerfil.controls['phone'].invalid && (updatePerfil.controls['phone'].dirty || updatePerfil.controls['phone'].touched)">
+                    <div class="alert alert-danger" *ngIf="updatePerfil.controls['phone'].errors.required">
+                      <small><i class="fas fa-exclamation-circle icon-error"></i>Teléfono obligatorio</small>
                     </div>
                   </div>
                   <mat-form-field appearance="outline">
                     <mat-label>Observaciones (Opcional)</mat-label>
-                    <textarea
-                      matInput
-                      type="text"
-                      placeholder="Observaciones"
-                      name="email"
-                      formControlName="notes"
-                      rows="5"
-                    ></textarea>
+                    <textarea matInput type="text" placeholder="Observaciones" name="email" formControlName="notes" rows="5"></textarea>
                   </mat-form-field>
                 </form>
               </div>
@@ -110,13 +49,7 @@
           </mat-card-content>
 
           <div fFlexFill>
-            <button
-              class="maxWidthBtn"
-              mat-raised-button
-              color="primary"
-              [disabled]="!updatePerfil.valid"
-              (click)="actualizarPerfil()"
-            >
+            <button class="maxWidthBtn" mat-raised-button color="primary" [disabled]="!updatePerfil.valid" (click)="actualizarPerfil()">
               Editar perfil
             </button>
           </div>

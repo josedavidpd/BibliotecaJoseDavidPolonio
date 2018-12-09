@@ -1,4 +1,4 @@
-export class AddRecursoDto{
+export class AddRecursoDto {
     title: string;
     autor: string;
     anyo: string;

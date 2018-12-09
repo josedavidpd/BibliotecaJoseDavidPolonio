@@ -1,6 +1,5 @@
 <div fxLayout="column" fxFlexFill>
-  <h3>Eliminar: <span id="name">'{{name}}'</span></h3>
-  
+  <h3>Eliminar: <span id="name">'{{name}}'</span></h3>  
   
   <mat-form-field>
     <input matInput type="text" [(ngModel)]="palabraBorrar"  placeholder="Escriba 'ELIMINAR'">
@@ -8,4 +7,4 @@
   
   <button mat-raised-button color="primary" [disabled]="!validarDelete()" (click)="borrarCategoria()">Eliminar categoria</button>
   
-  </div>
+</div>

@@ -1,66 +1,46 @@
 <div fxLayout="column" fFlexFill>
-  <form [formGroup]="editUsuario" fxLayout="column">
+    <form [formGroup]="editUsuario" fxLayout="column">
 
-
-
-  <mat-form-field class="example-full-width">
-        <input matInput placeholder="Nombre" formControlName="name" name="name" />
-  </mat-form-field>
-  <div *ngIf="editUsuario.controls['name'].invalid && (editUsuario.controls['name'].dirty || editUsuario.controls['name'].touched)">
+    <mat-form-field class="example-full-width">
+          <input matInput placeholder="Nombre" formControlName="name" name="name" />
+    </mat-form-field>
+    <div *ngIf="editUsuario.controls['name'].invalid && (editUsuario.controls['name'].dirty || editUsuario.controls['name'].touched)">
       <div class="alert alert-danger" *ngIf="editUsuario.controls['name'].errors.required">
         <small><i class="fas fa-exclamation-circle icon-error"></i>Nombre obligatorio</small>
-      </div>
-  
-  
+      </div>  
     </div>
 
+    <mat-form-field class="example-full-width">
+      <input matInput type="email" placeholder="Email" formControlName="email" name="email" />
+    </mat-form-field>
 
-  <mat-form-field class="example-full-width">
-    <input matInput type="email" placeholder="Email" formControlName="email" name="email" />
-  </mat-form-field>
-
-  <div *ngIf="editUsuario.controls['email'].invalid && (editUsuario.controls['email'].dirty || editUsuario.controls['email'].touched)">
+    <div *ngIf="editUsuario.controls['email'].invalid && (editUsuario.controls['email'].dirty || editUsuario.controls['email'].touched)">
       <div class="alert alert-danger" *ngIf="editUsuario.controls['email'].errors.required">
         <small><i class="fas fa-exclamation-circle icon-error"></i>Email obligatorio</small>
       </div>
-  
+    
       <div class="alert alert-danger" *ngIf="editUsuario.controls['email'].errors.email">
         <small><i class="fas fa-times icon-error"></i>Email incorrecto</small>
-      </div>
-  
-  
-  </div>
+      </div>  
+    </div>
 
 
-  <mat-form-field class="example-full-width">
-    <input
-      matInput
-      placeholder="Teléfono"
-      formControlName="phone"
-      name="phone"
-    />
-  </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Teléfono" formControlName="phone" name="phone"/>
+    </mat-form-field>
 
-  <div *ngIf="editUsuario.controls['phone'].invalid && (editUsuario.controls['phone'].dirty || editUsuario.controls['phone'].touched)">
+    <div *ngIf="editUsuario.controls['phone'].invalid && (editUsuario.controls['phone'].dirty || editUsuario.controls['phone'].touched)">
       <div class="alert alert-danger" *ngIf="editUsuario.controls['phone'].errors.required">
         <small><i class="fas fa-exclamation-circle icon-error"></i>Teléfono obligatorio</small>
-      </div>
-  
-  
-  </div>
+      </div>  
+    </div>
 
 
-  <mat-form-field class="example-full-width">
-    <textarea
-      matInput
-      placeholder="Observaciones (opcional)"
-      formControlName="notes"
-      name="notes"
-    ></textarea>
-  </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="Observaciones (opcional)" formControlName="notes" name="notes"></textarea>
+    </mat-form-field>
 
-
-</form>
+  </form>
 
   <button mat-raised-button [disabled]="!editUsuario.valid" color="primary" (click)="editarUsuario()">
     Editar usuario

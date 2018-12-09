@@ -12,10 +12,8 @@ import { EditAddUsuarioDto } from '../dto/edit-add-usuario.dto';
 })
 export class AddUsuarioComponent implements OnInit {
   
-  hide = true;
-  
+  hide = true;  
   createUser: FormGroup;
-
   passwordControl = new FormControl('', [Validators.required, Validators.minLength(4)]);
 
   constructor(public dialogRef: MatDialogRef<AddUsuarioComponent>,private usuarioService: UsuariosService) { }
@@ -48,7 +46,6 @@ export class AddUsuarioComponent implements OnInit {
       validado = true;
     }else{
       validado = false;
-
     }
     return validado;
   }

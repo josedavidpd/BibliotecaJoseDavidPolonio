@@ -10,6 +10,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 })
 export class DevolverRecursoComponent implements OnInit {
   palabraDevolver: string;
+  
   constructor(public dialogRef: MatDialogRef<DevolverRecursoComponent>,@Inject(MAT_DIALOG_DATA) public data: any, private recursoService: RecursosService) { }
 
 
@@ -26,17 +27,13 @@ export class DevolverRecursoComponent implements OnInit {
     })
   }
 
-
-
-  validarDevolver():boolean{
-
+  validarDevolver():boolean {
     let validar = true;
 
     if(this.palabraDevolver != 'DEVOLVER'){
       validar = false;
     }
     return validar;
-
   }
 
 }

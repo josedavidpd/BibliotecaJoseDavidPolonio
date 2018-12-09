@@ -16,8 +16,4 @@ export const DashboardRoutes: Routes = [
   {path: 'admin-tipos',component: AdminTiposComponent},
   {path: 'admin-supercategorias',component: AdminSupercategoriasComponent},
   {path: 'mi-perfil',component: MiPerfilComponent}
-
-
-
-
 ];

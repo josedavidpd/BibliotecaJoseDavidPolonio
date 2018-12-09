@@ -3,7 +3,6 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatIconModule, MatCardModule, MatButtonModule, MatListModule, MatProgressBarModule, MatMenuModule, MatTableModule, MatInputModule, MatSnackBar, MatSnackBarModule, MatPaginatorIntl, MatGridListModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
-
 import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutes } from './dashboard.routing';
 import { AdminRecursosComponent } from './admin-recursos/admin-recursos.component';
@@ -18,7 +17,6 @@ import { EditRecursoComponent } from './edit-recurso/edit-recurso.component';
 import { DeleteRecursoComponent } from './delete-recurso/delete-recurso.component';
 import { AdminCategoriasComponent } from './admin-categorias/admin-categorias.component';
 import { AddCategoriaComponent } from './add-categoria/add-categoria.component';
-
 import { MatPaginatorModule } from '@angular/material';
 import { AdminUsuariosComponent } from './admin-usuarios/admin-usuarios.component';
 import { DeleteUsuarioComponent } from './delete-usuario/delete-usuario.component';
@@ -36,6 +34,8 @@ import { DevolverRecursoComponent } from './devolver-recurso/devolver-recurso.co
 import { FilterPipeModule } from 'ngx-filter-pipe';
 import {MatTabsModule} from '@angular/material/tabs';
 import { InfoUsuarioComponent } from './info-usuario/info-usuario.component';
+
+
 @NgModule({
   imports: [
     CommonModule,

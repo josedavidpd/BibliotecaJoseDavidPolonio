@@ -17,6 +17,7 @@ export class AdminCategoriasComponent implements OnInit {
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
+  dataSource = new MatTableDataSource(ELEMENT_DATA);
 
   displayedColumns: string[] = [
     "Id",
@@ -27,13 +28,12 @@ export class AdminCategoriasComponent implements OnInit {
 
 
 
-  constructor(private dialog: MatDialog,private categoriaService: CategoriasService) { }
+  constructor(private dialog: MatDialog, private categoriaService: CategoriasService) { }
 
   ngOnInit() {
     this.getAllCategorias();
-  }
+  }  
 
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
@@ -41,8 +41,6 @@ export class AdminCategoriasComponent implements OnInit {
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-
-
 
 
   getAllCategorias(){

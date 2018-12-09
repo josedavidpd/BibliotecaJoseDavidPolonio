@@ -1,148 +1,17 @@
-/*.container {
-  width: 100vw;
-  height: 100vh;
-}
-
-.example-card {
-  max-width: 200px;
-  margin-left: 30px;
-  margin-top: 20px;
-}
-
-.example-header-image {
-  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
-  background-size: cover;
-}
-
-.card-wrapper {
-  display: flex;
-  align-content: center;
-  flex-wrap: wrap;
-  margin-top: 40px;
-  margin-left:60px;
-
-}
-
-.card-content {
-  margin-left: 10px;
+.image {
+  border: 2px solid;
   width: 100%;
 }
 
-.image{
-  width: 80%;
+::placeholder {
+  color: red;
 }
 
-
-.cards{
-  border: solid 3px;
-  box-shadow: 5px 10px #888888;
-
-}
-
-#cardw{
-  width: 24%;
-  height: 200px; 
-}
-
-#tituloLibro {
-  text-transform: capitalize;
-}
-#autor {
-  font-size: 14px;
-  text-transform: capitalize;
-  font-weight: bold;
-}
-
-#categoria {
-  font-size: 14px;
-  color: #a3c2c2;
-  text-transform: capitalize;
-  
-}
-
-#fechaPublicacion {
-  font-size: 14px;
-  font-weight: bold;
-}
-
-#disponible {
-  width: 120px;
-  background-color: #00e64d;
-  color: white;
-  border: solid 2px;
-  text-align: center;
-  font-size: 17px;
-
-}
-#prestado {
-  width: 120px;
-  background-color: #ff3333;
-  color: white;
-  border: solid 2px;
-  text-align: center;
-  font-size: 17px;
-
-}
-
-#titlePage {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.container-pagination {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-}
-
-.pagination /deep/ .ngx-pagination .current {
-  background: red;
-}
-
-@media(min-width:1800px){
-  .card {
-    display: flex;
-    width: 25%;
-    height: 35%;
-    justify-content: flex-start;
-    align-content: flex-start;
-    border: solid 3px;
-    margin-left: 50px;
-    margin-top: 40px;
-    box-shadow: 5px 10px #888888;
-  }
-
-  #cardw{
-    width: 25%;
-    height: 200px; 
-  }
-
-  .card-wrapper {
-    display: flex;
-    align-content: center;
-    
-    margin-top: 40px;
-    margin-left:150px;
-  
-  }
-
-  .image{
-    border: 2px solid;
-    width:86.5%;
-  }
-}*/
-.image{
-  border: 2px solid;
-  width:100%;
-}
-
-::placeholder { color: red; }
-
-mat-form-field{
+mat-form-field {
   margin-top: 10px;
   width: 30%;
 }
-.container{
+.container {
   height: 100%;
 }
 .container-pagination {
@@ -151,20 +20,20 @@ mat-form-field{
   margin-top: 40px;
 }
 
-.capitalize{
+.capitalize {
   text-transform: capitalize;
 }
 
-.autor{
+.autor {
   font-size: 14px;
 }
 
-.disponible{
-  background-color:  #58d68d;
+.disponible {
+  background-color: #58d68d;
   padding: 3px;
   color: green;
 }
-.prestamo{
+.prestamo {
   background-color: #cd6155;
   padding: 3px;
   color: red;
@@ -183,13 +52,13 @@ mat-form-field{
   display: block;
 }
 
-.filterSearch{
+.filterSearch {
   margin-bottom: 20px;
   margin-right: 10px;
 }
 
-.font{
-  font-family: 'Ubuntu', 'Roboto', sans-serif;
+.font {
+  font-family: "Ubuntu", "Roboto", sans-serif;
 }
 :host {
   .mat-sidenav {
@@ -207,7 +76,7 @@ mat-form-field{
   @media (min-width: 959px) {
     .mat-drawer-side {
       background-color: transparent;
-      box-shadow: none!important;
+      box-shadow: none !important;
     }
   }
   .mat-slider-horizontal {

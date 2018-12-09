@@ -1,5 +1,4 @@
 import { PrestarDto } from './../dto/prestarRecurso.dto';
-
 import { AddRecursoDto } from './../dto/add-recurso.dto';
 import { Recursos } from './../interfaces/recursos.interface';
 import { SessionService } from './../../session/services/session.service';
@@ -10,7 +9,6 @@ import { AddRecurso } from '../interfaces/add-recurso.interface';
 import { EditRecurso } from '../dto/edit-recurso.dto';
 import { PrestarDevolverRecursoResp } from '../interfaces/prestar-recurso.interface';
 import { DevolverRecursoDto } from '../dto/devolver-recurso.dto';
-
 
 const recursoUrl = `${environment.apiUrl}/recurso`;
 
@@ -29,36 +27,23 @@ export class RecursosService {
     })
   };
 
-
-
-  getAllRecursos(){
-    
+  getAllRecursos(){  
 
       return this.http.get<Recursos[]>(`${recursoUrl}/all`,this.requestOptions);
-    
-
   }
 
-  deleteRecurso(id:number){
-
-    
+  deleteRecurso(id:number){   
 
     return this.http.delete(`${recursoUrl}/${id}`,this.requestOptions);
-
   }
 
-
-  addRecurso(nuevoRecursoDto: AddRecursoDto){
-
-    
+  addRecurso(nuevoRecursoDto: AddRecursoDto){   
 
     return this.http.post<AddRecurso>(`${recursoUrl}/create`,nuevoRecursoDto, this.requestOptions);
-
   }
 
 
-  editarRecurso(id:number, recursoEditado: EditRecurso){
-    
+  editarRecurso(id:number, recursoEditado: EditRecurso){   
 
     return this.http.put<EditRecurso>(`${recursoUrl}/edit/${id}`,recursoEditado,this.requestOptions);
   }

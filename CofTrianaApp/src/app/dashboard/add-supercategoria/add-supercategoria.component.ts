@@ -12,10 +12,11 @@ import { SuperCategoriaDto } from '../dto/add-supercategoria.dto';
 export class AddSupercategoriaComponent implements OnInit {
 
   createSuperCategoria: FormGroup;
+
+  
   constructor(public dialogRef: MatDialogRef<AddSupercategoriaComponent>, private superCategoriaService: SupercategoriasService) { }
 
   ngOnInit() {
-
     this.createSuperCategoria = new FormGroup({
       name: new FormControl('', [Validators.required])
     })
@@ -24,7 +25,6 @@ export class AddSupercategoriaComponent implements OnInit {
 
   addSuperCategoria(){
     const addSuperCat = <SuperCategoriaDto>this.createSuperCategoria.value;
-
     this.superCategoriaService.createSupercategoria(addSuperCat).subscribe(superCategoria =>{
       this.dialogRef.close();
     }, error =>{

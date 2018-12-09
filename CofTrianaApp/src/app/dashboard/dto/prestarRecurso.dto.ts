@@ -1,4 +1,4 @@
-export class PrestarDto{
+export class PrestarDto {
     userId: number;
 
     constructor(userId:number){

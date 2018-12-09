@@ -1,59 +1,49 @@
 <div class="font container">
-<img class="image" src="../../assets/images/imageHome.jpg">
-
-
+  <img class="image" src="../../assets/images/imageHome.jpg">
 
   <h2 style="text-align:center; margin-top: 20px">Recursos</h2>
-  
+    
   <hr/>
 
   <div fxLayoutAlign="center" class="filterSearch">
-      <mat-form-field appearance="outline">
-    <input  matInput class="filter" type="text" [(ngModel)]="titleFilter.title" placeholder="Buscar por título...">
+    <mat-form-field appearance="outline">
+      <input  matInput class="filter" type="text" [(ngModel)]="titleFilter.title" placeholder="Buscar por título...">
     </mat-form-field>
   </div>
-<div fxLayout="row wrap">
-  
-  <div fxFlex.gt-md="33.33%" fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="100" *ngFor="let recurso of arrayRecursos | filterBy: titleFilter | paginate: { itemsPerPage: 9, currentPage: p } ">
-    <mat-card class="pa-0">
+
+  <div fxLayout="row wrap">    
+    <div fxFlex.gt-md="33.33%" fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="100" *ngFor="let recurso of arrayRecursos | filterBy: titleFilter | paginate: { itemsPerPage: 9, currentPage: p } ">
+      <mat-card class="pa-0">
 
 
-      <div fxLayout="row">
-        <div class="media-grid compact bg-cover" style="background-image: url('https://http2.mlstatic.com/secreto-de-la-mente-millonaria-libro-pdf-gratis-D_NQ_NP_858052-MPA26462455618_112017-F.jpg')"  fxFlex="40">
-          <figure>
-            <a href="{{recurso.url}}"><div class="product-badge font"><span>{{recurso.type.name}}</span></div></a>
-          </figure>
-        </div>
-        <div class="pa-1" fxFlex>
-          <div fxLayout="column">
-            
-            <div>
-             <h3 class="ma-0 capitalize font" title="{{recurso.title}}">{{(recurso.title.length>20)? (recurso.title | slice:0:20)+'..':(recurso.title)}} <a href="{{recurso.url}}"><span><i class="far fa-eye"></i></span></a></h3>
-              <p class="capitalize autor font">{{ recurso.autor }}</p>
-            </div>
+        <div fxLayout="row">
+          <div class="media-grid compact bg-cover" style="background-image: url('https://http2.mlstatic.com/secreto-de-la-mente-millonaria-libro-pdf-gratis-D_NQ_NP_858052-MPA26462455618_112017-F.jpg')"  fxFlex="40">
+            <figure>
+              <a href="{{recurso.url}}"><div class="product-badge font"><span>{{recurso.type.name}}</span></div></a>
+            </figure>
+          </div>
+          <div class="pa-1" fxFlex>
+            <div fxLayout="column">
+              
+              <div>
+              <h3 class="ma-0 capitalize font" title="{{recurso.title}}">{{(recurso.title.length>20)? (recurso.title | slice:0:20)+'..':(recurso.title)}} <a href="{{recurso.url}}"><span><i class="far fa-eye"></i></span></a></h3>
+                <p class="capitalize autor font">{{ recurso.autor }}</p>
+              </div>
 
-            <div class="mat-text-primary text-xl">
-              <span class="disponible font" *ngIf="recurso.free == true">{{ recurso.free ? 'Disponible' : 'En préstamo' }}</span>
-              <span class="prestamo font" *ngIf="recurso.free == false">{{ recurso.free ? 'Disponible' : 'En préstamo' }}</span>
+              <div class="mat-text-primary text-xl">
+                <span class="disponible font" *ngIf="recurso.free == true">{{ recurso.free ? 'Disponible' : 'En préstamo' }}</span>
+                <span class="prestamo font" *ngIf="recurso.free == false">{{ recurso.free ? 'Disponible' : 'En préstamo' }}</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </mat-card>
+      </mat-card>
+    </div>    
   </div>
 
-
-  
-</div>
-<div class="container-pagination">
-  <pagination-controls
-    class="pagination"
-    (pageChange)="p = $event"
-    previousLabel="Anterior"
-    nextLabel="Siguiente"
-    responsive="true"
-  ></pagination-controls>
-</div>
+  <div class="container-pagination">
+    <pagination-controls class="pagination" (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Siguiente" responsive="true"></pagination-controls>
+  </div>
 
 </div>
 

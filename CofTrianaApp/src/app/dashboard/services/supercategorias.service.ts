@@ -6,7 +6,6 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { SuperCategoriaDto } from '../dto/add-supercategoria.dto';
 
-
 const urlSuperCat = `${environment.apiUrl}/supercategoria`;
 
 @Injectable({
@@ -24,8 +23,6 @@ export class SupercategoriasService {
     })
   };
 
-
-
   getAllSuperCategorias(): Observable<SuperCategoriaResp[]>{
     return this.http.get<SuperCategoriaResp[]>(`${urlSuperCat}/all`, this.requestOptions);
   }
@@ -34,7 +31,6 @@ export class SupercategoriasService {
   createSupercategoria(nuevaSuperCategoria: SuperCategoriaDto){
 
     return this.http.post<SuperCategoriaResp>(`${urlSuperCat}/create`, nuevaSuperCategoria ,this.requestOptions);
-
   }
 
 

@@ -1,62 +1,57 @@
-*{
-    color:#43425D;
-    text-align: center;
-    
+* {
+  color: #43425d;
+  text-align: center;
 }
 ::ng-deep {
-    .mat-form-field-appearance-outline .mat-form-field-outline {
-       color: black;
-    }
- }
-
-.alert{
-    color: red;
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: black;
+  }
 }
 
-.icon-error{
-    margin-right: 5px;
+.alert {
+  color: red;
 }
 
-#image{
-    width: 100%;
-    height: 100%;
-}
-.container{
-    display: flex;
-    align-content: flex-start;
-    width: 100%;
+.icon-error {
+  margin-right: 5px;
 }
 
-h1{
-    margin-bottom: 50px;
+#image {
+  width: 100%;
+  height: 100%;
 }
-.logo{
-    width: 60px;
-}
-
-a{
-    text-align: left;
-    text-decoration: none;
-    margin-top: 40px;
+.container {
+  display: flex;
+  align-content: flex-start;
+  width: 100%;
 }
 
-
-.container-form{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-   
+h1 {
+  margin-bottom: 50px;
+}
+.logo {
+  width: 60px;
 }
 
-.container-img{
-    display: flex;
-    width: 100%;
-    
+a {
+  text-align: left;
+  text-decoration: none;
+  margin-top: 40px;
 }
-  
+
+.container-form {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container-img {
+  display: flex;
+  width: 100%;
+}
+
 .example-container > * {
-    width: 80%;
+  width: 80%;
 }

@@ -1,86 +1,58 @@
 <div fxLayout="column" fFlexFill>
 
   <form [formGroup]="createRecurso" fxLayout="column">
-
-
+    
   <mat-form-field class="example-full-width">
     <input matInput placeholder="Título" formControlName="title" name="title" />
   </mat-form-field>
 
   <div *ngIf="createRecurso.controls['title'].invalid && (createRecurso.controls['title'].dirty || createRecurso.controls['title'].touched)">
-      <div class="alert alert-danger" *ngIf="createRecurso.controls['title'].errors.required">
+    <div class="alert alert-danger" *ngIf="createRecurso.controls['title'].errors.required">
         <small><i class="fas fa-exclamation-circle icon-error"></i>Título obligatorio</small>
-      </div>
-  
-  
-    </div>
+    </div>  
+  </div>
   <mat-form-field class="example-full-width">
     <input matInput placeholder="Autor" formControlName="autor" name="autor" />
   </mat-form-field>
 
   <div *ngIf="createRecurso.controls['autor'].invalid && (createRecurso.controls['autor'].dirty || createRecurso.controls['autor'].touched)">
-      <div class="alert alert-danger" *ngIf="createRecurso.controls['autor'].errors.required">
+    <div class="alert alert-danger" *ngIf="createRecurso.controls['autor'].errors.required">
         <small><i class="fas fa-exclamation-circle icon-error"></i>Autor obligatorio</small>
-      </div>
-  
+    </div> 
   </div>
 
 
   <mat-form-field class="example-full-width">
-    <input
-      matInput
-      placeholder="Año de publicación"
-      formControlName="anyo"
-      name="anyo"
-    />
+    <input matInput placeholder="Año de publicación" formControlName="anyo" name="anyo"/>
   </mat-form-field>
   <div *ngIf="createRecurso.controls['anyo'].invalid && (createRecurso.controls['anyo'].dirty || createRecurso.controls['anyo'].touched)">
-      <div class="alert alert-danger" *ngIf="createRecurso.controls['anyo'].errors.required">
+    <div class="alert alert-danger" *ngIf="createRecurso.controls['anyo'].errors.required">
         <small><i class="fas fa-exclamation-circle icon-error"></i>Año de publicación obligatorio</small>
-      </div>
-  
-  
+    </div>  
   </div>
 
   <mat-form-field class="example-full-width">
-    <input
-      matInput
-      placeholder="Url recurso"
-      formControlName="url"
-      name="url"
-    />
+    <input matInput placeholder="Url recurso" formControlName="url" name="url"/>
   </mat-form-field>
 
   <div *ngIf="createRecurso.controls['url'].invalid && (createRecurso.controls['url'].dirty || createRecurso.controls['url'].touched)">
     <div class="alert alert-danger" *ngIf="createRecurso.controls['url'].errors.required">
       <small><i class="fas fa-exclamation-circle icon-error"></i>Url de recurso obligatoria</small>
     </div>
+  </div>
 
-
-</div>
   <mat-form-field class="example-full-width">
-    <textarea
-      matInput
-      placeholder="Descripción"
-      formControlName="content"
-      name="content"
-    ></textarea>
+    <textarea matInput placeholder="Descripción" formControlName="content" name="content"></textarea>
   </mat-form-field>
 
   <div *ngIf="createRecurso.controls['content'].invalid && (createRecurso.controls['content'].dirty || createRecurso.controls['content'].touched)">
-      <div class="alert alert-danger" *ngIf="createRecurso.controls['content'].errors.required">
+    <div class="alert alert-danger" *ngIf="createRecurso.controls['content'].errors.required">
         <small><i class="fas fa-exclamation-circle icon-error"></i>Descripción obligatoria</small>
-      </div>
-  
-  
-    </div>
+    </div>  
+  </div>
 
   <mat-form-field>
-    <mat-select
-      placeholder="Tipo"
-      formControlName="typeId"
-      name="typeId"
-    >
+    <mat-select placeholder="Tipo" formControlName="typeId" name="typeId">
       <mat-option *ngFor="let tipo of arrayTipos" [value]="tipo.id">
         {{ tipo.name }}
       </mat-option>
@@ -88,24 +60,13 @@
   </mat-form-field>
 
 
-
-   <!--
-<mat-option *ngFor="let categoria of arrayCategorias" [value]="categoria.id">
-        {{ categoria.name }}
-      </mat-option>
-
-    -->
-  <mat-form-field>
-
-   
-    <mat-select placeholder="Categoria" formControlName="categoryId" name="categoryId">
-      
-        
-        <mat-optgroup *ngFor="let superCat of arraySuperCategorias" [label]="superCat.name" [disabled]="superCat.disabled">
-          <mat-option *ngFor="let categoria of superCat.categories" [value]="categoria.id">
+  <mat-form-field>   
+    <mat-select placeholder="Categoria" formControlName="categoryId" name="categoryId">        
+      <mat-optgroup *ngFor="let superCat of arraySuperCategorias" [label]="superCat.name" [disabled]="superCat.disabled">
+        <mat-option *ngFor="let categoria of superCat.categories" [value]="categoria.id">
             {{categoria.name}}
-          </mat-option>
-        </mat-optgroup>
+        </mat-option>
+      </mat-optgroup>
     </mat-select>
   </mat-form-field>
 

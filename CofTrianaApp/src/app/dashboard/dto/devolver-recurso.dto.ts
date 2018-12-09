@@ -1,4 +1,4 @@
-export class DevolverRecursoDto{
+export class DevolverRecursoDto {
   id: number;
   title: string;
   autor: string;

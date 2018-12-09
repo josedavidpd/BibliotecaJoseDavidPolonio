@@ -7,9 +7,7 @@ import { UsuariosService } from '../services/usuarios.service';
   templateUrl: './delete-usuario.component.html',
   styleUrls: ['./delete-usuario.component.scss']
 })
-export class DeleteUsuarioComponent implements OnInit {
-
-  
+export class DeleteUsuarioComponent implements OnInit {  
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, private usuarioService: UsuariosService, public dialogRef: MatDialogRef<DeleteUsuarioComponent>) { }
   idUsuario = this.data.element.id;
@@ -27,15 +25,13 @@ export class DeleteUsuarioComponent implements OnInit {
     })
   }
 
-  validarDelete():boolean{
-
+  validarDelete():boolean {
     let validar = true;
 
     if(this.palabraBorrar != 'ELIMINAR'){
       validar = false;
     }
     return validar;
-
   }
 
 }

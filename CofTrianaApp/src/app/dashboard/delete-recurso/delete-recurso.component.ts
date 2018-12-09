@@ -34,14 +34,12 @@ export class DeleteRecursoComponent implements OnInit {
   }
 
   validarDelete():boolean{
-
     let validar = true;
 
     if(this.palabraBorrar != 'ELIMINAR'){
       validar = false;
     }
     return validar;
-
   }
 
 

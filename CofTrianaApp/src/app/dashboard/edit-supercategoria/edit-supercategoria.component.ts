@@ -10,10 +10,10 @@ import { SuperCategoriaDto } from '../dto/add-supercategoria.dto';
   styleUrls: ['./edit-supercategoria.component.scss']
 })
 export class EditSupercategoriaComponent implements OnInit {
-
   
   editSuperCategoria: FormGroup;
-  id: number;  
+  id: number;
+
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, private superCategoriaService: SupercategoriasService, public dialogRef: MatDialogRef<EditSupercategoriaComponent>) { }
 
   ngOnInit() {
@@ -23,15 +23,12 @@ export class EditSupercategoriaComponent implements OnInit {
   this.editSuperCategoria = new FormGroup({
     id: new FormControl(this.data.element.id),
     name: new FormControl(this.data.element.name, [Validators.required])
-
-
-  })
+    })
   }
 
 
   editarSuperCategoria(){
     const editSuperCat = <SuperCategoriaDto>this.editSuperCategoria.value;
-
     this.superCategoriaService.editSuperCategoria(this.id, editSuperCat).subscribe(editSuperCat =>{
       this.dialogRef.close();
     }, error =>{

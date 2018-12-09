@@ -1,4 +1,4 @@
-export class EditAddUsuarioDto{
+export class EditAddUsuarioDto {
     name: string;
     email: string;
     password: string;

@@ -1,5 +1,4 @@
 import { SupercategoriasService } from './../services/supercategorias.service';
-import { element } from 'protractor';
 import { CategoriasService } from './../services/categorias.service';
 import { Component, OnInit, Inject} from '@angular/core';
 import { RecursosService } from '../services/recursos.service';

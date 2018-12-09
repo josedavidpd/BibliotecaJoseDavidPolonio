@@ -4,7 +4,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
-
 const tipoUrl= `${environment.apiUrl}/tipo`;
 
 @Injectable({
@@ -25,8 +24,7 @@ export class TiposService {
 
   getAllTipos(){    
 
-    return this.http.get<Type[]>(`${tipoUrl}/all`,this.requestOptions);
-    
+    return this.http.get<Type[]>(`${tipoUrl}/all`,this.requestOptions);    
   }
 
 

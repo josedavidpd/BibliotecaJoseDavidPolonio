@@ -1,4 +1,4 @@
-export class EditCategoriaDto{
+export class EditCategoriaDto {
     id:number;
     name: string;
 

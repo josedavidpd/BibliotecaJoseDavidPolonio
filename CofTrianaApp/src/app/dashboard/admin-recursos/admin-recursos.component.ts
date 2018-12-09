@@ -51,9 +51,7 @@ export class AdminRecursosComponent implements OnInit {
     "¿Disponible?",
     "Acciones",
     "Prestar/Devolver"
-  ];
-
-  
+  ]; 
   
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 

@@ -7,11 +7,7 @@ import { EditUsuarioComponent } from '../edit-usuario/edit-usuario.component';
 import { AddUsuarioComponent } from '../add-usuario/add-usuario.component';
 import { InfoUsuarioComponent } from '../info-usuario/info-usuario.component';
 
-
 const ELEMENT_DATA: Usuario[] = [];
-
-
-
 
 @Component({
   selector: 'app-admin-usuarios',
@@ -33,7 +29,6 @@ export class AdminUsuariosComponent implements OnInit {
     "Acciones"
   ];
 
-
   constructor(private usuarioService: UsuariosService,public dialog: MatDialog) { }
 
   ngOnInit() {
@@ -49,7 +44,6 @@ export class AdminUsuariosComponent implements OnInit {
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-
 
   getUsuarios(){
     this.usuarioService.getAllUsuarios().subscribe(usuarios =>{
@@ -102,7 +96,6 @@ export class AdminUsuariosComponent implements OnInit {
       console.log(error);
     })
   }
-
 
   openDialogEditUsuario(usuario: Usuario){
     this.usuarioService.getOneUsuario(usuario.id).subscribe(OneUsuario =>{

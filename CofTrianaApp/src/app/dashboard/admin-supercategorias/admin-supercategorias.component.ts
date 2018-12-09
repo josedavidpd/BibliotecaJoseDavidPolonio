@@ -9,6 +9,7 @@ import { EditSupercategoriaComponent } from '../edit-supercategoria/edit-superca
 
 
 const ELEMENT_DATA: SuperCategoriaResp[] = [];
+
 @Component({
   selector: 'app-admin-supercategorias',
   templateUrl: './admin-supercategorias.component.html',
@@ -45,7 +46,6 @@ export class AdminSupercategoriasComponent implements OnInit {
       console.log(error);
     })
   }
-
 
   openDialogNewSuperCat(){
     const dialogNuevaSuperCat = this.dialog.open(AddSupercategoriaComponent);

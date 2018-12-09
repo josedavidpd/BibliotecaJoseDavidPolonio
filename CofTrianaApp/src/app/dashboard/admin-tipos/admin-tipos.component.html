@@ -1,7 +1,7 @@
 <div class="container">
-    <mat-form-field>
-        <input matInput (keyup)="applyFilter($event.target.value)" class="filter" placeholder="Filtrar búsqueda">
-      </mat-form-field>
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" class="filter" placeholder="Filtrar búsqueda">
+  </mat-form-field>
   <table mat-table [dataSource]="dataSource" class="font mat-elevation-z8">
     <ng-container matColumnDef="Id">
       <th mat-header-cell *matHeaderCellDef>ID</th>
