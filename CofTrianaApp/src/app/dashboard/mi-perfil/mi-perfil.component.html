@@ -121,7 +121,11 @@
             </button>
           </div>
         </mat-card>
+      </div>
+    </div>
 
+    <div fxFlex.gt-sm="60" fxFlex="100">
+      <div fxLayout="column">
         <mat-card>
           <mat-card-content style="width:100%;">
             <div fxLayout="row" class="wrapperForm">
@@ -199,12 +203,13 @@
                     />
                   </mat-form-field>
 
-                  <div *ngIf="updatePassword.controls['repeatPassword'].invalid &&
+                  <div
+                    *ngIf="
+                      updatePassword.controls['repeatPassword'].invalid &&
                       (updatePassword.controls['repeatPassword'].dirty ||
                         updatePassword.controls['repeatPassword'].touched)
                     "
                   >
-
                     <div
                       class="alert alert-danger"
                       *ngIf="
@@ -228,7 +233,6 @@
               class="maxWidthBtn"
               mat-raised-button
               color="primary"
-              
               (click)="actualizarPassword()"
             >
               Cambiar contraseña

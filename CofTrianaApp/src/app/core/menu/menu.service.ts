@@ -60,18 +60,6 @@ const USERMENU = [
     name: 'Inicio',
     type: 'link',
     icon: 'home'
-  },
-  {
-    state: '/recursos',
-    name: 'Recursos',
-    type: 'extTabLink',
-    icon: 'list'
-  },
-  {
-    state: '/categorias',
-    name: 'Categorias',
-    type: 'extTabLink',
-    icon: 'view_module'
   }
 ];
 

@@ -5,6 +5,7 @@ import { MatPaginator, MatTableDataSource, MatDialog } from '@angular/material';
 import { DeleteUsuarioComponent } from '../delete-usuario/delete-usuario.component';
 import { EditUsuarioComponent } from '../edit-usuario/edit-usuario.component';
 import { AddUsuarioComponent } from '../add-usuario/add-usuario.component';
+import { InfoUsuarioComponent } from '../info-usuario/info-usuario.component';
 
 
 const ELEMENT_DATA: Usuario[] = [];
@@ -70,6 +71,22 @@ export class AdminUsuariosComponent implements OnInit {
       this.getUsuarios();
     }, error =>{
       console.log(error);
+    })
+  }
+
+  openDialogInfoUsuario(usuario: Usuario){
+    const dialogInfoUsuario = this.dialog.open(InfoUsuarioComponent, {
+      height: '50%',
+      width: '30%',
+      data:{
+        element: usuario
+      }
+    })
+
+    dialogInfoUsuario.afterClosed().subscribe(response =>{
+      this.getUsuarios();
+    }, error =>{
+      console.log(error); 
     })
   }
 

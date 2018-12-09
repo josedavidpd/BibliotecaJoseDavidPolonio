@@ -35,6 +35,7 @@ import { PrestarRecursoComponent } from './prestar-recurso/prestar-recurso.compo
 import { DevolverRecursoComponent } from './devolver-recurso/devolver-recurso.component';
 import { FilterPipeModule } from 'ngx-filter-pipe';
 import {MatTabsModule} from '@angular/material/tabs';
+import { InfoUsuarioComponent } from './info-usuario/info-usuario.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -74,9 +75,10 @@ import {MatTabsModule} from '@angular/material/tabs';
     AddSupercategoriaComponent,
     EditSupercategoriaComponent,
     PrestarRecursoComponent,
-    DevolverRecursoComponent
+    DevolverRecursoComponent,
+    InfoUsuarioComponent
   ],
-  declarations: [ DashboardComponent, AdminRecursosComponent, AddRecursoComponent, EditRecursoComponent, DeleteRecursoComponent, AdminCategoriasComponent, AddCategoriaComponent, AdminUsuariosComponent, DeleteUsuarioComponent, EditUsuarioComponent, AdminTiposComponent, EditCategoriaComponent, AddUsuarioComponent, DeleteCategoriaComponent, AdminSupercategoriasComponent, AddSupercategoriaComponent, EditSupercategoriaComponent, MiPerfilComponent, PrestarRecursoComponent, DevolverRecursoComponent]
+  declarations: [ DashboardComponent, AdminRecursosComponent, AddRecursoComponent, EditRecursoComponent, DeleteRecursoComponent, AdminCategoriasComponent, AddCategoriaComponent, AdminUsuariosComponent, DeleteUsuarioComponent, EditUsuarioComponent, AdminTiposComponent, EditCategoriaComponent, AddUsuarioComponent, DeleteCategoriaComponent, AdminSupercategoriasComponent, AddSupercategoriaComponent, EditSupercategoriaComponent, MiPerfilComponent, PrestarRecursoComponent, DevolverRecursoComponent, InfoUsuarioComponent]
 })
 
 export class DashboardModule {}

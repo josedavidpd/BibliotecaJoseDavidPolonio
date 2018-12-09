@@ -1,0 +1,33 @@
+<mat-card>
+  <mat-card-content>
+    <div fxLayout="row">
+      <div fxFlex="55">
+        <h1 class="ma-0">{{name}}</h1>
+        <a href="javascript:;" class="block mt-xs mb-xs">{{email}}</a>
+        <a href="javascript:;" class="block mt-xs mb-xs">{{phone}}</a>
+      </div>
+      <div fxFlex="45">
+        <figure>
+          <div class="text-xs-center">
+            <img src="https://api.adorable.io/avatars/285/{{email}}.png" width="100px" alt="" class="radius-circle">
+            <div class="text-md mt10">{{role}}</div>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </mat-card-content>
+  <hr>
+  <mat-card-content>
+    <div fxLayout="row" class="text-xs-center">
+      <div fxFlex="100">
+        <h1 class="ma-0"><b>{{numRecursos}}</b></h1>
+        <small>Recursos</small>
+      </div>
+    </div>
+  </mat-card-content>
+  <hr>
+  <mat-card-content>
+    <h4 class="mt-0">Observaciones</h4>
+    <p>{{notes}}</p>
+  </mat-card-content>
+</mat-card>
